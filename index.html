@@ -1366,6 +1366,67 @@
       #achievementToast .at-desc { color: #d2dfca; font-size: .68rem; line-height: 1.4; }
       @media (max-width: 480px) { .ach-app { padding: 12px; } .ach-list { grid-template-columns: 1fr; } #achievementToast { top: 10px; right: 10px; } }
 
+      /* ===== Mystery Game: Recycle Bin ===== */
+      .bin{height:100%;display:flex;flex-direction:column;background:#fff}
+      .bin-top{padding:12px 16px;background:#f4f6f3;border-bottom:1px solid #e3e8e1;font-size:.84rem;line-height:1.55}
+      .bin-list{overflow:auto;flex:0 0 auto}
+      .bin-row{display:flex;gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid #f0f0ec}
+      .bin-ic{font-size:1.7rem}
+      .bin-info{flex:1;min-width:0}
+      .bin-name{font-weight:700;font-size:.92rem;font-family:ui-monospace,Menlo,Consolas,monospace}
+      .bin-note{font-size:.76rem;color:#6b7068;margin-top:2px}
+      .bin-badge{font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:999px;background:#eee;white-space:nowrap}
+      .bin-badge.ok{background:#dff3dc;color:#2e6b34}
+      .bin-badge.bad{background:#fde0de;color:#a33}
+      .bin-badge.unk{background:#fff1c9;color:#8a6a00}
+      .bin-btn{border:none;background:#3e6b46;color:#fff;border-radius:8px;padding:7px 12px;font-size:.78rem;font-weight:700;white-space:nowrap}
+      .bin-btn:disabled{background:#c9cfc8;cursor:default}
+      .bin-res{flex:1;overflow:auto;padding:14px 16px;font-size:.88rem;line-height:1.6;background:#fafbf9}
+      .mono{font-family:ui-monospace,Menlo,Consolas,monospace;background:#eef2ec;padding:6px 10px;border-radius:6px;display:inline-block;margin:6px 0}
+      .bar{height:10px;background:#e6ebe4;border-radius:999px;overflow:hidden;margin-top:8px}
+      .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7fae77,#3e6b46)}
+      .bin-pic{width:110px;height:110px;border-radius:10px;background:linear-gradient(135deg,#cfe8c4,#f6d9c4);display:flex;align-items:center;justify-content:center;font-size:3.2rem;margin-bottom:8px}
+
+      /* ===== Project 17 ===== */
+      .p17{height:100%;overflow:auto;background:#0e1812;color:#c4f5d0;font-family:ui-monospace,Menlo,Consolas,monospace;padding:18px 18px 30px;position:relative}
+      .p17-t{font-size:1.5rem;font-weight:700;letter-spacing:3px;color:#7dffa0}
+      .p17-s{font-size:.75rem;opacity:.75;margin:4px 0 16px}
+      .slot{border:1px solid #1f4a30;background:#12241a;border-radius:10px;padding:12px 14px;margin-bottom:12px}
+      .slot.ok{border-color:#3fbf68;box-shadow:0 0 14px rgba(63,191,104,.25)}
+      .slot h4{font-size:.85rem;color:#7dffa0}
+      .slot .wh{font-size:.72rem;opacity:.7;margin:2px 0 6px}
+      .slot .cl{font-size:.82rem;line-height:1.5;margin-bottom:8px;color:#e6fff0}
+      .slot .row{display:flex;gap:8px;flex-wrap:wrap}
+      .slot input{flex:1;min-width:120px;background:#0a120d;border:1px solid #2b5a3b;color:#c4f5d0;border-radius:6px;padding:8px 10px;font-family:inherit;font-size:.9rem;outline:none;text-transform:uppercase}
+      .p17 button.pb{background:#1f7a46;border:none;color:#fff;border-radius:6px;padding:8px 12px;font-family:inherit;font-weight:700;font-size:.8rem}
+      .p17 button.pb.ghost{background:transparent;border:1px solid #2b5a3b;color:#9fe8b4}
+      .slot .msg2{font-size:.76rem;margin-top:6px;min-height:1em;color:#ffb4a8}
+      .slot .hintbox{font-size:.76rem;margin-top:6px;color:#ffe9a8;line-height:1.5}
+      .p17-ov{position:absolute;inset:0;background:#050b07;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:26px;z-index:5;font-size:.9rem}
+      .ov-big{font-size:1.9rem;font-weight:700;color:#7dffa0;letter-spacing:3px;animation:glow 1s infinite alternate}
+      .ov-q{color:#ffe9a8;font-style:italic;line-height:1.5}
+      @keyframes glow{from{text-shadow:0 0 6px #2f9}to{text-shadow:0 0 24px #5f9}}
+      .filebox{border:1px dashed #3fbf68;border-radius:12px;padding:26px;text-align:center;cursor:pointer;margin-top:12px;background:#12241a}
+      .filebox:hover{background:#17301f}
+
+      /* ===== Final Gift ===== */
+      .gift-wrap{position:relative;height:100%}
+      .gift{height:100%;overflow:auto;background:linear-gradient(180deg,#fff7ee,#f3f8ec);padding:18px 18px 40px}
+      .gift-h{font-family:'Caveat',cursive;font-size:2.2rem;font-weight:700;color:#3e6b46;text-align:center;margin-bottom:12px}
+      .gcard{background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(60,80,50,.12);padding:16px;margin-bottom:14px}
+      .gcard.locked{opacity:.55;text-align:center}
+      .gcard h3{font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:#7a8a76;margin-bottom:10px}
+      .gbtn{border:none;border-radius:999px;background:#3e6b46;color:#fff;font-weight:700;padding:11px 22px;font-size:.95rem;box-shadow:0 4px 0 #2b4d32}
+      .gbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #2b4d32}
+      .letter{font-family:'Caveat',cursive;font-size:1.5rem;line-height:1.5;white-space:pre-wrap}
+      .mems{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+      .mem{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,#cfe8c4,#f6d9c4,#d6e6f0);transition:transform .15s}
+      .mem:hover{transform:scale(1.04)}
+      .mem img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .mem .ck{position:absolute;top:6px;right:6px;background:#fff;border-radius:50%;width:22px;height:22px;font-size:.8rem;display:flex;align-items:center;justify-content:center;z-index:2;color:#3e6b46;font-weight:700}
+      .finale-t{font-family:'Caveat',cursive;font-size:2.1rem;color:#c4577a;margin-bottom:6px}
+      .lb-story{max-width:420px;text-align:center;font-size:.95rem;line-height:1.55;opacity:.92}
+
       /* ===== mobile ===== */
       @media (max-width: 700px) {
         .win {
@@ -1502,11 +1563,14 @@
       /* ============================================================
    ✏️ EDIT BAGIAN INI AJA — semua isi komputer ada di sini ✏️
    ============================================================ */
+      // Jawaban akhir mystery game: kata MEMORY diikuti umur 17.
+      const PZ = { word: "888", clue: 739 };
+
       const CONFIG = {
         name: "Faiza",
       avatar: "assets/tul.jpeg",  // opsional: nama file foto profil, misal "profil.jpg"
         music: "musik.mp3", // opsional: taruh mp3 di folder yang sama, kosongkan "" kalau nggak mau
-        reminder: "a letter for Faiza! 🎂 Klik.",
+        reminder: "Pahami alur lewat chat WhysApp dari Assistant 1️⃣",
         byeTitle: "Happie b-dayy!",
         byeMessage: "Di tunggu traktirannya (NASI CUMI HITAM MADURA)",
 
@@ -1539,9 +1603,26 @@
               },
               {
                 w: "them",
+                t: "Kalo boleh rikues, bagian aplikasi recycle bin di akhir klo smua udah selesai di liat 😃😄",
+                time: "00:02",
+              },
+              {
+                w: "them",
                 t: "Ehh terus cobain frame fotonya juga!! bisa di-download buat disimpen, lumayan buat kenang-kenangan hehe, cobain yess 🤭🤭",
                 time: "00:03",
               },
+            ],
+          },
+          {
+            name: "Detective 🔍",
+            emoji: "🕵️",
+            unread: 1,
+            msgs: [
+              { day: "30 Oktober" },
+              { w: "them", t: "Aplikasi recycle bin buka paling akhir! ada secret file 🫣", time: "00:01" },
+              { w: "me", t: "File apa?? 😳", time: "00:02" },
+              { w: "them", t: "Kepo siee.. Katanya sih tersembunyi ya, selamat jadi detektif! 🕵️‍♀️", time: "00:02" },
+              { w: "them", t: `Oh iya, welcome to the ${PZ.age} club! 😉`, time: "00:03" },
             ],
           },
           {
@@ -1591,12 +1672,52 @@
           {
             name: "???",
             emoji: "❓",
-            unread: 1,
+            unread: 3,
             msgs: [
               { day: "30 Oktober" },
-              { w: "them", 
-                t: "hbd!", 
-                time: "00:00",
+              { w: "them", t: "hbd!", time: "07:24" },
+              {
+                w: "them",
+                t: "7",
+                time: "07:25",
+              },
+              {
+                w: "them",
+                t: "👍",
+                time: "07:26",
+               },
+             ],
+           },
+           {
+             name: "Telsel ✅",
+             emoji: "📞",
+             unread: 2,
+             msgs: [
+               { day: "30 Oktober" },
+               { w: "them", t: "Halo, Pelanggan Setia Telsel! Khusus untuk nomor kamu, ada penawaran spesial Paket Ketengan Internet 10GB cuma Rp15.000 aktif 3 hari. Mau ambil promonya sekarang?", time: "08:04" },
+               {
+                 w: "them",
+                 t: "Balas YA atau cek langsung di aplikasi MyTelsel: www.mytelsel.com",
+                 time: "08:06",
+                },
+              ],
+            },
+            {
+              name: "Muss",
+              emoji: "🙍",
+              unread: 3,
+              msgs: [
+                { day: "29 Oktober" },
+                { w: "them", t: "mo mukbang 9 bungkus mi", time: "09:24" },
+                {
+                  w: "them",
+                  t: "mati gk ya",
+                  time: "09:25",
+                },
+                {
+                  w: "them",
+                  t: "🙂🙂",
+                  time: "09:26",
               },
             ],
          },
@@ -1637,7 +1758,7 @@
               bg: "linear-gradient(135deg,#f9d3b8,#f2a1b5)",
               img: "assets/je.jpeg",
               caption:
-                "Happy birthday Faiza! Seniman kesayangan kita 🎨🌿 Semoga tahun ini makin banyak karya dan makin banyak tawa.",
+                "Happy birthday Faiza! Semoga tahun ini makin banyak hal baik yang datang, WYATB!! ★ ★ ★ ★",
               likes: 128,
               comments: [
                 ["Wina", "HBD atul 🥳"],
@@ -1648,11 +1769,11 @@
               avatar: "assets/rot.jpeg",
               emoji: "🏞️",
               bg: "linear-gradient(135deg,#cfe8c4,#8ecae6)",
-              img: "assets/cuking.jpg",
+              img: "assets/ger.jpg",
               caption:
-                "Pengingat: hari ini ada yang boleh istirahat dan makan enak. Selamat ulang tahun, Faiza! 🌄",
+                "Pengingat: Cara jago main mm di mobile legend gmna kak??? ● ● ● ● ● ●",
               likes: 96,
-              comments: [["aulia2ndd", "Setuju banget 💚"]],
+              comments: [["aulia2ndd", "hapus aja emelnya"]],
             },
             {
               user: "ttasssy_",
@@ -1661,9 +1782,9 @@
               bg: "linear-gradient(135deg,#f7e9a8,#b79ced)",
               img: "assets/igege.jpg",
               caption:
-                "Kalau hidup itu kanvas, semoga umur barumu penuh warna cerah. Happy birthday Faiza 🎨",
+                "Kalau hidup itu kanvas, semoga umur barumu penuh warna cerah. Happy birthday Faiza 🎨 ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥",
               likes: 74,
-              comments: [["bestie_kamu", "Aamiin 🙏"]],
+              comments: [["inihintkah", "bintang - bulat - cinta"]],
             },
           ],
         },
@@ -1716,10 +1837,33 @@
             album: "Secret",
             src: "assets/qr.jpeg",
           },
+          {
+            caption: "eh eh kepencett",
+            emoji: "🍃",
+            album: "Secret",
+            src: "assets/qr.jpeg",
+          },
+          {
+            caption: "eh eh kepencett",
+            emoji: "🍃",
+            album: "Secret",
+            src: "assets/qr.jpeg",
+          },
         ],
 
         /* ---------- Catatan ---------- (todo: [teks, sudahDicentang]) */
         notes: [
+          {
+            title: "📓 Catatan lama (jangan dihapus)",
+            date: "Lama banget",
+            text: `Catatan buat diriku sendiri:
+
+Kalau suatu hari kamu lupa kenapa kita bisa sedekat ini, ingat satu hal: yang bikin persahabatan ini berharga itu bukan barangnya, tapi MEMORY-nya. Semua tawa, semua cerita, semua hari random yang ujungnya jadi spesial.
+
+Simpan baik-baik. Itu awal dari segalanya.
+
+P.S. Kata yang ditulis kapital itu penting. 😉`,
+          },
           {
             title: "✉️ Letters for You",
             date: "30 Oktober 2026",
@@ -1755,6 +1899,63 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
             ],
           },
         ],
+
+        /* ---------- Mystery game: petunjuk Project 17 ---------- */
+        puzzle: {
+          slots: {
+            a: {
+              title: "The Article",
+              where: "Tempat dimana ada jawaban",
+              clue: "Ambil tahun tertua dan hapus digit pertamanya.",
+              hint: "Tahun",
+            },
+            b: {
+              title: "Random Conversations",
+              where: "Tempat komunikasi",
+              clue: "Masing-masing menyimpan satu yang harus diambil.",
+              hint: "Gabung menjadi 3",
+            },
+            c: {
+              title: "The Grid",
+              where: "pinky",
+              clue: "caption",
+              hint: "Atas ke bawah",
+            },
+          },
+          orderOptions: [
+            "937",
+            "469",
+            "135",
+          ],
+          orderCorrect: 1,
+          passwordHint: "Telusuri isi catatan",
+        },
+        gift: {
+          letter: `Haii Faiza! 🎉
+
+Selamat ulang tahun yang ke-${PZ.age}! Semoga tahun ini hidupmu seindah lukisan yang kamu bikin: penuh warna, penuh cerita, dan kalaupun ada goresan yang salah, anggap aja itu bagian dari seninya 😆
+
+Makasih udah jadi teman yang bikin hari-hariku lebih berwarna dan penuh cerita.
+
+Semoga kamu makin semangat melukis, makin sering healing ke alam, dan makin banyak hal baik yang datang di usia barumu.
+
+Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
+
+— dari temanmu 💚`,
+          memories: [
+            { emoji: "😂", src: "assets/cuking.jpg", title: "Si paling lucu", story: "Foto sederhana yang selalu punya cerita dan bikin kita tersenyum." },
+            { emoji: "💚", src: "assets/igege.jpg", title: "Hari yang berarti", story: "Momen kecil yang semoga tetap jadi kenangan baik." },
+            { emoji: "🌿", src: "assets/rusli.jpg", title: "Perjalanan kita", story: "Banyak cerita sudah dibagi, semoga masih banyak kenangan seru yang menunggu." },
+          ],
+          finaleTitle: "One last thing, Faiza 💚",
+          finale: `Kalau kamu sampai di sini, berarti kamu berhasil mengumpulkan semua fragmennya. Kamu memang detektif sekaligus seniman paling keren yang kukenal 🕵️‍♀️🎨
+
+Makasih udah jadi bagian dari cerita-cerita. Semoga semua doa dan impianmu menemukan jalannya.
+
+Sekarang, make a wish, lalu tiup lilinnya dalam hati. Aku yakin tahun ini bakal baik banget buat kamu.
+
+Happy birthday, Faiza! 🎂`,
+        },
 
         /* ---------- Chrome ---------- */
         chrome: {
@@ -1818,6 +2019,18 @@ Hari ini tercatat sebagai hari ulang tahunnya. Teman-teman dianjurkan memberi uc
 Tempat yang sempit dan tertutup dapat memberikan rasa aman bagi kucing. Selain itu, lokasi seperti kolong meja atau kardus juga bisa menjadi tempat yang nyaman untuk beristirahat, terutama ketika suasana di sekitarnya terasa ramai.
 
 Karena itu, jangan heran jika kucing terkadang sulit ditemukan meskipun sebenarnya berada tidak jauh dari tempat biasanya. Bisa jadi, mereka hanya sedang menikmati waktu tenang di tempat persembunyiannya.`,
+              },
+              {
+               title: "Perjalanan Kamera dari Masa ke Masa",
+               url: "journeyilmu.id/kamera-now",
+               snippet: "Perkembangan kamera menunjukkan bagaimana teknologi dapat mengubah cara manusia menyimpan kenangan.....",
+               article: `Perkembangan kamera menunjukkan bagaimana teknologi dapat mengubah cara manusia menyimpan kenangan. Dari perangkat sederhana hingga kamera digital modern, setiap perubahan membawa kemudahan baru bagi penggunanya.
+
+Pada tahun 1948, kamera Polaroid Land Camera diperkenalkan kepada masyarakat. Kamera ini memungkinkan pengguna memperoleh hasil foto dalam waktu yang jauh lebih singkat dibandingkan proses fotografi konvensional. Inovasi tersebut menjadi salah satu tonggak penting dalam perkembangan fotografi instan.
+
+Beberapa dekade kemudian, kamera digital mulai mengubah kebiasaan masyarakat dalam mengambil gambar. Foto tidak lagi harus selalu dicetak untuk dapat dilihat, karena hasilnya dapat disimpan dalam bentuk digital. Perubahan ini membuat dokumentasi berbagai kegiatan menjadi semakin mudah dan praktis.
+
+Saat ini, fotografi tidak hanya digunakan untuk mengabadikan peristiwa penting, tetapi juga menjadi bagian dari aktivitas sehari-hari. Foto dapat menjadi pengingat akan tempat yang pernah dikunjungi, orang yang pernah ditemui, maupun pengalaman yang memiliki arti tersendiri bagi seseorang.`,
              },
              {
               title: "Kucing Dikabarkan Hilang, Pemilik Berharap Segera Kembali",
@@ -1829,16 +2042,39 @@ Karena itu, jangan heran jika kucing terkadang sulit ditemukan meskipun sebenarn
 Namun, selama beberapa waktu terakhir, Ucup tak kunjung terlihat. Pemiliknya telah mencoba mencari di sejumlah tempat yang biasa dikunjungi, mulai dari halaman tetangga hingga sudut-sudut rumah.
 
 Kehilangan hewan peliharaan tentu bukan hal yang mudah, terutama ketika kehadirannya sudah menjadi bagian dari keseharian. Kini, pemiliknya hanya berharap Ucup dapat segera ditemukan dan kembali pulang dengan selamat.`,
+               },
+               {
+                title: "Awal Mula Fotografi Modern",
+                url: "cariilmu.id/Sejarah-Fotografi",
+                snippet: "Fotografi telah menjadi bagian penting dalam kehidupan manusia. Melalui sebuah foto, seseorang dapat.....",
+                article: `Fotografi telah menjadi bagian penting dalam kehidupan manusia. Melalui sebuah foto, seseorang dapat menyimpan momen yang mungkin tidak akan pernah terulang kembali. Mulai dari peristiwa bersejarah hingga kenangan sederhana bersama keluarga dan teman, foto mampu mengabadikan banyak hal dalam satu bingkai.
+
+Pada tahun 1888, George Eastman memperkenalkan kamera Kodak yang membantu membuat kegiatan fotografi lebih mudah diakses oleh masyarakat. Sebelumnya, proses mengambil gambar membutuhkan peralatan yang rumit dan tidak selalu praktis untuk digunakan sehari-hari. Kehadiran kamera tersebut menjadi salah satu langkah penting dalam perkembangan fotografi modern.
+
+Seiring waktu, teknologi kamera terus berkembang. Peralatan yang dahulu berukuran besar perlahan menjadi lebih ringkas dan mudah dibawa. Kini, hampir setiap orang dapat mengambil foto melalui perangkat yang mereka gunakan setiap hari.
+
+Meskipun teknologi terus berubah, tujuan fotografi tetap sama, yaitu menyimpan momen dan memberikan kesempatan bagi seseorang untuk mengenang kembali kejadian di masa lalu.`,
             },
             {
-              title: "Tempat makan enak terdekat (buat traktiran)",
+              title: "Tempat Makan Enak Terdekat, Ini Rekomendasi Kuliner di Lombok",
               url: "peta-makan.id/terdekat",
               snippet:
                 "Ditemukan banyak tempat makan enak. Rekomendasi: yang porsinya banyak dan dompetnya aman...",
-              article: `Hasil pencarian: banyak.
-Rekomendasi sistem: pilih yang ada es krimnya 🍨
+              article: `
+Lombok memiliki beragam pilihan kuliner yang menarik untuk dicoba, mulai dari makanan khas tradisional hingga restoran dengan pemandangan alam yang indah. Berikut beberapa rekomendasi kuliner di Lombok:
 
-Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. 😎`,
+1. Ayam Taliwang
+Ayam Taliwang merupakan makanan khas Lombok berupa ayam yang dibakar atau digoreng dengan bumbu rempah bercita rasa pedas dan gurih.
+2. Plecing Kangkung
+Plecing kangkung adalah hidangan kangkung rebus yang disajikan dengan sambal tomat pedas dan perasan jeruk limau.
+3. Sayur Ares
+Sayur Ares terbuat dari pelepah pisang muda yang dimasak menggunakan santan dan berbagai rempah khas Lombok.
+4. Nasi Balap Puyung
+Nasi Balap Puyung merupakan hidangan nasi dengan lauk ayam suwir pedas, abon sapi, dan kentang renyah.
+5. Sate Rembiga
+Sate Rembiga berbahan dasar daging sapi yang dibumbui dengan perpaduan rasa pedas dan manis sebelum dibakar.
+
+Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman bersantap di Lombok. Sebelum berkunjung, wisatawan disarankan memeriksa lokasi, jam operasional, dan harga terbaru agar dapat memilih tempat makan sesuai kebutuhan.`,
             },
           ],
         },
@@ -2068,14 +2304,60 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
       /* ---------- toast ---------- */
       function showToast() {
         const t = $("#toast");
-        t.innerHTML = `<div class="ti">📅</div><div><b>Reminder • Now</b><div>${esc(CONFIG.reminder)}</div></div>`;
+        t.innerHTML = `<div class="ti">💬</div><div><b>WhatsApp • Assistant 1️⃣</b><div>${esc(CONFIG.reminder)}</div></div>`;
         t.classList.add("on");
         t.onclick = () => {
           t.classList.remove("on");
-          openApp("notes", { select: 0 });
+          const bestieIndex = CONFIG.wa.findIndex((contact) => contact.name === "Assistant 1️⃣");
+          openApp("wa", { select: bestieIndex >= 0 ? bestieIndex : 0 });
           celebrate(80);
         };
         setTimeout(() => t.classList.remove("on"), 14000);
+      }
+
+      /* ---------- Mystery game progress ---------- */
+      const SKEY = "faizaPC.v1";
+      let STATE = {
+        rec: {},
+        p17: false,
+        solved: {},
+        unlocked: false,
+        gift: { letter: false, viewed: [], done: false },
+      };
+      try {
+        if (location.hash === "#reset") localStorage.removeItem(SKEY);
+        const saved = JSON.parse(localStorage.getItem(SKEY) || "null");
+        if (saved && typeof saved === "object") {
+          if (saved.rec && typeof saved.rec === "object" && !Array.isArray(saved.rec))
+            Object.assign(STATE.rec, saved.rec);
+          if (saved.solved && typeof saved.solved === "object" && !Array.isArray(saved.solved))
+            Object.assign(STATE.solved, saved.solved);
+          STATE.p17 = Boolean(saved.p17);
+          STATE.unlocked = Boolean(saved.unlocked);
+          if (saved.gift && typeof saved.gift === "object") {
+            STATE.gift.letter = Boolean(saved.gift.letter);
+            STATE.gift.done = Boolean(saved.gift.done);
+            STATE.gift.viewed = Array.isArray(saved.gift.viewed)
+              ? saved.gift.viewed.filter(
+                  (index) => Number.isInteger(index) && index >= 0 && index < CONFIG.gift.memories.length,
+                )
+              : [];
+          }
+        }
+      } catch (_) {}
+      function save() {
+        try {
+          localStorage.setItem(SKEY, JSON.stringify(STATE));
+        } catch (_) {}
+      }
+      const norm = (value) =>
+        String(value == null ? "" : value).toUpperCase().replace(/\s+/g, "");
+      function visibleApps() {
+        return Object.keys(APPS).filter(
+          (id) =>
+            !APPS[id].hidden &&
+            (!APPS[id].needs || STATE[APPS[id].needs]),
+        );
       }
 
       /* ---------- window manager ---------- */
@@ -2210,6 +2492,32 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           h: 540,
           build: buildChrome,
         },
+        bin: {
+          title: "Recycle Bin",
+          icon: "🗑️",
+          bg: "linear-gradient(135deg,#dfe8e1,#9fb3a6)",
+          w: 640,
+          h: 500,
+          build: buildBin,
+        },
+        p17: {
+          title: "Project 17",
+          icon: "🧩",
+          bg: "linear-gradient(135deg,#1f3a2a,#0e1812)",
+          w: 560,
+          h: 600,
+          build: buildP17,
+          needs: "p17",
+        },
+        gift: {
+          title: "Final Gift",
+          icon: "🎁",
+          bg: "linear-gradient(135deg,#f2a1b5,#f7d56a)",
+          w: 620,
+          h: 600,
+          build: buildGift,
+          hidden: true,
+        },
         achievements: {
           title: "Achievements",
           icon: "🏆",
@@ -2321,32 +2629,37 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
       (function () {
         const icons = $("#icons"),
           sm = $("#startmenu");
-        Object.keys(APPS).forEach((id) => {
-          const A = APPS[id];
-          const b = el(
-            "button",
-            "icon",
-            `<div class="ic" style="background:${A.bg}">${A.icon}</div>${A.title}`,
-          );
-          b.onclick = () => openApp(id);
-          icons.appendChild(b);
-          const m = el("button", "", `<span>${A.icon}</span>${A.title}`);
-          m.onclick = () => openApp(id);
-          sm.appendChild(m);
-        });
-        sm.appendChild(el("hr"));
-        const rs = el("button", "", "<span>🔄</span>Restart");
-        rs.onclick = restart;
-        sm.appendChild(rs);
-        const sd = el("button", "", "<span>🚫</span>Shut down");
-        sd.onclick = () => {
-          sm.classList.remove("on");
-          $("#byeTitle").textContent = CONFIG.byeTitle;
-          $("#byeMsg").textContent = CONFIG.byeMessage;
-          $("#bye").classList.add("on");
-          celebrate(200);
+        window.renderIcons = function () {
+          icons.innerHTML = "";
+          sm.innerHTML = "";
+          visibleApps().forEach((id) => {
+            const A = APPS[id];
+            const b = el(
+              "button",
+              "icon",
+              `<div class="ic" style="background:${A.bg}">${A.icon}</div>${A.title}`,
+            );
+            b.onclick = () => openApp(id);
+            icons.appendChild(b);
+            const m = el("button", "", `<span>${A.icon}</span>${A.title}`);
+            m.onclick = () => openApp(id);
+            sm.appendChild(m);
+          });
+          sm.appendChild(el("hr"));
+          const rs = el("button", "", "<span>🔄</span>Restart");
+          rs.onclick = restart;
+          sm.appendChild(rs);
+          const sd = el("button", "", "<span>🚫</span>Shut down");
+          sd.onclick = () => {
+            sm.classList.remove("on");
+            $("#byeTitle").textContent = CONFIG.byeTitle;
+            $("#byeMsg").textContent = CONFIG.byeMessage;
+            $("#bye").classList.add("on");
+            celebrate(200);
+          };
+          sm.appendChild(sd);
         };
-        sm.appendChild(sd);
+        window.renderIcons();
         $("#startBtn").onclick = (e) => {
           e.stopPropagation();
           sm.classList.toggle("on");
@@ -2899,6 +3212,414 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
         return root;
       }
 
+      /* ============ APP: Recycle Bin ============ */
+      const BIN_FILES = [
+        { id: "img", name: "IMG_0017.mem", size: "0 KB", status: "Rusak", icon: "🖼️", note: "Ukuran 0 KB. Kemungkinan besar nggak bisa diselamatkan." },
+        { id: "note", name: "old_note.dat", size: "2 KB", status: "Dapat dipulihkan", icon: "📄", note: "Catatan lama. Datanya masih utuh." },
+        { id: "pic", name: "memory_03.pic", size: "1,2 MB", status: "Dapat dipulihkan", icon: "🏞️", note: "Gambar dengan potongan data." },
+        { id: "p17", name: "project17.tmp", size: "17 KB", status: "Tidak dikenal", icon: "🧩", note: "File sementara, asalnya tidak diketahui." },
+      ];
+      function binResult(id) {
+        if (id === "img")
+          return { ok: false, html: "<b>❌ Pemulihan gagal</b><br>File rusak (error 0x017). Tidak ada data yang bisa diselamatkan.<br><small>Tenang, ini bukan file yang kamu cari.</small>" };
+        if (id === "note")
+          return { ok: true, html: '<b>📄 Recovery log #017</b><br><span class="mono">Three fragments remain.<br>Find them where memories are stored.</span><br><small>💡 Tempat kenangan disimpan: catatan, percakapan, dan unggahan foto.</small>' };
+        if (id === "pic")
+          return { ok: true, html: '<div class="bin-pic">🏞️</div><b>memory_03.pic</b><br>Potongan gambar berhasil dipulihkan. Di pojoknya ada tulisan kecil:<br><span class="mono">"Awal cerita selalu ada di tulisan lama."</span><br><small>💡 Petunjuk pertama: coba cek aplikasi Catatan.</small>' };
+        return { ok: true, html: "<b>🧩 project17.tmp berhasil dipulihkan</b><br>Aplikasi baru bernama <b>Project 17</b> sekarang ada di desktop kamu." };
+      }
+      function buildBin() {
+        const root = el(
+          "div",
+          "bin",
+          `<div class="bin-top">🗑️ <b>Recycle Bin</b> • 4 file terhapus<br>💡 Coba pulihkan file yang berstatus <b>Dapat dipulihkan</b> dulu. File yang rusak atau tidak dikenal mungkin butuh petunjuk dari file lain.</div>
+           <div class="bin-list"></div>
+           <div class="bin-res"><span style="color:#8a9086">Pilih file lalu tekan "Pulihkan".</span></div>`,
+        );
+        const list = root.querySelector(".bin-list");
+        const res = root.querySelector(".bin-res");
+        let busy = false;
+
+        function renderRows() {
+          list.innerHTML = "";
+          BIN_FILES.forEach((file) => {
+            const done = Boolean(STATE.rec[file.id]);
+            const locked = file.id === "p17" && !STATE.rec.note;
+            const badge =
+              file.status === "Rusak"
+                ? "bad"
+                : file.status === "Dapat dipulihkan"
+                  ? "ok"
+                  : "unk";
+            const note = locked
+              ? "Terkunci: butuh recovery log dari file lain"
+              : file.note;
+            const row = el(
+              "div",
+              "bin-row",
+              `<div class="bin-ic">${file.icon}</div><div class="bin-info"><div class="bin-name">${esc(file.name)}</div><div class="bin-note">${esc(file.size)} • ${esc(note)}</div></div><span class="bin-badge ${badge}">${esc(file.status)}</span>`,
+            );
+            const button = el(
+              "button",
+              "bin-btn",
+              done ? "Lihat" : locked ? "🔒" : "Pulihkan",
+            );
+            button.disabled = locked || busy;
+            button.onclick = () =>
+              done ? (res.innerHTML = binResult(file.id).html) : recover(file);
+            row.appendChild(button);
+            list.appendChild(row);
+          });
+        }
+
+        function recover(file) {
+          busy = true;
+          renderRows();
+          res.innerHTML = `<div>Memulihkan <b>${esc(file.name)}</b>… <span class="pc">0%</span></div><div class="bar"><i></i></div>`;
+          const bar = res.querySelector(".bar i");
+          const percentage = res.querySelector(".pc");
+          const limit = file.id === "img" ? 63 : 100;
+          let progress = 0;
+          const timer = setInterval(() => {
+            if (!root.isConnected) {
+              clearInterval(timer);
+              busy = false;
+              return;
+            }
+            progress = Math.min(limit, progress + Math.random() * 8 + 3);
+            bar.style.width = progress + "%";
+            percentage.textContent = Math.floor(progress) + "%";
+            if (progress >= limit) {
+              clearInterval(timer);
+              busy = false;
+              const result = binResult(file.id);
+              setTimeout(() => {
+                if (result.ok) {
+                  STATE.rec[file.id] = true;
+                  if (file.id === "p17") {
+                    STATE.p17 = true;
+                    window.renderIcons();
+                    celebrate(70);
+                  }
+                  save();
+                }
+                res.innerHTML = result.html;
+                renderRows();
+              }, 450);
+            }
+          }, 70);
+        }
+
+        renderRows();
+        return root;
+      }
+
+      /* ============ APP: Project 17 ============ */
+      function buildP17() {
+        const puzzle = CONFIG.puzzle;
+        const root = el("div", "p17");
+        const labels = { a: "A", b: "B", c: "C" };
+        const answer = (key) => (key === "a" ? PZ.word : String(PZ.clue));
+        const count = () => ["a", "b", "c"].filter((key) => STATE.solved[key]).length;
+        function solve(key) {
+          STATE.solved[key] = true;
+          save();
+          render();
+        }
+        function shake(row) {
+          row.classList.remove("shake");
+          void row.offsetWidth;
+          row.classList.add("shake");
+        }
+
+        function slot(key) {
+          const data = puzzle.slots[key];
+          const solved = Boolean(STATE.solved[key]);
+          const card = el(
+            "div",
+            "slot" + (solved ? " ok" : ""),
+            `<h4>FRAGMENT ${labels[key]} — ${esc(data.title)}</h4><div class="wh">Cari di: ${esc(data.where)}</div><div class="cl">${esc(data.clue)}</div>`,
+          );
+          if (solved) {
+            const value =
+              key === "c"
+                ? puzzle.orderOptions[puzzle.orderCorrect]
+                : answer(key);
+            card.appendChild(el("div", "", `✔ <b>${esc(value)}</b>`));
+            return card;
+          }
+
+          const message = el("div", "msg2");
+          const hintBox = el("div", "hintbox");
+          if (key === "c") {
+            card.appendChild(el("div", "cl", "Pilih susunan yang benar:"));
+            puzzle.orderOptions.forEach((option, index) => {
+              const button = el("button", "pb ghost", esc(option));
+              button.style.cssText =
+                "display:block;width:100%;text-align:left;margin-bottom:6px";
+              button.onclick = () => {
+                if (index === puzzle.orderCorrect) solve(key);
+                else message.textContent = "Belum tepat. Baca lagi petunjuknya 🔎";
+              };
+              card.appendChild(button);
+            });
+          } else {
+            const row = el("div", "row");
+            const input = el("input");
+            const button = el("button", "pb", "Cek");
+            input.placeholder = "ketik fragmen...";
+            input.autocomplete = "off";
+            const check = () => {
+              if (norm(input.value) === norm(answer(key))) solve(key);
+              else {
+                message.textContent = "Belum tepat. Coba cari lagi 🔎";
+                shake(row);
+              }
+            };
+            button.onclick = check;
+            input.onkeydown = (event) => {
+              if (event.key === "Enter") check();
+            };
+            row.append(input, button);
+            card.appendChild(row);
+          }
+          const hint = el("button", "pb ghost", "💡 Hint");
+          hint.style.marginTop = "8px";
+          hint.onclick = () => {
+            hintBox.textContent = data.hint;
+          };
+          card.append(message, hint, hintBox);
+          return card;
+        }
+
+        function passwordBox() {
+          const card = el(
+            "div",
+            "slot ok",
+            '<h4>MEMORY PROTOCOL</h4><div class="cl">Telusuri catatan untuk mendapatkan jawaban</div>',
+          );
+          const row = el("div", "row");
+          const input = el("input");
+          const button = el("button", "pb", "Buka");
+          const message = el("div", "msg2");
+          const hintBox = el("div", "hintbox");
+          input.placeholder = "password...";
+          input.autocomplete = "off";
+          const check = () => {
+            if (norm(input.value) === norm(PZ.word + PZ.clue)) grant();
+            else {
+              message.textContent = "ACCESS DENIED. Cek lagi susunannya 🔒";
+              shake(row);
+            }
+          };
+          button.onclick = check;
+          input.onkeydown = (event) => {
+            if (event.key === "Enter") check();
+          };
+          row.append(input, button);
+          const hint = el("button", "pb ghost", "💡 Hint");
+          hint.style.marginTop = "8px";
+          hint.onclick = () => {
+            hintBox.textContent = puzzle.passwordHint;
+          };
+          card.append(row, message, hint, hintBox);
+          return card;
+        }
+
+        function grant() {
+          root.scrollTop = 0;
+          const overlay = el("div", "p17-ov");
+          root.appendChild(overlay);
+          const lines = [
+            ["> memverifikasi fragmen...", ""],
+            ["ACCESS GRANTED", "ov-big"],
+            ["Project 17 successfully unlocked.", ""],
+            ['"You found the fragments. Now it\'s time to see what they were protecting."', "ov-q"],
+          ];
+          let index = 0;
+          (function next() {
+            if (!root.isConnected) return;
+            if (index >= lines.length) {
+              setTimeout(() => {
+                STATE.unlocked = true;
+                save();
+                render();
+                celebrate(120);
+              }, 1500);
+              return;
+            }
+            const line = lines[index++];
+            overlay.appendChild(el("div", line[1], esc(line[0])));
+            setTimeout(next, index === 2 ? 1000 : 750);
+          })();
+        }
+
+        function render() {
+          root.innerHTML = `<div class="p17-t">PROJECT 17</div><div class="p17-s">MEMORY PROTOCOL • fragmen terkumpul: ${count()}/3</div>`;
+          if (STATE.unlocked) {
+            root.appendChild(
+              el("div", "cl", "✔ Project 17 unlocked. Satu file baru muncul:"),
+            );
+            const file = el(
+              "div",
+              "filebox",
+              '<div style="font-size:3rem">🎁</div><div style="font-weight:700;margin:8px 0">for_faiza_final.gift</div><div style="font-size:.8rem;opacity:.8">Klik untuk membuka hadiah terakhir</div>',
+            );
+            file.onclick = () => openApp("gift");
+            root.appendChild(file);
+            return;
+          }
+          ["a", "b", "c"].forEach((key) => root.appendChild(slot(key)));
+          if (count() === 3) root.appendChild(passwordBox());
+        }
+
+        render();
+        return root;
+      }
+
+      /* ============ APP: Final Gift ============ */
+      function buildGift() {
+        const gift = CONFIG.gift;
+        const wrap = el("div", "gift-wrap");
+        const root = el("div", "gift");
+        const lightbox = el(
+          "div",
+          "lightbox",
+          '<button class="lb-x">✕</button><div class="lb-img"></div><div class="lb-cap"></div><div class="lb-story"></div>',
+        );
+        wrap.append(root, lightbox);
+        const viewedAll = () => STATE.gift.viewed.length >= gift.memories.length;
+        let typing = false;
+        let skip = false;
+        let letterElement = null;
+        let announced = STATE.gift.letter && viewedAll();
+        lightbox.querySelector(".lb-x").onclick = () => {
+          lightbox.classList.remove("on");
+          render();
+        };
+
+        function startLetter() {
+          typing = true;
+          skip = false;
+          render();
+          const text = gift.letter;
+          let index = 0;
+          (function step() {
+            if (!root.isConnected) return;
+            if (skip || index >= text.length) {
+              typing = false;
+              STATE.gift.letter = true;
+              save();
+              render();
+              return;
+            }
+            letterElement.textContent = text.slice(0, ++index);
+            setTimeout(step, 18);
+          })();
+        }
+
+        function render() {
+          const scrollTop = root.scrollTop;
+          root.innerHTML = "";
+          root.appendChild(
+            el("div", "gift-h", "🎁 A gift for " + esc(CONFIG.name)),
+          );
+
+          const letterCard = el("div", "gcard");
+          letterCard.appendChild(el("h3", "", "Part 1 — A Letter for You"));
+          if (!STATE.gift.letter && !typing) {
+            const button = el("button", "gbtn", "Buka surat 💌");
+            button.onclick = startLetter;
+            letterCard.appendChild(button);
+          } else {
+            const text = el("div", "letter");
+            letterCard.appendChild(text);
+            if (STATE.gift.letter) text.textContent = gift.letter;
+            else {
+              letterElement = text;
+              text.title = "Klik untuk melewati animasi";
+              text.onclick = () => {
+                skip = true;
+              };
+            }
+          }
+          root.appendChild(letterCard);
+
+          const memoryCard = el(
+            "div",
+            "gcard" + (STATE.gift.letter ? "" : " locked"),
+          );
+          memoryCard.appendChild(el("h3", "", "Part 2 — Our Little Memories"));
+          if (!STATE.gift.letter) {
+            memoryCard.appendChild(el("div", "", "🔒 Baca suratnya sampai habis dulu"));
+          } else {
+            memoryCard.appendChild(
+              el(
+                "div",
+                "",
+                `<div style="font-size:.82rem;margin-bottom:8px;color:#6b7068">Buka semua kenangan (${STATE.gift.viewed.length}/${gift.memories.length})</div>`,
+              ),
+            );
+            const grid = el("div", "mems");
+            gift.memories.forEach((memory, index) => {
+              const tile = el("div", "mem", esc(memory.emoji || "📷"));
+              mediaBox(tile, memory.src);
+              if (STATE.gift.viewed.includes(index))
+                tile.appendChild(el("div", "ck", "✓"));
+              tile.onclick = () => {
+                const image = lightbox.querySelector(".lb-img");
+                image.innerHTML = esc(memory.emoji || "📷");
+                image.style.background =
+                  "linear-gradient(135deg,#cfe8c4,#f6d9c4,#d6e6f0)";
+                mediaBox(image, memory.src);
+                lightbox.querySelector(".lb-cap").textContent =
+                  memory.title || "";
+                lightbox.querySelector(".lb-story").textContent =
+                  memory.story || "";
+                lightbox.classList.add("on");
+                if (!STATE.gift.viewed.includes(index)) {
+                  STATE.gift.viewed.push(index);
+                  save();
+                }
+              };
+              grid.appendChild(tile);
+            });
+            memoryCard.appendChild(grid);
+          }
+          root.appendChild(memoryCard);
+
+          const finaleOpen = STATE.gift.letter && viewedAll();
+          const finaleCard = el(
+            "div",
+            "gcard" + (finaleOpen ? "" : " locked"),
+          );
+          finaleCard.appendChild(el("h3", "", "Part 3 — One Last Thing"));
+          if (!finaleOpen) {
+            finaleCard.appendChild(el("div", "", "🔒 Buka semua kenangan dulu"));
+          } else {
+            finaleCard.appendChild(el("div", "finale-t", esc(gift.finaleTitle)));
+            finaleCard.appendChild(el("div", "letter", esc(gift.finale)));
+            const button = el("button", "gbtn", "🎂 Make a wish");
+            button.style.marginTop = "14px";
+            button.onclick = () => {
+              celebrate(240);
+              STATE.gift.done = true;
+              save();
+            };
+            finaleCard.appendChild(button);
+            if (!announced) {
+              announced = true;
+              celebrate(90);
+            }
+          }
+          root.appendChild(finaleCard);
+          root.scrollTop = scrollTop;
+        }
+
+        render();
+        return wrap;
+      }
+
       /* ============ APP: Chrome ============ */
       function buildChrome() {
         const C = CONFIG.chrome;
@@ -2957,3 +3678,4 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
     </script>
   </body>
 </html>
+#reset
