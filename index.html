@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Komputernya Faiza 🌿</title>
+    <title>Faiza Turns Seventeen 🌿</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -180,6 +180,11 @@
         inset: 0;
         z-index: 1;
         display: none;
+        background-color: #304335;
+        background-image: url("assets/cuking.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       #desktop.on {
         display: block;
@@ -519,6 +524,21 @@
         justify-content: center;
         font-size: 1.4rem;
         flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .wa-av img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+      }
+      .wa-av-compact {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
       }
       .wa-meta {
         flex: 1;
@@ -733,6 +753,8 @@
         align-items: center;
         justify-content: center;
         font-size: 1.6rem;
+        position: relative;
+        overflow: hidden;
       }
       .post {
         background: #fff;
@@ -756,6 +778,18 @@
         align-items: center;
         justify-content: center;
         font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .story .in img,
+      .post-h .pa img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
       }
       .post-img {
         aspect-ratio: 1;
@@ -885,6 +919,53 @@
         background: #3e6b46;
         color: #fff;
         border-color: #3e6b46;
+      }
+      .secret-lock {
+        grid-column: 1 / -1;
+        width: min(100%, 390px);
+        justify-self: center;
+        align-self: center;
+        padding: 26px 22px;
+        border: 1px solid #e2eadf;
+        border-radius: 16px;
+        background: #f7faf5;
+        text-align: center;
+        color: #344b37;
+      }
+      .secret-lock-icon {
+        font-size: 2.4rem;
+        margin-bottom: 8px;
+      }
+      .secret-lock p {
+        margin-top: 7px;
+        color: #68766a;
+        font-size: 0.88rem;
+      }
+      .secret-lock-form {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .secret-lock-form input {
+        flex: 1;
+        min-width: 0;
+        padding: 10px 12px;
+        border: 1px solid #cbd7c9;
+        border-radius: 9px;
+        font: inherit;
+      }
+      .secret-lock-form button {
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 9px;
+        background: #3e6b46;
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+      }
+      .secret-lock .secret-lock-error {
+        color: #b33b45;
+        font-weight: 600;
       }
       .gal-grid {
         flex: 1;
@@ -1154,6 +1235,20 @@
         justify-content: center;
         font-size: 3.4rem;
         margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+      .panel .pic img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+      }
+      .panel .pic span {
+        position: relative;
+        z-index: 1;
       }
       .panel h3 {
         font-size: 1.25rem;
@@ -1322,7 +1417,7 @@
   </head>
   <body>
     <div class="wall">
-      <div class="wall-title">Happy Birthday, Faiza 🌿</div>
+      <div class="wall-title"></div>
       <svg
         viewBox="0 0 1200 600"
         preserveAspectRatio="xMidYMax slice"
@@ -1360,7 +1455,7 @@
     <div id="login">
       <div class="lg-time" id="lgTime">00:00</div>
       <div class="lg-date" id="lgDate"></div>
-      <div class="avatar" id="lgAvatar">F</div>
+      <div class="avatar" id="lgAvatar">-</div>
       <div class="lg-name" id="lgName">Faiza</div>
       <form class="lg-form" id="lgForm" autocomplete="off">
         <input
@@ -1372,7 +1467,7 @@
         <button type="submit">➜</button>
       </form>
       <div class="lg-hint" id="lgHint">Hint: day/month/year</div>
-      <div class="lg-welcome" id="lgWelcome">Welcome, Faiza</div>
+      <div class="lg-welcome" id="lgWelcome">Password accepted. Unlocking something special...</div>
     </div>
 
     <!-- DESKTOP -->
@@ -1409,36 +1504,43 @@
    ============================================================ */
       const CONFIG = {
         name: "Faiza",
-        avatar: "", // opsional: nama file foto profil, misal "profil.jpg"
+      avatar: "assets/tul.jpeg",  // opsional: nama file foto profil, misal "profil.jpg"
         music: "musik.mp3", // opsional: taruh mp3 di folder yang sama, kosongkan "" kalau nggak mau
         reminder: "a letter for Faiza! 🎂 Klik.",
         byeTitle: "Happie b-dayy!",
         byeMessage: "Di tunggu traktirannya (NASI CUMI HITAM MADURA)",
 
         /* ---------- WhatsApp ----------
+     avatar: opsional, isi dengan path foto seperti "assets/profil-kontak.jpg".
      w: 'them' (orang lain) atau 'me' (Faiza), who: nama pengirim (khusus grup), {day:"..."} = pemisah tanggal */
         wa: [
           {
             name: "Assistant 1️⃣",
-            emoji: "🎯",
-            unread: 4,
+            emoji: "🍃",
+            avatar: "assets/ass.jpg",
+            unread: 5,
             msgs: [
               { day: "30 Oktober" },
-              { w: "them", t: "Faizaaaa 🎉🎉🎉", time: "00:00" },
+              { w: "them", t: "🎉🎉🎉", time: "00:00" },
               {
                 w: "them",
-                t: "HAPPY BIRTHDAY YAAA! Semoga umur barunya makin sehat, makin bahagia, makin banyak rezeki 🥳",
+                t: "HAPPY BIRTHDAY YAAA! Semoga di umur baru ini selalu sehat, bahagia, dilancarkan semua urusannya, dan dikelilingi hal-hal baik. semoga apa pun yang lagi kamu usahain bisa pelan-pelan tercapai yaa",
                 time: "00:00",
               },
               {
                 w: "them",
-                t: "BTW, buka aplikasi-aplikasi lain di komputermu, ada something kecil tersebar di sana 👀",
+                t: "BTW, buka aplikasi-aplikasi lain di komputer, ada something tersebar di sana 👀",
                 time: "00:01",
               },
               {
                 w: "them",
-                t: "Cek semuanya ya. Jangan lupa baca Catatan, paling penting!! 💌",
+                t: "Cek semua yaa. Jangan lupa buka Catatan, paling penting!! ✉️",
                 time: "00:02",
+              },
+              {
+                w: "them",
+                t: "Ehh terus cobain frame fotonya juga!! bisa di-download buat disimpen, lumayan buat kenang-kenangan hehe, cobain yess 🤭🤭",
+                time: "00:03",
               },
             ],
           },
@@ -1451,7 +1553,7 @@
               {
                 w: "them",
                 who: "Winaa",
-                t: "Selamat ulang tahun Faizaa 🎂 Semoga makin jago lukisnya!",
+                t: "Selamat ulang tahun Faizaa 🎂🎊🎊",
                 time: "06:12",
               },
               {
@@ -1484,57 +1586,80 @@
                 t: "habede atulnya mar...",
                 time: "06:20",
               },
-              { w: "me", t: "coba ketik 'makasih' tul", time: "06:31" },
             ],
           },
-        ],
+          {
+            name: "???",
+            emoji: "❓",
+            unread: 1,
+            msgs: [
+              { day: "30 Oktober" },
+              { w: "them", 
+                t: "hbd!", 
+                time: "00:00",
+              },
+            ],
+         },
+      ],
 
         /* ---------- Instagram ---------- */
         ig: {
-          brand: "Instagram",
+          brand: "Instaglam",
+          // For posts, set avatar to an image path such as "assets/profile.jpg".
           stories: [
             {
               name: "Your story",
-              emoji: "🙋‍♀️",
-              text: "beginning aaa 17-year journey!",
-              bg: "Roblox/6002174314_119048529960596_1792404883998.png",
+              emoji: "",
+              avatar: "assets/tul.jpeg",
+              text: "beginning a 17-year journey!",
+              bg: "assets/cuking.jpg",
+            },
+            {
+              name: "kakitabel",
+              emoji: "",
+              avatar: "assets/fir.jpg",
+              text: "",
+              bg: "assets/qr.jpeg",
             },
             {
               name: "George Russell",
-              emoji: "🚘",
+              emoji: "",
+              avatar: "assets/rusli.jpg",
               text: "Happie b-day!!",
-              bg: "foto-story-2.jpg",
+              bg: "assets/rusli.jpg",
             },
           ],
           posts: [
             {
-              user: "bestie_kamu",
+              user: "jealouvsie_",
+              avatar: "assets/je.jpeg",
               emoji: "🎂",
               bg: "linear-gradient(135deg,#f9d3b8,#f2a1b5)",
-              img: "",
+              img: "assets/je.jpeg",
               caption:
                 "Happy birthday Faiza! Seniman kesayangan kita 🎨🌿 Semoga tahun ini makin banyak karya dan makin banyak tawa.",
               likes: 128,
               comments: [
-                ["rina", "HBD Za 🥳"],
-                ["dimas", "Traktiran mana nih 😆"],
+                ["Wina", "HBD atul 🥳"],
               ],
             },
             {
-              user: "healing.club",
+              user: "pineapopple",
+              avatar: "assets/rot.jpeg",
               emoji: "🏞️",
               bg: "linear-gradient(135deg,#cfe8c4,#8ecae6)",
-              img: "",
+              img: "assets/cuking.jpg",
               caption:
                 "Pengingat: hari ini ada yang boleh istirahat dan makan enak. Selamat ulang tahun, Faiza! 🌄",
               likes: 96,
-              comments: [["sari", "Setuju banget 💚"]],
+              comments: [["aulia2ndd", "Setuju banget 💚"]],
             },
             {
-              user: "cat.air.corner",
-              emoji: "🖌️",
+              user: "ttasssy_",
+              avatar: "assets/igege.jpg",
+              emoji: "",
               bg: "linear-gradient(135deg,#f7e9a8,#b79ced)",
-              img: "",
+              img: "assets/igege.jpg",
               caption:
                 "Kalau hidup itu kanvas, semoga umur barumu penuh warna cerah. Happy birthday Faiza 🎨",
               likes: 74,
@@ -1545,12 +1670,15 @@
 
         /* ---------- Galeri Foto ----------
      src = nama file foto di folder yang sama (kalau belum ada, yang tampil emoji + warna) */
+        // Kunci tampilan album Secret. Ganti nilainya sendiri; ini bukan perlindungan file sungguhan.
+        secretAlbumPassword: "ucup",
+        DuaAlbumPassword: "Sagi",
         gallery: [
           {
-            caption: "Kita waktu itu 📸",
+            caption: "first NASI CUMI HITAM MADURA fotbar",
             emoji: "😄",
             album: "Kita",
-            src: "foto1.jpg",
+            src: "assets/cuking.jpg",
           },
           {
             caption: "Healing bareng",
@@ -1561,13 +1689,13 @@
           {
             caption: "Salah satu lukisanmu",
             emoji: "🎨",
-            album: "Lukisan",
+            album: "Dua",
             src: "lukisan1.jpg",
           },
           {
             caption: "Karya favoritku",
             emoji: "🖼️",
-            album: "Lukisan",
+            album: "Dua",
             src: "lukisan2.jpg",
           },
           {
@@ -1577,17 +1705,23 @@
             src: "alam1.jpg",
           },
           {
-            caption: "Foto random tapi bagus",
-            emoji: "🍃",
+            caption: "Senja favorit",
+            emoji: "🌅",
             album: "Alam",
-            src: "foto3.jpg",
+            src: "alam1.jpg",
+          },
+          {
+            caption: "eh eh kepencett",
+            emoji: "🍃",
+            album: "Secret",
+            src: "assets/qr.jpeg",
           },
         ],
 
         /* ---------- Catatan ---------- (todo: [teks, sudahDicentang]) */
         notes: [
           {
-            title: "💌 Surat buat Faiza",
+            title: "✉️ Letters for You",
             date: "30 Oktober 2026",
             text: `Haii Faiza! 🎉
 
@@ -1624,17 +1758,18 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
 
         /* ---------- Chrome ---------- */
         chrome: {
-          query: "all about Faiza",
+          query: "a little bit about Faiza",
           panel: {
-            emoji: "🎨",
+            avatar: "assets/tul.jpeg",
+            emoji: ".",
             title: "Faiza 'atul'",
-            sub: "Seniman • Pecinta alam • Sahabat",
+            sub: "Orang funny",
             facts: [
-              ["Hobi", "Melukis, menikmati alam, dan healing"],
-              ["Status", "Ulang tahun 🎂"],
-              ["Umur", "+1 (level up!)"],
-              ["Kekuatan", "Smart, funny, creative, and caring"],
-              ["Kelemahan", "Nggak bisa nolak traktiran 😆"],
+              ["Known as", "Atul"],
+              ["Status", "+1 (level up!)"],
+              ["Age", "17"],
+              ["Personality", "Thoughtful, creative, and one of a kind"],
+              ["Fun fact", "Suka Rusdi f1"],
             ],
           },
           results: [
@@ -1651,31 +1786,49 @@ Kegemaran: alam, cat, dan tempat-tempat yang tenang.
 Hari ini tercatat sebagai hari ulang tahunnya. Teman-teman dianjurkan memberi ucapan, doa, dan (kalau sempat) makanan enak.`,
             },
             {
-              title: "10 Alasan Faiza Layak Dapat Traktiran Hari Ini",
-              url: "blog-sahabat.id/alasan-traktiran",
+              title: "17 Hal yang Patut Dirayakan dari Faiza",
+              url: "blog-sahabat.id/patut-dirayakan",
               snippet:
-                "1. Ulang tahun. 2. Ulang tahun. 3. Ulang tahun. 4 sampai 10: lihat poin 1...",
-              article: `1. Karena hari ini ulang tahun.
-2. Karena lukisannya bagus.
-3. Karena orangnya baik.
-4. Karena sudah sabar menghadapi kita semua.
-5. Karena kue nggak enak kalau dimakan sendirian.
-6. Karena kamu hebat.
-7. Karena dunia lebih berwarna dengan adanya kamu.
-8. Karena bumi butuh lebih banyak orang seperti kamu.
-9. Karena traktiran itu doa yang bisa dimakan.
-10. Lihat poin 1 😆`,
+                "1. Bisa sampai di 2. Hal-hal baru ya 3. Keberanian untuk me 4. sampai 17: Diri sendiri, yan...",
+              article: `01. Bisa sampai di titik ini.
+02. Hal-hal baru yang sudah dipelajari.
+03. Keberanian untuk mencoba.
+04. Kesempatan untuk mengenal diri sendiri.
+05. Orang-orang yang masih menemani.
+06. Tawa dari kejadian sederhana.
+07. Kenangan yang masih tersimpan.
+08. Hal-hal kecil yang membuat bahagia.
+09. Keinginan yang perlahan terwujud.
+10. Kesalahan yang memberi pelajaran.
+11. Kesempatan untuk memulai lagi.
+12. Perubahan yang membawa kebaikan.
+13. Mimpi yang masih ingin dikejar.
+14. Waktu untuk beristirahat.
+15. Hal-hal yang membuat diri sendiri bangga.
+16. Hari-hari yang masih akan datang.
+17. Diri sendiri, yang sudah berusaha sejauh ini.`,
             },
             {
-              title: "Cara Merayakan Ulang Tahun Ala Seniman",
-              url: "senimania.id/ultah-ala-seniman",
+              title: "Mengapa Kucing Suka Bersembunyi di Tempat Sempit?",
+              url: "kabarhewan.id/kucing-bersembunyi",
               snippet:
-                "Mulai dari melukis langit sore, piknik di taman, sampai bikin kue yang bentuknya kayak palet cat...",
-              article: `Langkah 1: Bangun tidur, pilih warna favorit hari itu.
-Langkah 2: Lukis sesuatu, apa pun, nggak harus bagus.
-Langkah 3: Makan kue di tempat yang pemandangannya enak.
-Langkah 4: Bilang terima kasih ke orang-orang yang ngucapin.
-Langkah 5: Tutup hari dengan senyum, karena kamu pantas bahagia 🌿`,
+                "Pernah menemukan kucing tidur di dalam kardus, bersembunyi di bawah meja, atau menyelinap di antara tumpukan barang?....",
+              article: `pernah menemukan kucing tidur di dalam kardus, bersembunyi di bawah meja, atau menyelinap di antara tumpukan barang? Perilaku ini sebenarnya cukup umum ditemukan pada kucing rumahan.
+
+Tempat yang sempit dan tertutup dapat memberikan rasa aman bagi kucing. Selain itu, lokasi seperti kolong meja atau kardus juga bisa menjadi tempat yang nyaman untuk beristirahat, terutama ketika suasana di sekitarnya terasa ramai.
+
+Karena itu, jangan heran jika kucing terkadang sulit ditemukan meskipun sebenarnya berada tidak jauh dari tempat biasanya. Bisa jadi, mereka hanya sedang menikmati waktu tenang di tempat persembunyiannya.`,
+             },
+             {
+              title: "Kucing Dikabarkan Hilang, Pemilik Berharap Segera Kembali",
+              url: "kabarsekitar.id/kucing-hilang",
+              snippet:
+                "Seekor kucing dikabarkan hilang setelah terakhir kali terlihat berkeliaran di sekitar rumah pemiliknya.....",
+              article: `Seekor kucing bernama Ucup dikabarkan hilang setelah terakhir kali terlihat berkeliaran di sekitar rumah pemiliknya. Biasanya, kucing tersebut sering menghabiskan waktu di halaman dan kembali ke rumah menjelang sore.
+
+Namun, selama beberapa waktu terakhir, Ucup tak kunjung terlihat. Pemiliknya telah mencoba mencari di sejumlah tempat yang biasa dikunjungi, mulai dari halaman tetangga hingga sudut-sudut rumah.
+
+Kehilangan hewan peliharaan tentu bukan hal yang mudah, terutama ketika kehadirannya sudah menjadi bagian dari keseharian. Kini, pemiliknya hanya berharap Ucup dapat segera ditemukan dan kembali pulang dengan selamat.`,
             },
             {
               title: "Tempat makan enak terdekat (buat traktiran)",
@@ -1709,6 +1862,20 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
         const img = new Image();
         img.onload = () => box.appendChild(img);
         img.src = src;
+      }
+      function waAvatarMarkup(contact, compact = false) {
+        const emoji = esc(contact.emoji || "🙂");
+        const content = contact.avatar
+          ? `<img src="${esc(contact.avatar)}" alt="${esc(contact.name || "Foto profil")}" onerror="this.remove()"><span>${emoji}</span>`
+          : `<span>${emoji}</span>`;
+        return `<div class="wa-av${compact ? " wa-av-compact" : ""}">${content}</div>`;
+      }
+      function igAvatarMarkup(src, emoji, className, name) {
+        const fallback = `<span>${esc(emoji || "🙂")}</span>`;
+        const photo = src
+          ? `<img src="${esc(src)}" alt="${esc(name || "Foto profil")}" onerror="this.remove()">`
+          : "";
+        return `<div class="${className}">${photo}${fallback}</div>`;
       }
       function whoColor(n) {
         const p = [
@@ -1845,7 +2012,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
         av.textContent = (CONFIG.name || "F")[0].toUpperCase();
         mediaBox(av, CONFIG.avatar);
         $("#lgName").textContent = CONFIG.name;
-        $("#lgWelcome").textContent = "Welcome " + CONFIG.name + "🍃";
+        $("#lgWelcome").textContent = "Password accepted, unlocking something..";
       })();
       $("#lgForm").onsubmit = (e) => {
         e.preventDefault();
@@ -1856,7 +2023,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           void f.offsetWidth;
           f.classList.add("shake");
           $("#lgHint").textContent =
-            "incorrect password Hint: ur day/month/year";
+            "incorrect password, Hint: day/month/year";
           $("#lgPass").value = "";
           $("#lgPass").focus();
           return;
@@ -1918,12 +2085,12 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
 
       /* ---------- achievements: retro birthday quest ---------- */
       const ACHIEVEMENTS = [
-        { id: "first-login", title: "PLAYER 1 READY", icon: "🕹️", desc: "Successfully logged into the birthday computer." },
-        { id: "first-app", title: "NEW WORLD LOADED", icon: "🧩", desc: "Opened your first app. The adventure begins!" },
-        { id: "memory-collector", title: "MEMORY COLLECTOR", icon: "📸", desc: "Visited the photo gallery and its memories." },
-        { id: "letter-reader", title: "HEART CHECKPOINT", icon: "💌", desc: "Opened the notes app to read a birthday note." },
-        { id: "social-butterfly", title: "SOCIAL BUTTERFLY", icon: "💬", desc: "Checked both WhatsApp and Instagram." },
-        { id: "ultimate-bestie", title: "THE ULTIMATE BESTIE", icon: "🏆", desc: "Unlocked every achievement. You are the MVP!", final: true },
+        { id: "first-login", title: "A LITTLE HELLO", icon: "🌿", desc: "Successfully logged into the computer." },
+        { id: "first-app", title: "NEW WORLD LOADED", icon: "🪴", desc: "Opened your first app. The adventure begins!" },
+        { id: "memory-collector", title: "MEMORY COLLECTOR", icon: "📸", desc: "Visited the photo gallery." },
+        { id: "letter-reader", title: "A NOTE FOR YOU", icon: "💌", desc: "Opened the notes app to read a birthday note." },
+        { id: "social-butterfly", title: "SOCIAL BUTTERFLY", icon: "☁️", desc: "Checked both WhysApp and Instaglam." },
+        { id: "ultimate-bestie", title: "THAT'S A WRAP", icon: "🤍", desc: "Unlocked every achievement, you've seen it all. Hope you enjoyed this little surprise!", final: true },
       ];
       const ACHIEVEMENT_STORAGE_KEY = "faiza-birthday-achievements-v1";
       const achievementState = { unlocked: new Set(), openedApps: new Set(), toastTimer: null };
@@ -1984,7 +2151,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
             list.appendChild(card);
           });
           if (count === base.length) {
-            const note = el("div", "ach-head", "<h2>🎉 QUEST CLEAR!</h2><p>All trophies collected. Happy birthday, superstar!</p>");
+            const note = el("div", "ach-head", "<h2>🎉 QUEST CLEAR!</h2><p>All trophies collected. Happy birthday!</p>");
             note.style.marginTop = "14px";
             root.appendChild(note);
           }
@@ -1996,7 +2163,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
 
       const APPS = {
         wa: {
-          title: "WhatsApp",
+          title: "WhysApp",
           icon: "💬",
           bg: "linear-gradient(135deg,#4be37a,#1da851)",
           w: 820,
@@ -2004,7 +2171,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           build: buildWA,
         },
         ig: {
-          title: "Instagram",
+          title: "Instaglam",
           icon: "📷",
           bg: "linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)",
           w: 480,
@@ -2036,7 +2203,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           build: buildNotes,
         },
         chrome: {
-          title: "Chrome",
+          title: "Gugel",
           icon: "🌐",
           bg: "linear-gradient(135deg,#ffffff,#cfe0ff)",
           w: 860,
@@ -2216,7 +2383,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
             const r = el(
               "div",
               "wa-item" + (i === cur ? " act" : ""),
-              `<div class="wa-av">${esc(c.emoji || "🙂")}</div><div class="wa-meta"><div class="wa-nm"><span>${esc(c.name)}</span><small>${esc(last.time || "")}</small></div><div class="wa-pv">${esc((last.who ? last.who + ": " : "") + last.t)}</div></div>${c._unread ? `<div class="badge">${c._unread}</div>` : ""}`,
+              `${waAvatarMarkup(c)}<div class="wa-meta"><div class="wa-nm"><span>${esc(c.name)}</span><small>${esc(last.time || "")}</small></div><div class="wa-pv">${esc((last.who ? last.who + ": " : "") + last.t)}</div></div>${c._unread ? `<div class="badge">${c._unread}</div>` : ""}`,
             );
             r.onclick = () => openChat(i);
             items.appendChild(r);
@@ -2229,7 +2396,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           renderList();
           root.classList.add("in-chat");
           const my = ++token;
-          chat.innerHTML = `<div class="wa-top"><button class="wa-back">←</button><div class="wa-av" style="width:38px;height:38px;font-size:1.2rem">${esc(c.emoji || "🙂")}</div><div><div style="font-weight:700">${esc(c.name)}</div><div class="wa-st" style="font-size:.75rem;color:#667781">online</div></div></div><div class="wa-msgs"></div><form class="wa-input"><input type="text" placeholder="Ketik pesan..." autocomplete="off"><button type="submit" aria-label="Kirim">➤</button></form>`;
+          chat.innerHTML = `<div class="wa-top"><button class="wa-back">←</button>${waAvatarMarkup(c, true)}<div><div style="font-weight:700">${esc(c.name)}</div><div class="wa-st" style="font-size:.75rem;color:#667781">online</div></div></div><div class="wa-msgs"></div><form class="wa-input"><input type="text" placeholder="Ketik pesan..." autocomplete="off"><button type="submit" aria-label="Kirim">➤</button></form>`;
           chat.querySelector(".wa-back").onclick = () =>
             root.classList.remove("in-chat");
           const box = chat.querySelector(".wa-msgs"),
@@ -2241,7 +2408,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
             function autoReply(message) {
               const msg = message.toLowerCase();
 
-              if (/\b(hai|haii|halo|hello|hii|hei)\b/.test(msg))
+              if (/\b(hai|hi|haii|halo|hello|hii|hei)\b/.test(msg))
                 return [
                   "haiii jugaaa 😭💗",
                   "halooo, apaa nihh?",
@@ -2251,13 +2418,16 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
               if (
                 msg.includes("makasih") ||
                 msg.includes("thank you") ||
+                msg.includes("makasi") ||
+                msg.includes("thankyou") ||
+                msg.includes("thanks") ||
                 msg.includes("terima kasih")
               )
-                return ["SAMA SAMAA💗", "EHH, sama sama", "yazzz"][
+                return ["💕💗", "yapyap, sama sama", "yazzz"][
                   Math.floor(Math.random() * 3)
                 ];
 
-              return "iyaa, aku dengerin nihh 💗";
+              return "fitur jawab hanya untuk say thanks dan say hallo";
             }
 
             form.onsubmit = (e) => {
@@ -2370,7 +2540,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
         const root = el("div", "ig");
         wrap.appendChild(root);
         root.appendChild(
-          el("div", "ig-top", esc(CONFIG.ig.brand || "Instagram")),
+          el("div", "ig-top", esc(CONFIG.ig.brand || "Instaglam")),
         );
         const inner = el("div", "ig-inner");
         root.appendChild(inner);
@@ -2389,7 +2559,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           const d = el(
             "div",
             "story",
-            `<div class="ring"><div class="in">${esc(s.emoji)}</div></div>${esc(s.name)}`,
+            `<div class="ring">${igAvatarMarkup(s.avatar, s.emoji, "in", s.name)}</div>${esc(s.name)}`,
           );
           d.onclick = () => {
             sv.querySelector(".big").textContent = s.emoji;
@@ -2410,7 +2580,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           const post = el(
             "div",
             "post",
-            `<div class="post-h"><div class="pa">${esc(p.emoji || "🌿")}</div>${esc(p.user)}</div>
+            `<div class="post-h">${igAvatarMarkup(p.avatar, p.emoji || "🌿", "pa", p.user)}${esc(p.user)}</div>
        <div class="post-img" style="background:${p.bg || "linear-gradient(135deg,#cfe8c4,#f6d9c4)"}">${esc(p.emoji || "🎂")}</div>
        <div class="post-a"><button class="lk">♡</button><button>💬</button><button>✈️</button></div>
        <div class="post-l"></div>
@@ -2455,6 +2625,8 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
       /* ============ APP: Foto ============ */
       function buildGallery() {
         const root = el("div", "gal");
+        const secretAlbumName = "Secret";
+        let secretUnlocked = false;
         const albums = [
           "Semua",
           ...new Set(CONFIG.gallery.map((g) => g.album).filter(Boolean)),
@@ -2484,8 +2656,47 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
         });
         function render() {
           grid.innerHTML = "";
+          if (curAlbum === secretAlbumName && !secretUnlocked) {
+            const lock = el(
+              "section",
+              "secret-lock",
+              `<div class="secret-lock-icon" aria-hidden="true">🔒</div>
+               <h4>Album Secret</h4>
+               <p>Masukkan password untuk melihat foto di album ini. Hint: nama kucing yang hilang </p>
+               <form class="secret-lock-form">
+                 <input type="password" aria-label="Password album Secret" placeholder="Password" autocomplete="off" required>
+                 <button type="submit">Buka album</button>
+               </form>
+               <p class="secret-lock-error" role="alert" aria-live="polite" hidden></p>`,
+            );
+            const form = lock.querySelector(".secret-lock-form");
+            const input = form.querySelector("input");
+            const error = lock.querySelector(".secret-lock-error");
+            form.addEventListener("submit", (event) => {
+              event.preventDefault();
+              if (
+                CONFIG.secretAlbumPassword &&
+                input.value === CONFIG.secretAlbumPassword
+              ) {
+                secretUnlocked = true;
+                render();
+                return;
+              }
+              error.textContent = CONFIG.secretAlbumPassword
+                ? "Salah jirr. Coba lagi.. jawabannya ada di komputer ini lho"
+                : "Password album belum diatur di konfigurasi.";
+              error.hidden = false;
+              input.focus();
+            });
+            grid.appendChild(lock);
+            return;
+          }
           CONFIG.gallery
-            .filter((g) => curAlbum === "Semua" || g.album === curAlbum)
+            .filter(
+              (g) =>
+                (curAlbum === "Semua" || g.album === curAlbum) &&
+                (secretUnlocked || g.album !== secretAlbumName),
+            )
             .forEach((g) => {
               const bg =
                 g.bg || "linear-gradient(135deg,#cfe8c4,#f6d9c4,#d6e6f0)";
@@ -2728,7 +2939,7 @@ Catatan dari penulis: tempatnya terserah Faiza, hari ini dia yang menentukan. �
           });
           const P = C.panel;
           page.querySelector(".panel").innerHTML =
-            `<div class="pic">${esc(P.emoji)}</div><h3>${esc(P.title)}</h3><div class="sub">${esc(P.sub)}</div>${P.facts.map((f) => `<div class="fact"><b>${esc(f[0])}:</b> ${esc(f[1])}</div>`).join("")}`;
+            `<div class="pic">${P.avatar ? `<img src="${esc(P.avatar)}" alt="${esc(P.title)}" onerror="this.remove()">` : ""}<span>${esc(P.emoji || "🌿")}</span></div><h3>${esc(P.title)}</h3><div class="sub">${esc(P.sub)}</div>${P.facts.map((f) => `<div class="fact"><b>${esc(f[0])}:</b> ${esc(f[1])}</div>`).join("")}`;
           page.scrollTop = 0;
         }
         function article(r) {
