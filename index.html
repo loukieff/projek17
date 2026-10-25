@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Faiza Turns Seventeen 🌿</title>
+    <!-- [BARU] Pratinjau link (WhatsApp dll) + jangan diindeks Google.
+         Taruh gambar 1200x630 bernama preview.jpg di folder assets/ (pakai gambar netral, jangan bocorin isi) -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Ada sesuatu yang spesial menunggumu 🌿" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nyalakan komputernya 🌿" />
+    <meta property="og:description" content="Ada sesuatu yang spesial menunggumu." />
+    <meta property="og:url" content="https://projekhbd.loukief.site/" />
+    <meta property="og:image" content="https://projekhbd.loukief.site/assets/preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -1427,6 +1437,123 @@
       .finale-t{font-family:'Caveat',cursive;font-size:2.1rem;color:#c4577a;margin-bottom:6px}
       .lb-story{max-width:420px;text-align:center;font-size:.95rem;line-height:1.55;opacity:.92}
 
+      /* ===== [BARU] Ucup, kucing yang pulang ===== */
+      #ucup{position:absolute;left:0;bottom:48px;width:64px;height:48px;z-index:5;cursor:pointer;display:none;touch-action:manipulation;-webkit-user-select:none;user-select:none;will-change:transform}
+      #ucup.on{display:block}
+      #ucup .cat{width:100%;height:100%;transform-origin:50% 100%}
+      #ucup.left .cat{transform:scaleX(-1)}
+      #ucup svg{width:100%;height:100%;overflow:visible;display:block;transition:transform .2s;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.75))}
+      #ucup .leg{transform-box:fill-box;transform-origin:50% 0}
+      #ucup.walk .leg.a{animation:ucupLeg .35s infinite alternate}
+      #ucup.walk .leg.b{animation:ucupLeg .35s infinite alternate-reverse}
+      @keyframes ucupLeg{from{transform:rotate(-28deg)}to{transform:rotate(28deg)}}
+      #ucup .tail{transform-box:fill-box;transform-origin:0% 100%;animation:ucupTail 1.6s ease-in-out infinite alternate}
+      @keyframes ucupTail{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+      #ucup .eye{transform-box:fill-box;transform-origin:50% 50%;animation:ucupBlink 4.5s infinite}
+      @keyframes ucupBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+      #ucup.sleep svg{transform:translateY(8px) scaleY(.82)}
+      #ucup.sleep .eye{animation:none;transform:scaleY(.12)}
+      #ucup .zz{position:absolute;left:36px;top:-12px;font-size:.8rem;font-weight:700;color:#355a3b;opacity:0;pointer-events:none}
+      #ucup.sleep .zz{animation:ucupZ 2s infinite}
+      @keyframes ucupZ{0%{opacity:0;transform:translateY(6px)}30%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}
+      .ucup-bubble{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:4px;background:#fff;color:#2b2b26;border-radius:12px;padding:5px 10px;font-size:.78rem;font-weight:700;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.2);pointer-events:none;animation:winIn .18s}
+      .ucup-heart{position:absolute;left:50%;bottom:100%;font-size:1rem;pointer-events:none;animation:ucupHeart 1.1s ease-out forwards}
+      @keyframes ucupHeart{from{opacity:1;transform:translate(-50%,0)}to{opacity:0;transform:translate(calc(-50% + var(--dx)),-46px)}}
+      @media (prefers-reduced-motion: reduce){#ucup .tail,#ucup .eye{animation:none}}
+
+      /* ===== [BARU] Time Machine (reset cerita) ===== */
+      .rst{height:100%;overflow:auto;padding:22px 24px;text-align:center;background:linear-gradient(180deg,#f3efff,#eaf6fb);color:#2f3a4a}
+      .rst-ic{font-size:3rem;line-height:1}
+      .rst h2{font-size:1.3rem;margin:6px 0 4px}
+      .rst p{font-size:.88rem;line-height:1.55;color:#55627a}
+      .rst ul{list-style:none;display:inline-block;text-align:left;margin:12px 0 16px;font-size:.88rem;line-height:1.9}
+      .rst-act{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+      .rst-btn{border:none;border-radius:999px;padding:11px 22px;font-weight:700;font-size:.92rem;background:#7a63d1;color:#fff;box-shadow:0 4px 0 #5a47a8}
+      .rst-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #5a47a8}
+      .rst-btn:disabled{opacity:.6;cursor:default}
+      .rst-btn.ghost{background:#e6e8ef;color:#44506a;box-shadow:0 4px 0 #c9cdd8}
+      .rst-btn.danger{background:#d9534f;box-shadow:0 4px 0 #a93a37}
+      .rst-warn{width:100%;font-size:.85rem;font-weight:700;color:#a93a37;margin-bottom:4px}
+
+      
+      /* ===== Toko & Email ===== */
+      .shop{height:100%;display:flex;flex-direction:column;background:#fff6ec}
+      .shop-h{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fff;border-bottom:1px solid #f0e0cc}
+      .shop-h span{font-weight:700;color:#b9420c}
+      .shop-n{padding:8px 16px;background:#fff1d6;color:#8a4b0c;font-size:.8rem;font-weight:600}
+      .shop-g{flex:1;overflow:auto;padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;align-content:start}
+      .shop-i{background:#fff;border-radius:10px;padding:10px;font-size:.8rem;border:1px solid #f0e0cc}
+      .shop-i .e{font-size:2rem}
+      .shop-i small{display:block;color:#8a7a68}
+      .shop-i b{display:block;margin:4px 0;color:#b9420c}
+      .shop button{border:0;border-radius:8px;background:#d9531a;color:#fff;font-weight:700;padding:7px 10px;font-size:.78rem}
+      .shop button:disabled{background:#d6d0c8;cursor:default}
+      .shop-c{border-top:1px solid #f0e0cc;background:#fff;padding:10px 14px;font-size:.82rem;max-height:48%;overflow:auto}
+      .shop-c input{width:100%;margin:6px 0;padding:8px;border:1px solid #ddd;border-radius:8px;font:inherit}
+      .shop-c .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:4px 0}
+      .shop-m{color:#b91c1c;font-weight:700;min-height:1em;margin:4px 0}
+      .mail{height:100%;display:flex;flex-direction:column;background:#fff}
+      .mail-l{max-height:42%;overflow:auto;border-bottom:1px solid #e5e5e5}
+      .mail-r{padding:10px 14px;border-bottom:1px solid #f0f0f0;font-size:.85rem;cursor:pointer}
+      .mail-r.act{background:#e8f1fb}
+      .mail-b{flex:1;overflow:auto;padding:16px;white-space:pre-wrap;line-height:1.6;font-size:.92rem}
+
+      .mail-img{display:block;max-width:100%;max-height:320px;border-radius:12px;margin-top:12px;border:1px solid #e5e5e5}
+      .mail-ph{margin-top:12px;display:flex;align-items:center;justify-content:center;height:160px;border-radius:12px;background:linear-gradient(135deg,#cfe8c4,#f6d9c4);font-size:3.4rem}
+      .mail-att{margin-top:14px;font-size:.8rem;color:#667781;font-weight:600}
+      .ucup-bubble.wide{white-space:pre-line;width:210px;text-align:center;line-height:1.35}
+
+      /* ===== [BARU] Quest log (bar progress main & side quest) ===== */
+      #quest{position:absolute;top:14px;right:14px;width:262px;z-index:3;background:#17251d;color:#f8f5d7;border:3px solid #8ebc83;box-shadow:4px 4px 0 rgba(0,0,0,.4);font-family:"Courier New",monospace;font-size:.72rem}
+      #quest .q-head{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;border:0;background:#263c2d;color:#f3d76b;padding:8px 10px;font:inherit;font-weight:900;letter-spacing:1px;text-align:left}
+      #quest .q-body{padding:8px 10px 10px}
+      #quest.min .q-body{display:none}
+      #quest .q-sec{margin-bottom:10px}
+      #quest .q-sec:last-child{margin-bottom:0}
+      #quest .q-title{display:flex;justify-content:space-between;color:#f3d76b;font-weight:900;margin-bottom:4px}
+      #quest .q-bar{height:11px;background:#0b130e;border:2px solid #8ebc83;padding:1px;margin-bottom:6px}
+      #quest .q-fill{height:100%;width:0;background:repeating-linear-gradient(90deg,#f3d76b 0 8px,#c3a642 8px 10px);transition:width .25s steps(5)}
+      #quest .q-fill.side{background:repeating-linear-gradient(90deg,#8ecae6 0 8px,#5d9fc0 8px 10px)}
+      #quest .q-it{display:flex;gap:7px;align-items:flex-start;line-height:1.35;padding:2px 0;color:#d2dfca}
+      #quest .q-it .ck{flex:0 0 14px;height:14px;display:grid;place-items:center;border:2px solid #8ebc83;background:#0b130e;font-size:.65rem;color:#0b130e;margin-top:1px}
+      #quest .q-it.done{color:#f3d76b}
+      #quest .q-it.done .ck{background:#f3d76b;border-color:#f3d76b}
+      #quest .q-it.done .tx{text-decoration:line-through;text-decoration-thickness:2px}
+      #quest .q-it small{color:#9ab19a;margin-left:4px}
+
+      /* ===== [BARU] Department of Turning 17 ===== */
+      .dept{height:100%;overflow:auto;background:#17251d;color:#f8f5d7;font-family:"Courier New",monospace;padding:18px}
+      .dept h2{font-size:1.15rem;letter-spacing:1px;color:#f3d76b;line-height:1.4}
+      .dept .d-box{background:#263c2d;border:3px solid #8ebc83;box-shadow:4px 4px 0 #0b130e;padding:14px;margin-bottom:14px}
+      .dept p{font-size:.82rem;line-height:1.6;color:#d2dfca}
+      .dept .d-quote{font-style:italic;color:#f8f5d7;margin:10px 0}
+      .dept .d-btn{border:3px solid #f3d76b;background:#3e6b46;color:#fff8d7;font:inherit;font-weight:900;font-size:.8rem;letter-spacing:1px;padding:10px 14px;box-shadow:3px 3px 0 #0b130e;cursor:pointer}
+      .dept .d-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #0b130e}
+      .dept .d-btn.ghost{background:#17251d;border-color:#8ebc83}
+      .dept .d-btn:disabled{opacity:.5;cursor:default}
+      .dept .d-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+      .dept label{display:block;font-size:.7rem;font-weight:900;color:#f3d76b;margin:10px 0 4px;letter-spacing:1px}
+      .dept input[type=text],.dept input[type=date],.dept textarea{width:100%;background:#0b130e;border:2px solid #8ebc83;color:#f8f5d7;padding:8px 10px;font:inherit;font-size:.85rem;outline:none;color-scheme:dark}
+      .dept textarea{resize:vertical;min-height:58px}
+      .dept .d-photos{display:flex;gap:10px}
+      .dept .d-ph{flex:1;border:3px solid #536c53;background:#0b130e;padding:8px;text-align:center;cursor:pointer;color:#d2dfca;font:inherit;font-size:.7rem}
+      .dept .d-ph.on{border-color:#f3d76b;color:#f3d76b}
+      .dept .d-ph canvas{display:block;margin:0 auto 6px;width:72px;height:90px;image-rendering:pixelated;background:#bfe3ee}
+      .dept .d-sig{background:#fffdf0;border:3px solid #8ebc83;touch-action:none;display:block;width:100%;height:auto;cursor:crosshair}
+      .dept .d-err{color:#ffb4a8;font-size:.78rem;font-weight:700;min-height:1.1em;margin-top:8px}
+      .dept .d-paper{background:#fffdf0;color:#2b2b26;border:3px solid #8ebc83;padding:16px;position:relative;box-shadow:4px 4px 0 #0b130e}
+      .dept .d-paper h3{font-size:.9rem;letter-spacing:1px;border-bottom:2px dashed #b9b394;padding-bottom:8px;margin-bottom:8px;color:#3e6b46}
+      .dept .d-line{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;padding:5px 0;border-bottom:1px dotted #d8d2b4}
+      .dept .d-line b{text-align:right}
+      .dept .d-stamp{position:absolute;right:14px;bottom:18px;border:5px solid #d6455d;color:#d6455d;font-weight:900;font-size:1.9rem;letter-spacing:3px;padding:2px 12px;opacity:0;transform:rotate(-14deg) scale(3.2);pointer-events:none}
+      .dept .d-stamp.hit{animation:stampHit .45s cubic-bezier(.2,.9,.3,1) forwards}
+      @keyframes stampHit{0%{opacity:0;transform:rotate(-14deg) scale(3.2)}60%{opacity:1;transform:rotate(-14deg) scale(.92)}100%{opacity:.92;transform:rotate(-14deg) scale(1)}}
+      .dept .d-paper.thud{animation:thud .25s}
+      @keyframes thud{25%{transform:translate(3px,4px)}60%{transform:translate(-2px,-2px)}}
+      .dept .d-card{display:block;width:100%;height:auto;image-rendering:pixelated;border:3px solid #8ebc83;box-shadow:4px 4px 0 #0b130e;background:#0b130e}
+      @media (prefers-reduced-motion: reduce){.dept .d-stamp.hit{animation:none;opacity:.92;transform:rotate(-14deg)}.dept .d-paper.thud{animation:none}}
+      @media (max-width:700px){#quest{width:min(262px,calc(100% - 28px))}}
+
       /* ===== mobile ===== */
       @media (max-width: 700px) {
         .win {
@@ -1535,6 +1662,7 @@
     <div id="desktop">
       <div id="icons"></div>
       <div id="winlayer"></div>
+      <div id="quest"></div>
       <div id="toast"></div>
       <div id="startmenu"></div>
       <div id="taskbar">
@@ -1564,7 +1692,23 @@
    ✏️ EDIT BAGIAN INI AJA — semua isi komputer ada di sini ✏️
    ============================================================ */
       // Jawaban akhir mystery game: kata MEMORY diikuti umur 17.
-      const PZ = { word: "888", clue: 739 };
+      const PZ = { word: "888", clue: 739, age: 17 };
+      // Toko: saldo, kode redeem yang dikirim lewat Email, dan katalog (ganti sesukamu).
+      const SHOP = {
+        balance: 70000,
+        code: "4TUL-SWVT-2O26",
+        items: [
+          { id: "kresek", n: "Plastik kresek", p: 1, e: "🛍️", m: "Warung Bu Tini" },
+          { id: "teh", n: "Es teh manis", p: 5000, e: "🧋", m: "Warung Bu Tini" },
+          { id: "cat", n: "Cat air pro set", p: 45000, e: "🎨", m: "Toko Seni Kuas" },
+          { id: "nasi", n: "Nasi cumi hitam Madura", p: 25000, e: "🍛", m: "Warung Madura" },
+          { id: "ucup", n: "Ucup (kucing)", p: 0, e: "🐱", m: "Pet Corner", out: true },
+          { id: "f1", n: "Mobil F1 Rusdi", p: 17000000, e: "🏎️", m: "Garasi Sultan" },
+          { id: "code", n: "Kode Redeem Spesial", p: 69999, e: "🎟️", m: "Toko Kode", key: true },
+        ],
+      };
+      // bandingkan kode tanpa peduli spasi, tanda hubung, huruf besar/kecil, dan O vs 0
+      const cnorm = (s) => String(s == null ? "" : s).toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/O/g, "0");
 
       const CONFIG = {
         name: "Faiza",
@@ -1928,7 +2072,7 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
             "135",
           ],
           orderCorrect: 1,
-          passwordHint: "Telusuri isi catatan",
+          passwordHint: "Kode redeem dijual di toko. Cek saldo, lalu cek emailmu.",
         },
         gift: {
           letter: `Haii Faiza! 🎉
@@ -2277,6 +2421,14 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         celebrate(90);
         setTimeout(showToast, 1800);
       }
+      // [BARU] layar penutup dipakai bersama oleh "Shut down" dan "Make a wish"
+      function showBye() {
+        $("#startmenu").classList.remove("on");
+        $("#byeTitle").textContent = CONFIG.byeTitle;
+        $("#byeMsg").textContent = CONFIG.byeMessage;
+        $("#bye").classList.add("on");
+        celebrate(200);
+      }
       function restart() {
         Object.keys(wins).forEach((id) => {
           wins[id].el.remove();
@@ -2324,8 +2476,14 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         unlocked: false,
         gift: { letter: false, viewed: [], done: false },
       };
+      STATE.shop = { bought: [] };
+      // [BARU] progres side quest: album secret, elus Ucup, kartu ID
+      STATE.side = { secret: false, pets: 0, petDone: false, id: null, idDone: false };
       try {
-        if (location.hash === "#reset") localStorage.removeItem(SKEY);
+        if (location.hash === "#reset") {
+          localStorage.removeItem(SKEY);
+          localStorage.removeItem("faiza-birthday-achievements-v1"); // [BARU] achievement ikut terhapus
+        }
         const saved = JSON.parse(localStorage.getItem(SKEY) || "null");
         if (saved && typeof saved === "object") {
           if (saved.rec && typeof saved.rec === "object" && !Array.isArray(saved.rec))
@@ -2334,6 +2492,15 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             Object.assign(STATE.solved, saved.solved);
           STATE.p17 = Boolean(saved.p17);
           STATE.unlocked = Boolean(saved.unlocked);
+          if (saved.shop && Array.isArray(saved.shop.bought))
+            STATE.shop.bought = saved.shop.bought.filter((id) => SHOP.items.some((i) => i.id === id));
+          if (saved.side && typeof saved.side === "object") {
+            STATE.side.secret = Boolean(saved.side.secret);
+            STATE.side.pets = Math.max(0, Math.min(17, Number(saved.side.pets) || 0));
+            STATE.side.petDone = Boolean(saved.side.petDone);
+            STATE.side.idDone = Boolean(saved.side.idDone);
+            if (saved.side.id && typeof saved.side.id === "object") STATE.side.id = saved.side.id;
+          }
           if (saved.gift && typeof saved.gift === "object") {
             STATE.gift.letter = Boolean(saved.gift.letter);
             STATE.gift.done = Boolean(saved.gift.done);
@@ -2349,6 +2516,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         try {
           localStorage.setItem(SKEY, JSON.stringify(STATE));
         } catch (_) {}
+        if (typeof renderQuests === "function") renderQuests();
       }
       const norm = (value) =>
         String(value == null ? "" : value).toUpperCase().replace(/\s+/g, "");
@@ -2372,6 +2540,10 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         { id: "memory-collector", title: "MEMORY COLLECTOR", icon: "📸", desc: "Visited the photo gallery." },
         { id: "letter-reader", title: "A NOTE FOR YOU", icon: "💌", desc: "Opened the notes app to read a birthday note." },
         { id: "social-butterfly", title: "SOCIAL BUTTERFLY", icon: "☁️", desc: "Checked both WhysApp and Instaglam." },
+        { id: "detective", title: "JUNIOR DETECTIVE", icon: "🕵️", desc: "Recovered a mysterious file from the Recycle Bin." },
+        { id: "fragments", title: "FRAGMENT FINDER", icon: "🧩", desc: "Collected all three memory fragments." },
+        { id: "access-granted", title: "ACCESS GRANTED", icon: "🔓", desc: "Cracked the password and unlocked Project 17." },
+        { id: "wish-maker", title: "WISH MAKER", icon: "🎂", desc: "Made a wish at the very end. Happy birthday!" },
         { id: "ultimate-bestie", title: "THAT'S A WRAP", icon: "🤍", desc: "Unlocked every achievement, you've seen it all. Hope you enjoyed this little surprise!", final: true },
       ];
       const ACHIEVEMENT_STORAGE_KEY = "faiza-birthday-achievements-v1";
@@ -2526,6 +2698,38 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           h: 560,
           build: buildAchievements,
         },
+        shop: {
+          title: "Toko",
+          icon: "🛒",
+          bg: "linear-gradient(135deg,#ffb36b,#ff6b6b)",
+          w: 580,
+          h: 600,
+          build: buildShop,
+        },
+        mail: {
+          title: "Email",
+          icon: "✉️",
+          bg: "linear-gradient(135deg,#8ecae6,#4a7fb5)",
+          w: 620,
+          h: 480,
+          build: buildMail,
+        },
+        dept: {
+          title: "Dept. of 17",
+          icon: "🪪",
+          bg: "linear-gradient(135deg,#3e6b46,#f3d76b)",
+          w: 560,
+          h: 620,
+          build: buildDept,
+        },
+        reset: {
+          title: "Time Machine",
+          icon: "⏪",
+          bg: "linear-gradient(135deg,#b79ced,#8ecae6)",
+          w: 460,
+          h: 440,
+          build: buildReset,
+        },
       };
       function focusWin(id) {
         const w = wins[id];
@@ -2651,11 +2855,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           sm.appendChild(rs);
           const sd = el("button", "", "<span>🚫</span>Shut down");
           sd.onclick = () => {
-            sm.classList.remove("on");
-            $("#byeTitle").textContent = CONFIG.byeTitle;
-            $("#byeMsg").textContent = CONFIG.byeMessage;
-            $("#bye").classList.add("on");
-            celebrate(200);
+            showBye();
           };
           sm.appendChild(sd);
         };
@@ -2992,6 +3192,11 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
                 input.value === CONFIG.secretAlbumPassword
               ) {
                 secretUnlocked = true;
+                if (!STATE.side.secret) {
+                  STATE.side.secret = true;
+                  save();
+                }
+                if (window.ucupFound) window.ucupFound(); // [BARU] Ucup pulang
                 render();
                 return;
               }
@@ -3298,6 +3503,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
                   STATE.rec[file.id] = true;
                   if (file.id === "p17") {
                     STATE.p17 = true;
+                    unlockAchievement("detective");
                     window.renderIcons();
                     celebrate(70);
                   }
@@ -3323,6 +3529,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         const count = () => ["a", "b", "c"].filter((key) => STATE.solved[key]).length;
         function solve(key) {
           STATE.solved[key] = true;
+          if (["a", "b", "c"].every((k) => STATE.solved[k])) unlockAchievement("fragments");
           save();
           render();
         }
@@ -3396,7 +3603,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           const card = el(
             "div",
             "slot ok",
-            '<h4>MEMORY PROTOCOL</h4><div class="cl">Telusuri catatan untuk mendapatkan jawaban</div>',
+            '<h4>MEMORY PROTOCOL</h4><div class="cl">Masukkan kode redeem dari toko</div>',
           );
           const row = el("div", "row");
           const input = el("input");
@@ -3406,7 +3613,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           input.placeholder = "password...";
           input.autocomplete = "off";
           const check = () => {
-            if (norm(input.value) === norm(PZ.word + PZ.clue)) grant();
+            if (cnorm(input.value) === cnorm(SHOP.code)) grant();
             else {
               message.textContent = "ACCESS DENIED. Cek lagi susunannya 🔒";
               shake(row);
@@ -3442,6 +3649,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             if (index >= lines.length) {
               setTimeout(() => {
                 STATE.unlocked = true;
+                unlockAchievement("access-granted");
                 save();
                 render();
                 celebrate(120);
@@ -3602,9 +3810,19 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             const button = el("button", "gbtn", "🎂 Make a wish");
             button.style.marginTop = "14px";
             button.onclick = () => {
+              if (button.disabled) return;
+              button.disabled = true;
+              button.textContent = "✨ Make a wish...";
               celebrate(240);
               STATE.gift.done = true;
               save();
+              unlockAchievement("wish-maker");
+              // [BARU] setelah confetti, tampilkan layar penutup "Happie b-dayy!"
+              setTimeout(() => {
+                button.disabled = false;
+                button.textContent = "🎂 Make a wish";
+                showBye();
+              }, 3500);
             };
             finaleCard.appendChild(button);
             if (!announced) {
@@ -3675,7 +3893,802 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         search();
         return root;
       }
+
+      /* ============ APP: Toko ============ */
+      function buildShop() {
+        const S = STATE.shop, root = el("div", "shop");
+        const rp = (n) => "Rp" + n.toLocaleString("id-ID");
+        const it = (id) => SHOP.items.find((i) => i.id === id);
+        const bal = () => SHOP.balance - S.bought.reduce((a, id) => a + it(id).p, 0);
+        const fragKey = () => PZ.word + PZ.clue + CONFIG.puzzle.orderOptions[CONFIG.puzzle.orderCorrect];
+        let cart = [], msg = "";
+        function render() {
+          const total = cart.reduce((a, id) => a + it(id).p, 0), hasKey = cart.includes("code");
+          root.innerHTML = `<div class="shop-h"><b>🛒 Toko</b><span>Saldo: ${rp(bal())}</span></div>
+            <div class="shop-n">💡 Beli barang dengan bijak ya. Semua pesanan tidak bisa dikembalikan.</div>
+            <div class="shop-g">${SHOP.items.map((i) => {
+              const own = S.bought.includes(i.id), inC = cart.includes(i.id);
+              return `<div class="shop-i"><div class="e">${i.e}</div>${esc(i.n)}<small>${esc(i.m)}</small><b>${i.out ? "Stok habis" : rp(i.p)}</b><button data-add="${i.id}" ${i.out || own || inC ? "disabled" : ""}>${own ? "Dibeli ✓" : inC ? "Di keranjang" : "+ Keranjang"}</button></div>`;
+            }).join("")}</div>
+            <div class="shop-c"><b>Keranjang</b>
+              ${cart.length ? cart.map((id) => `<div class="row"><span>${it(id).e} ${esc(it(id).n)}</span><span>${rp(it(id).p)} <button data-del="${id}">✕</button></span></div>`).join("") : "<div>Kosong</div>"}
+              ${hasKey ? '<input class="vk" placeholder="Kode verifikasi pembeli (gabungan fragmen A+B+C)" autocomplete="off">' : ""}
+              <div class="row"><b>Total: ${rp(total)}</b><button data-co ${cart.length ? "" : "disabled"}>Checkout</button></div>
+              <div class="shop-m">${esc(msg)}</div>
+              ${S.bought.length ? "<b>Pesanan saya</b>" + S.bought.map((id) => `<div class="row"><span>${it(id).e} ${esc(it(id).n)}</span><small>tidak bisa direfund</small></div>`).join("") : ""}
+            </div>`;
+          root.querySelectorAll("[data-add]").forEach((b) => (b.onclick = () => { cart.push(b.dataset.add); msg = ""; render(); }));
+          root.querySelectorAll("[data-del]").forEach((b) => (b.onclick = () => { cart = cart.filter((x) => x !== b.dataset.del); msg = ""; render(); }));
+          const co = root.querySelector("[data-co]");
+          if (co) co.onclick = () => {
+            const vk = root.querySelector(".vk");
+            if (total > bal()) { msg = "Saldo tidak cukup 😢"; return render(); }
+            if (hasKey && cnorm(vk && vk.value) !== cnorm(fragKey())) { msg = "Kode verifikasi salah."; return render(); }
+            S.bought.push(...cart); cart = []; save(); msg = "Pesanan berhasil ✅"; render();
+            setTimeout(() => {
+              const t = $("#toast");
+              t.innerHTML = '<div class="ti">✉️</div><div><b>Email baru</b><div>Pesananmu sudah diproses. Cek Email.</div></div>';
+              t.classList.add("on");
+              t.onclick = () => { t.classList.remove("on"); openApp("mail"); };
+              setTimeout(() => t.classList.remove("on"), 8000);
+              if (wins.mail && wins.mail.api.refresh) wins.mail.api.refresh();
+            }, 2500);
+          };
+        }
+        render();
+        return root;
+      }
+
+      /* ============ APP: Email ============ */
+      function buildMail(opts, api) {
+        const root = el("div", "mail");
+        let cur = 0;
+        const mails = () => {
+          const m = [{ f: "Toko", s: "Selamat datang! Saldo Rp70.000 sudah masuk 🎉", b: "Halo " + CONFIG.name + "!\n\nSaldo awal Rp70.000 sudah masuk ke akunmu di Toko. Belanjalah dengan bijak ya 😉" }];
+          STATE.shop.bought.forEach((id) => {
+            const i = SHOP.items.find((x) => x.id === id);
+            const rp = "Rp" + i.p.toLocaleString("id-ID");
+            m.unshift(i.key
+              ? { f: i.m, s: "Pesananmu: " + i.n + " 🎟️", b: "Terima kasih sudah berbelanja!\n\nKode redeem kamu:\n\n" + SHOP.code + "\n\nMasukkan kode ini di aplikasi Project 17." }
+              : { f: i.m, s: "Pesananmu: " + i.n, b: "Terima kasih sudah berbelanja di " + i.m + "!\n\nPesanan: " + i.n + "\nTotal: " + rp + "\n\nBarang yang sudah dibeli tidak dapat dikembalikan." });
+          });
+          // [BARU] hadiah side quest Elus Ucup 17 kali
+          if (STATE.side.petDone)
+            m.unshift({
+              f: "Ucup",
+              s: "Dari Ucup",
+              b: "hai, ini ucup!\n\nmakasih udah elus aku 17 kali. sebagai hadiah, aku kasih foto aku yang asli buat kamu.\n\njangan lupa elus aku lagi kapan-kapan, ya. meow!",
+              img: UCUP_PHOTO,
+            });
+          return m;
+        };
+        function render() {
+          const m = mails();
+          cur = Math.min(cur, m.length - 1);
+          root.innerHTML = `<div class="mail-l">${m.map((x, i) => `<div class="mail-r${i === cur ? " act" : ""}" data-i="${i}"><b>${esc(x.f)}</b><br>${esc(x.s)}</div>`).join("")}</div><div class="mail-b">${esc(m[cur].b)}${m[cur].img ? `<div class="mail-att">📎 foto-ucup</div><img class="mail-img" src="${esc(m[cur].img)}" alt="Foto Ucup">` : ""}</div>`;
+          const pic = root.querySelector(".mail-img");
+          if (pic)
+            pic.onerror = function () {
+              const d = document.createElement("div");
+              d.className = "mail-ph";
+              d.textContent = "🐱";
+              this.replaceWith(d);
+            };
+          root.querySelectorAll("[data-i]").forEach((r) => (r.onclick = () => { cur = +r.dataset.i; render(); }));
+        }
+        api.refresh = () => { cur = 0; render(); };
+        render();
+        return root;
+      }
+
+      /* ============ [BARU] Quest log: bar progress main & side quest ============ */
+      // Foto asli Ucup untuk email hadiah: taruh file ini di folder assets/
+      const UCUP_PHOTO = "assets/ucup.jpg";
+      let questMin = innerWidth <= 700;
+      function questToast(icon, title, text, onclick) {
+        const t = $("#toast");
+        t.innerHTML = `<div class="ti">${icon}</div><div><b>${esc(title)}</b><div>${esc(text)}</div></div>`;
+        t.classList.add("on");
+        t.onclick = () => {
+          t.classList.remove("on");
+          if (onclick) onclick();
+        };
+        setTimeout(() => t.classList.remove("on"), 8000);
+      }
+      function questData() {
+        const rec = ["note", "pic", "p17"].filter((k) => STATE.rec[k]).length;
+        const frag = ["a", "b", "c"].filter((k) => STATE.solved[k]).length;
+        const S = STATE.side;
+        return {
+          main: [
+            { t: "Pulihkan file di Recycle Bin", n: rec, of: 3, done: rec === 3 },
+            { t: "Cari 3 fragmen di aplikasi-aplikasi", n: frag, of: 3, done: frag === 3 },
+            { t: "Masukkan kode redeem di Project 17", n: STATE.unlocked ? 1 : 0, of: 1, done: !!STATE.unlocked },
+          ],
+          side: [
+            { t: "Unlock album Secret", n: S.secret ? 1 : 0, of: 1, done: !!S.secret },
+            { t: "Elus Ucup 17 kali", n: S.pets, of: 17, done: !!S.petDone },
+            { t: "Unlock pixel-art ID card", n: S.idDone ? 1 : 0, of: 1, done: !!S.idDone },
+          ],
+        };
+      }
+      function renderQuests() {
+        const box = $("#quest");
+        if (!box) return;
+        const q = questData();
+        const total = q.main.concat(q.side).filter((x) => x.done).length;
+        const sec = (title, list, cls) => {
+          const frac = list.reduce((a, x) => a + Math.min(1, x.n / x.of), 0) / list.length;
+          const dn = list.filter((x) => x.done).length;
+          return `<div class="q-sec"><div class="q-title"><span>${title}</span><span>${dn}/${list.length}</span></div><div class="q-bar"><div class="q-fill ${cls}" style="width:${Math.round(frac * 100)}%"></div></div>${list.map((x) => `<div class="q-it${x.done ? " done" : ""}"><span class="ck">${x.done ? "✓" : ""}</span><span class="tx">${esc(x.t)}${x.of > 1 && !x.done ? `<small>(${x.n}/${x.of})</small>` : ""}</span></div>`).join("")}</div>`;
+        };
+        box.classList.toggle("min", questMin);
+        box.innerHTML = `<button class="q-head" type="button" aria-expanded="${!questMin}"><span>📜 QUEST LOG ${total}/6</span><span>${questMin ? "▸" : "▾"}</span></button><div class="q-body">${sec("MAIN QUEST", q.main, "")}${sec("SIDE QUEST (opsional)", q.side, "side")}</div>`;
+      }
+      $("#quest").addEventListener("click", (e) => {
+        if (e.target.closest(".q-head")) {
+          questMin = !questMin;
+          renderQuests();
+        }
+      });
+
+      function closeWin(id) {
+        const w = wins[id];
+        if (!w) return;
+        w.el.remove();
+        w.tb.remove();
+        delete wins[id];
+        if (activeId === id) activeId = null;
+      }
+
+      /* ============ [BARU] APP: The Department of Turning 17 ============ */
+      const DEPT_INK = "#1b2b6b";
+      const AV_ROWS = ["........", ".....bbb", "....bbbb", "...hhhhh", "..hhhhhh", "..hhssss", "..hsssss", "..hsesss", "..hsssss", "..hcssss", "..hssssm", "...hssss", "......ss", "...ggggg", "..gggggg", "..ggyggg", "..gggggg", "..gggggg"];
+      const AV_PAL = { b: "#c4577a", h: "#3a2a22", s: "#f2c7a5", e: "#1a1a1a", c: "#f2a1b5", m: "#c0504d", g: "#3e6b46", y: "#f3d76b" };
+      const MON = ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"];
+      function drawPixelAvatar(g, x, y, w, h) {
+        g.fillStyle = "#bfe3ee";
+        g.fillRect(x, y, w, h);
+        const s = Math.max(1, Math.floor(Math.min(w / 16, h / 18)));
+        const ox = x + Math.floor((w - 16 * s) / 2), oy = y + h - 18 * s;
+        AV_ROWS.forEach((half, r) => {
+          const row = half.padEnd(8, ".").slice(0, 8);
+          const full = row + [...row].reverse().join("");
+          for (let c = 0; c < 16; c++) {
+            const col = AV_PAL[full[c]];
+            if (!col) continue;
+            g.fillStyle = col;
+            g.fillRect(ox + c * s, oy + r * s, s, s);
+          }
+        });
+      }
+      let realPhotoPromise = null;
+      function loadRealPhoto() {
+        if (!realPhotoPromise)
+          realPhotoPromise = new Promise((res) => {
+            if (!CONFIG.avatar) return res(null);
+            const im = new Image();
+            im.onload = () => res(im);
+            im.onerror = () => res(null);
+            im.src = CONFIG.avatar;
+          });
+        return realPhotoPromise;
+      }
+      function drawPixelPhoto(g, img, x, y, w, h) {
+        const tw = Math.max(8, Math.round(w / 6)), th = Math.max(8, Math.round(h / 6));
+        const t = document.createElement("canvas");
+        t.width = tw;
+        t.height = th;
+        const sc = Math.max(tw / img.naturalWidth, th / img.naturalHeight);
+        const sw = tw / sc, sh = th / sc;
+        t.getContext("2d").drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) / 2, sw, sh, 0, 0, tw, th);
+        g.imageSmoothingEnabled = false;
+        g.drawImage(t, 0, 0, tw, th, x, y, w, h);
+        g.imageSmoothingEnabled = true;
+      }
+      function fitText(g, text, maxW, px, weight, min) {
+        let s = px;
+        while (s >= min) {
+          g.font = `${weight} ${s}px "Courier New",monospace`;
+          if (g.measureText(text).width <= maxW) return text;
+          s--;
+        }
+        g.font = `${weight} ${min}px "Courier New",monospace`;
+        while (text.length > 1 && g.measureText(text + "…").width > maxW) text = text.slice(0, -1);
+        return text + "…";
+      }
+      function wrapLines(g, text, maxW, maxLines) {
+        const words = text.split(/\s+/).filter(Boolean), lines = [];
+        let line = "";
+        for (let i = 0; i < words.length; i++) {
+          const test = line ? line + " " + words[i] : words[i];
+          if (line && g.measureText(test).width > maxW) {
+            lines.push(line);
+            line = words[i];
+            if (lines.length === maxLines) break;
+          } else line = test;
+        }
+        if (lines.length < maxLines && line) lines.push(line);
+        const used = lines.join(" ").split(/\s+/).length;
+        if (used < words.length || lines.length > maxLines) {
+          let last = lines[maxLines - 1] || "";
+          while (last.length > 1 && g.measureText(last + "…").width > maxW) last = last.slice(0, -1);
+          lines[maxLines - 1] = last + "…";
+        }
+        return lines.slice(0, maxLines);
+      }
+      function hashStr(s) {
+        let h = 2166136261;
+        for (const ch of s) {
+          h ^= ch.charCodeAt(0);
+          h = Math.imul(h, 16777619);
+        }
+        return h >>> 0;
+      }
+      function fmtDate(iso) {
+        const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+        return m ? `${m[3]} ${MON[+m[2] - 1]} ${m[1]}` : "—";
+      }
+      function validUntil(iso) {
+        const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+        if (m) return fmtDate(`${+m[1] + 18}-${m[2]}-${m[3]}`);
+        const d = new Date();
+        return fmtDate(`${d.getFullYear() + 1}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`);
+      }
+      function loadImg(src) {
+        return new Promise((res) => {
+          if (!src) return res(null);
+          const im = new Image();
+          im.onload = () => res(im);
+          im.onerror = () => res(null);
+          im.src = src;
+        });
+      }
+      async function drawCard(cv, p) {
+        const W = 856, H = 540;
+        cv.width = W;
+        cv.height = H;
+        const g = cv.getContext("2d");
+        const [photoImg, sigImg] = await Promise.all([p.photo === "real" ? loadRealPhoto() : Promise.resolve(null), loadImg(p.sig)]);
+        g.textBaseline = "alphabetic";
+        g.textAlign = "left";
+        g.fillStyle = "#17251d";
+        g.fillRect(0, 0, W, H);
+        g.fillStyle = "#f6f0d4";
+        g.fillRect(8, 8, W - 16, H - 16);
+        g.fillStyle = "rgba(62,107,70,.08)";
+        for (let yy = 100; yy < 500; yy += 8) for (let xx = (yy / 8) % 2 ? 4 : 0; xx < W; xx += 8) g.fillRect(xx, yy, 4, 4);
+        g.fillStyle = "#17251d";
+        [[8, 8], [W - 20, 8], [8, H - 20], [W - 20, H - 20]].forEach(([x, y]) => g.fillRect(x, y, 12, 12));
+        // header
+        g.fillStyle = "#3e6b46";
+        g.fillRect(20, 8, W - 40, 82);
+        g.fillStyle = "#f3d76b";
+        g.fillRect(8, 90, W - 16, 6);
+        g.fillStyle = "#f3d76b";
+        g.font = 'bold 30px "Courier New",monospace';
+        g.fillText("DEPARTMENT OF TURNING 17", 32, 52);
+        g.fillStyle = "#d9e8cf";
+        g.font = 'bold 15px "Courier New",monospace';
+        g.fillText("REPUBLIC OF FAIZA · LEVEL 17 IDENTITY CARD", 32, 76);
+        g.fillStyle = "#17251d";
+        g.fillRect(W - 138, 18, 108, 62);
+        g.fillStyle = "#f3d76b";
+        g.fillRect(W - 134, 22, 100, 54);
+        g.fillStyle = "#17251d";
+        g.font = 'bold 44px "Courier New",monospace';
+        g.textAlign = "center";
+        g.fillText("17", W - 84, 64);
+        g.textAlign = "left";
+        // photo
+        g.fillStyle = "#17251d";
+        g.fillRect(30, 106, 222, 274);
+        if (p.photo === "real" && photoImg) drawPixelPhoto(g, photoImg, 36, 112, 210, 262);
+        else drawPixelAvatar(g, 36, 112, 210, 262);
+        // left info
+        const label = (t, x, y) => {
+          g.fillStyle = "#6b7a5f";
+          g.font = 'bold 12px "Courier New",monospace';
+          g.fillText(t, x, y);
+        };
+        label("ID NO.", 36, 398);
+        g.fillStyle = "#17251d";
+        g.fillText(fitText(g, p.no, 210, 19, "bold", 12), 36, 420);
+        label("VALID UNTIL", 36, 446);
+        g.fillStyle = "#17251d";
+        g.fillText(fitText(g, p.valid, 210, 19, "bold", 12), 36, 468);
+        g.fillStyle = "#3e6b46";
+        g.fillRect(36, 478, 210, 22);
+        g.fillStyle = "#f3d76b";
+        g.font = 'bold 13px "Courier New",monospace';
+        g.textAlign = "center";
+        g.fillText("LEVEL 17 · ACTIVE", 141, 494);
+        g.textAlign = "left";
+        // right fields
+        const field = (t, v, x, y, maxW, px) => {
+          label(t, x, y + 14);
+          g.fillStyle = "#17251d";
+          const s = fitText(g, v, maxW, px, "bold", 13);
+          g.fillText(s, x, y + 42);
+          g.fillStyle = "#cfc8a4";
+          g.fillRect(x, y + 48, maxW, 2);
+        };
+        field("NAME", p.name, 276, 112, 544, 26);
+        field("PREFERRED NAME", p.pref, 276, 170, 260, 22);
+        field("DATE OF BIRTH", fmtDate(p.dob), 560, 170, 260, 22);
+        field("OCCUPATION", p.job, 276, 228, 544, 22);
+        field("SPECIAL ABILITY", p.power, 276, 286, 544, 22);
+        label("PERSONALITY", 276, 358);
+        g.fillStyle = "#17251d";
+        g.font = '15px "Courier New",monospace';
+        wrapLines(g, p.pers, 470, 2).forEach((ln, i) => g.fillText(ln, 276, 380 + i * 20));
+        // signature
+        label("SIGNATURE", 276, 424);
+        g.fillStyle = "#17251d";
+        g.fillRect(276, 492, 256, 3);
+        if (sigImg) {
+          const sc = Math.min(256 / sigImg.naturalWidth, 60 / sigImg.naturalHeight, 1.6);
+          const sw = sigImg.naturalWidth * sc, sh = sigImg.naturalHeight * sc;
+          g.drawImage(sigImg, 276 + (256 - sw) / 2, 490 - sh, sw, sh);
+        }
+        // stamp
+        g.save();
+        g.translate(690, 440);
+        g.rotate(-0.2);
+        g.globalAlpha = 0.9;
+        g.strokeStyle = "#d6455d";
+        g.fillStyle = "#d6455d";
+        g.lineWidth = 6;
+        g.strokeRect(-150, -38, 300, 76);
+        g.lineWidth = 2;
+        g.strokeRect(-141, -29, 282, 58);
+        g.font = 'bold 26px "Courier New",monospace';
+        g.textAlign = "center";
+        g.fillText("CERTIFIED", 0, -3);
+        g.fillText("BIRTHDAY GIRL", 0, 23);
+        g.restore();
+        // footer
+        g.fillStyle = "#f3d76b";
+        g.fillRect(8, 504, W - 16, 28);
+        g.fillStyle = "#17251d";
+        g.font = 'bold 14px "Courier New",monospace';
+        g.textAlign = "center";
+        g.fillText("FICTIONAL BIRTHDAY KEEPSAKE — NOT AN OFFICIAL ID", W / 2, 523);
+        g.textAlign = "left";
+      }
+      async function downloadCard(cv, p) {
+        const a = document.createElement("a");
+        const slug = String(p.pref || p.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "citizen";
+        a.download = `level17-id-${slug}.png`;
+        try {
+          a.href = cv.toDataURL("image/png");
+        } catch (_) {
+          // foto profil bisa "mengotori" canvas saat dibuka dari file lokal: pakai avatar pixel sebagai cadangan
+          const t = document.createElement("canvas");
+          await drawCard(t, Object.assign({}, p, { photo: "pixel" }));
+          a.href = t.toDataURL("image/png");
+        }
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      function makeSigPad(cv) {
+        const g = cv.getContext("2d");
+        let drawing = false, ink = false, last = null;
+        g.lineWidth = 5;
+        g.lineCap = "round";
+        g.lineJoin = "round";
+        g.strokeStyle = DEPT_INK;
+        g.fillStyle = DEPT_INK;
+        const pos = (e) => {
+          const r = cv.getBoundingClientRect();
+          return { x: ((e.clientX - r.left) * cv.width) / r.width, y: ((e.clientY - r.top) * cv.height) / r.height };
+        };
+        cv.addEventListener("pointerdown", (e) => {
+          e.preventDefault();
+          drawing = true;
+          try { cv.setPointerCapture(e.pointerId); } catch (_) {}
+          last = pos(e);
+          g.beginPath();
+          g.arc(last.x, last.y, 2.5, 0, Math.PI * 2);
+          g.fill();
+          ink = true;
+        });
+        cv.addEventListener("pointermove", (e) => {
+          if (!drawing) return;
+          const p = pos(e);
+          g.beginPath();
+          g.moveTo(last.x, last.y);
+          g.lineTo(p.x, p.y);
+          g.stroke();
+          last = p;
+        });
+        const end = () => { drawing = false; };
+        cv.addEventListener("pointerup", end);
+        cv.addEventListener("pointercancel", end);
+        return {
+          hasInk: () => ink,
+          clear() {
+            g.clearRect(0, 0, cv.width, cv.height);
+            ink = false;
+          },
+          exportPng() {
+            const d = g.getImageData(0, 0, cv.width, cv.height).data;
+            let x0 = cv.width, y0 = cv.height, x1 = -1, y1 = -1;
+            for (let y = 0; y < cv.height; y++)
+              for (let x = 0; x < cv.width; x++)
+                if (d[(y * cv.width + x) * 4 + 3] > 10) {
+                  if (x < x0) x0 = x;
+                  if (x > x1) x1 = x;
+                  if (y < y0) y0 = y;
+                  if (y > y1) y1 = y;
+                }
+            if (x1 < x0) return null;
+            const pad = 6;
+            x0 = Math.max(0, x0 - pad);
+            y0 = Math.max(0, y0 - pad);
+            x1 = Math.min(cv.width - 1, x1 + pad);
+            y1 = Math.min(cv.height - 1, y1 + pad);
+            const w = x1 - x0 + 1, h = y1 - y0 + 1;
+            const t = document.createElement("canvas");
+            t.width = w;
+            t.height = h;
+            t.getContext("2d").drawImage(cv, x0, y0, w, h, 0, 0, w, h);
+            return t.toDataURL("image/png");
+          },
+        };
+      }
+      function buildDept() {
+        const root = el("div", "dept");
+        const existing = () => (STATE.side.idDone && STATE.side.id ? STATE.side.id : null);
+        function office() {
+          root.innerHTML = `<div class="d-box"><h2>🪪 THE DEPARTMENT OF TURNING 17</h2><p class="d-quote">“One citizen. One identity. Seventeen years of being iconic.”</p><p>Welcome to the Department of Turning 17. Every citizen deserves an identity of their own. Complete your application to receive your official Level 17 Identity Card.</p><div class="d-row"><button class="d-btn" data-go>APPLY FOR LEVEL 17 ID</button></div></div><p style="font-size:.72rem;opacity:.75">Side quest opsional · hasilnya kartu kenang-kenangan fiktif, bukan ID resmi.</p>`;
+          root.querySelector("[data-go]").onclick = () => form(null);
+        }
+        function form(prev) {
+          const v = (k, d) => esc(prev && prev[k] ? prev[k] : d || "");
+          root.innerHTML = `<div class="d-box"><h2>IDENTITY REGISTRATION</h2><p>Isi data versi kamu. Semua ini akan muncul di kartu akhirnya. Jangan isi nomor identitas asli ya.</p></div>
+            <label>FULL NAME *</label><input type="text" id="f_name" maxlength="40" value="${v("name")}" placeholder="nama lengkap" autocomplete="off">
+            <label>PREFERRED NAME</label><input type="text" id="f_pref" maxlength="24" value="${v("pref")}" placeholder="biasa dipanggil apa?" autocomplete="off">
+            <label>DATE OF BIRTH</label><input type="date" id="f_dob" value="${v("dob", "2009-10-30")}">
+            <label>OCCUPATION</label><input type="text" id="f_job" maxlength="40" value="${v("job")}" placeholder="misal: Pelukis Perasaan" autocomplete="off">
+            <label>SPECIAL ABILITY</label><input type="text" id="f_power" maxlength="40" value="${v("power")}" placeholder="misal: Bisa tidur di mana saja" autocomplete="off">
+            <label>PERSONALITY DESCRIPTION</label><textarea id="f_pers" maxlength="110" placeholder="satu dua kalimat tentang kamu">${v("pers")}</textarea>
+            <label>PHOTO</label>
+            <div class="d-photos"><button type="button" class="d-ph on" data-ph="pixel"><canvas width="72" height="90"></canvas>PIXEL AVATAR</button><button type="button" class="d-ph" data-ph="real"><canvas width="72" height="90"></canvas><span>FOTO PROFIL</span></button></div>
+            <label>SIGNATURE * <span style="font-weight:400;color:#d2dfca">(gambar pakai jari / mouse)</span></label>
+            <canvas class="d-sig" width="600" height="200"></canvas>
+            <div class="d-row" style="margin-top:8px"><button type="button" class="d-btn ghost" data-clear>HAPUS TANDA TANGAN</button></div>
+            ${prev && prev.sig ? '<p style="font-size:.7rem;margin-top:6px">Kosongkan kalau mau tetap pakai tanda tangan lama.</p>' : ""}
+            <div class="d-err" role="alert"></div>
+            <div class="d-row"><button type="button" class="d-btn" data-submit>SUBMIT APPLICATION</button>${prev ? '<button type="button" class="d-btn ghost" data-cancel>BATAL</button>' : ""}</div>`;
+          let photo = prev && prev.photo === "real" ? "real" : "pixel";
+          const phBtns = [...root.querySelectorAll(".d-ph")];
+          const setPh = (k) => {
+            photo = k;
+            phBtns.forEach((b) => b.classList.toggle("on", b.dataset.ph === k));
+          };
+          phBtns.forEach((b) => (b.onclick = () => !b.disabled && setPh(b.dataset.ph)));
+          drawPixelAvatar(phBtns[0].querySelector("canvas").getContext("2d"), 0, 0, 72, 90);
+          loadRealPhoto().then((img) => {
+            if (!root.isConnected) return;
+            const c = phBtns[1].querySelector("canvas"), cg = c.getContext("2d");
+            if (img) drawPixelPhoto(cg, img, 0, 0, 72, 90);
+            else {
+              drawPixelAvatar(cg, 0, 0, 72, 90);
+              phBtns[1].disabled = true;
+              phBtns[1].querySelector("span").textContent = "FOTO TIDAK ADA";
+              if (photo === "real") setPh("pixel");
+            }
+          });
+          setPh(photo);
+          const pad = makeSigPad(root.querySelector(".d-sig"));
+          root.querySelector("[data-clear]").onclick = () => pad.clear();
+          const err = root.querySelector(".d-err");
+          if (prev) root.querySelector("[data-cancel]").onclick = card.bind(null, false);
+          root.querySelector("[data-submit]").onclick = () => {
+            const name = root.querySelector("#f_name").value.trim();
+            if (!name) { err.textContent = "Full Name wajib diisi."; root.querySelector("#f_name").focus(); return; }
+            const sig = pad.hasInk() ? pad.exportPng() : prev && prev.sig;
+            if (!sig) { err.textContent = "Tanda tangan dulu ya, citizen."; return; }
+            const dob = root.querySelector("#f_dob").value || "2009-10-30";
+            const p = {
+              name,
+              pref: root.querySelector("#f_pref").value.trim() || name.split(/\s+/)[0],
+              dob,
+              job: root.querySelector("#f_job").value.trim() || "Citizen of Level 17",
+              power: root.querySelector("#f_power").value.trim() || "Classified",
+              pers: root.querySelector("#f_pers").value.trim() || "Thoughtful, creative, and one of a kind.",
+              photo,
+              sig,
+            };
+            const h = hashStr(name + "|" + dob);
+            p.no = "L17-" + String(h % 10000).padStart(4, "0") + "-" + String(Math.floor(h / 10000) % 10000).padStart(4, "0");
+            p.valid = validUntil(dob);
+            review(p);
+          };
+        }
+        function review(p) {
+          root.innerHTML = `<div class="d-box"><h2>APPLICATION REVIEW</h2><p>Berkas sedang diperiksa oleh pejabat yang sangat sibuk…</p></div>
+            <div class="d-paper" style="padding-bottom:78px"><h3>FORM L17-A · LEVEL 17 ID APPLICATION</h3>
+              <div class="d-line"><span>Application Type</span><b>Level 17 ID</b></div>
+              <div class="d-line"><span>Applicant</span><b>${esc(p.name)}</b></div>
+              <div class="d-line"><span>Processing Fee</span><b>1 Birthday Wish</b></div>
+              <div class="d-line"><span>Payment Status</span><b>PAID IN HAPPINESS</b></div>
+              <div class="d-stamp">APPROVED</div></div>
+            <p class="d-quote" style="display:none;margin-top:14px">After careful consideration of absolutely nothing, your application has been approved.</p>
+            <div class="d-row"><button class="d-btn" style="display:none" data-go>PROCEED TO ID CARD ISSUANCE</button></div>`;
+          const paper = root.querySelector(".d-paper"), stamp = root.querySelector(".d-stamp");
+          setTimeout(() => { if (root.isConnected) stamp.classList.add("hit"); }, 900);
+          setTimeout(() => { if (root.isConnected) { paper.classList.add("thud"); celebrate(40); } }, 1250);
+          setTimeout(() => {
+            if (!root.isConnected) return;
+            root.querySelector(".d-quote").style.display = "block";
+            root.querySelector("[data-go]").style.display = "inline-block";
+          }, 1900);
+          root.querySelector("[data-go]").onclick = () => {
+            p.issued = new Date().toISOString();
+            const first = !STATE.side.idDone;
+            STATE.side.id = p;
+            STATE.side.idDone = true;
+            save();
+            if (first) {
+              celebrate(110);
+              questToast("🪪", "Side quest selesai!", "Level 17 ID card kamu sudah terbit.");
+            }
+            card(first);
+          };
+        }
+        function card(justIssued) {
+          const p = existing();
+          if (!p) return office();
+          root.innerHTML = `<div class="d-box"><h2>${justIssued ? "ID CARD ISSUED!" : "YOUR LEVEL 17 ID"}</h2><p>Kartu kenang-kenangan fiktif. Simpan sebagai PNG kalau mau.</p></div><canvas class="d-card"></canvas><div class="d-row"><button class="d-btn" data-dl>DOWNLOAD ID CARD PNG</button>${justIssued ? '<button class="d-btn ghost" data-next>FINISH ▶</button>' : '<button class="d-btn ghost" data-edit>EDIT APPLICATION</button><button class="d-btn ghost" data-close>RETURN TO DESKTOP</button>'}</div>`;
+          const cv = root.querySelector(".d-card");
+          drawCard(cv, p);
+          root.querySelector("[data-dl]").onclick = () => downloadCard(cv, p);
+          if (justIssued) root.querySelector("[data-next]").onclick = done;
+          else {
+            root.querySelector("[data-edit]").onclick = () => form(p);
+            root.querySelector("[data-close]").onclick = () => closeWin("dept");
+          }
+        }
+        function done() {
+          root.innerHTML = `<div class="d-box"><h2>🎉 REGISTRATION COMPLETE!</h2><p class="d-quote">Your Level 17 identity has been successfully issued. You may be officially 17, but the department takes no responsibility for your questionable decisions. Have a wonderful birthday, citizen.</p><div class="d-row"><button class="d-btn" data-ret>RETURN TO DESKTOP</button><button class="d-btn ghost" data-view>LIHAT KARTU LAGI</button></div></div>`;
+          root.querySelector("[data-ret]").onclick = () => closeWin("dept");
+          root.querySelector("[data-view]").onclick = () => card(false);
+        }
+        if (existing()) card(false);
+        else office();
+        return root;
+      }
+
+      /* ============ [BARU] APP: Time Machine (reset cerita) ============
+         Tombol "Ya, ulang dari awal" menghapus semua progres lalu kembali ke layar login. */
+      const NOTES_TODO_INITIAL = CONFIG.notes.map((n) => (n.todo ? n.todo.map((t) => !!t[1]) : null));
+      const WA_COUNT_INITIAL = CONFIG.wa.map((c) => c.msgs.length);
+
+      function resetStory() {
+        // 1. hapus data tersimpan
+        try {
+          localStorage.removeItem(SKEY);
+          localStorage.removeItem(ACHIEVEMENT_STORAGE_KEY);
+        } catch (_) {}
+        // 2. kembalikan data di memori
+        STATE.rec = {};
+        STATE.p17 = false;
+        STATE.solved = {};
+        STATE.unlocked = false;
+        STATE.gift = { letter: false, viewed: [], done: false };
+        STATE.shop = { bought: [] };
+        STATE.side = { secret: false, pets: 0, petDone: false, id: null, idDone: false };
+        achievementState.unlocked.clear();
+        achievementState.openedApps.clear();
+        clearTimeout(achievementState.toastTimer);
+        CONFIG.notes.forEach((n, i) => {
+          if (n.todo && NOTES_TODO_INITIAL[i]) n.todo.forEach((t, k) => (t[1] = NOTES_TODO_INITIAL[i][k]));
+        });
+        CONFIG.wa.forEach((c, i) => { c.msgs.length = WA_COUNT_INITIAL[i]; });
+        if (window.ucupReset) window.ucupReset();
+        try { audio.pause(); audio.currentTime = 0; musicBtn.textContent = "🎵"; } catch (_) {}
+        // 3. gambar ulang ikon (Project 17 hilang lagi) dan kembali ke layar login
+        window.renderIcons();
+        renderQuests();
+        restart();
+      }
+      function rewindAndReset() {
+        const ov = document.createElement("div");
+        ov.style.cssText = "position:fixed;inset:0;z-index:16000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#120f24;color:#fff;font-family:'Quicksand',sans-serif;opacity:0;transition:opacity .5s";
+        ov.innerHTML = '<div style="font-size:3.4rem">⏪</div><div style="font-size:1.1rem;font-weight:700;letter-spacing:1px">Memutar balik waktu…</div>';
+        document.body.appendChild(ov);
+        requestAnimationFrame(() => (ov.style.opacity = "1"));
+        setTimeout(() => {
+          resetStory();
+          ov.style.opacity = "0";
+          setTimeout(() => ov.remove(), 600);
+        }, 1700);
+      }
+      function buildReset() {
+        const root = el("div", "rst", `<div class="rst-ic">⏪</div><h2>Time Machine</h2>
+          <p>Mau mengulang ceritanya dari awal?<br>Semua progres dikembalikan seperti pertama kali komputer ini dinyalakan.</p>
+          <ul><li>🏆 Achievement</li><li>🧩 Teka-teki dan file yang sudah dipulihkan</li><li>🎁 Hadiah dan kejutan lainnya</li><li>📝 Centang di catatan dan chat yang kamu ketik</li></ul>
+          <div class="rst-act"></div>`);
+        const act = root.querySelector(".rst-act");
+        function first() {
+          act.innerHTML = "";
+          const b = el("button", "rst-btn", "⏪ Mulai ulang cerita");
+          b.onclick = confirmStep;
+          act.appendChild(b);
+        }
+        function confirmStep() {
+          act.innerHTML = '<div class="rst-warn">Yakin? Ini tidak bisa dibatalkan.</div>';
+          const no = el("button", "rst-btn ghost", "Batal");
+          no.onclick = first;
+          const yes = el("button", "rst-btn danger", "Ya, ulang dari awal");
+          yes.onclick = () => {
+            yes.disabled = true;
+            no.disabled = true;
+            rewindAndReset();
+          };
+          act.append(no, yes);
+        }
+        first();
+        return root;
+      }
+
+      /* ============ [BARU] Ucup, kucing yang pulang ============
+         Muncul di desktop setelah album Secret terbuka (jawaban "nama kucing yang hilang").
+         Ganti UCUP_FROM_START ke true kalau mau kucingnya sudah ada dari awal
+         (tetap tanpa nama sampai album Secret terbuka, jadi password tidak bocor). */
+      (function () {
+        const UCUP_FROM_START = false;
+        const KEY = "faizaUcup.v1";
+        try { if (location.hash === "#reset") localStorage.removeItem(KEY); } catch (_) {}
+        let home = false;
+        try { home = localStorage.getItem(KEY) === "1"; } catch (_) {}
+        const reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+        const desk = $("#desktop");
+        const cat = el("div", "", `<div class="cat"><svg viewBox="0 0 64 48" aria-hidden="true">
+          <g class="tail"><path d="M14 30 C4 28 2 16 8 10" fill="none" stroke="#2a2a2e" stroke-width="5" stroke-linecap="round"/><path d="M9.5 12.5 C8 11.5 7.5 11 8 10" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+          <g class="leg b"><rect x="26" y="34" width="6" height="12" rx="3" fill="#1f1f23"/><rect x="26" y="41" width="6" height="5" rx="2.5" fill="#e4e4e4"/></g>
+          <g class="leg a"><rect x="18" y="34" width="6" height="12" rx="3" fill="#2a2a2e"/><rect x="18" y="41" width="6" height="5" rx="2.5" fill="#fff"/></g>
+          <g class="leg a"><rect x="46" y="34" width="6" height="12" rx="3" fill="#1f1f23"/><rect x="46" y="41" width="6" height="5" rx="2.5" fill="#e4e4e4"/></g>
+          <g class="leg b"><rect x="38" y="34" width="6" height="12" rx="3" fill="#2a2a2e"/><rect x="38" y="41" width="6" height="5" rx="2.5" fill="#fff"/></g>
+          <ellipse cx="32" cy="30" rx="20" ry="11" fill="#2a2a2e"/>
+          <ellipse cx="38" cy="35" rx="10" ry="6" fill="#fff"/>
+          <circle cx="50" cy="21" r="10" fill="#2a2a2e"/>
+          <polygon points="42,14 44,3 51,11" fill="#2a2a2e"/><polygon points="52,11 58,3 59,16" fill="#2a2a2e"/>
+          <polygon points="44,12 45,7 49,11" fill="#f5b8b0"/><polygon points="54,11 57,7 57,14" fill="#f5b8b0"/>
+          <path d="M50 12 L53 12 L54 21 L49 21 Z" fill="#fff"/>
+          <ellipse cx="51.5" cy="25" rx="5" ry="4" fill="#fff"/>
+          <g class="eye"><ellipse cx="46.5" cy="20" rx="2.2" ry="2.6" fill="#f4d35e"/><ellipse cx="46.5" cy="20" rx="1" ry="2" fill="#16161a"/></g>
+          <g class="eye"><ellipse cx="55.5" cy="20" rx="2.2" ry="2.6" fill="#f4d35e"/><ellipse cx="55.5" cy="20" rx="1" ry="2" fill="#16161a"/></g>
+          <path d="M50 23.6 l1.5 1.6 l1.5 -1.6 z" fill="#e58b8b"/>
+          <path d="M45 25 l-7 -1 M45 27 l-7 1 M58 25 l6 -1 M58 27 l6 1" stroke="#cfcfcf" stroke-width=".8" stroke-linecap="round"/>
+        </svg></div><div class="zz">z Z</div>`);
+        cat.id = "ucup";
+        desk.appendChild(cat);
+
+        const W = 64;
+        let x = 40, dir = 1, mode = "sit", nextAt = 0, bubbleTimer = null;
+        const width = () => Math.max(W, (desk.clientWidth || innerWidth) - W);
+        function place() {
+          cat.style.transform = `translateX(${Math.round(x)}px)`;
+          cat.classList.toggle("left", dir < 0);
+        }
+        function setMode(m) {
+          mode = m;
+          cat.classList.toggle("walk", m === "walk");
+          cat.classList.toggle("sleep", m === "sleep");
+        }
+        function think() {
+          const now = Date.now();
+          if (reduce) { setMode("sit"); nextAt = now + 8000; return; }
+          const r = Math.random();
+          if (r < 0.55) { dir = Math.random() < 0.5 ? -1 : 1; setMode("walk"); nextAt = now + 2500 + Math.random() * 4500; }
+          else if (r < 0.82) { setMode("sit"); nextAt = now + 2500 + Math.random() * 3000; }
+          else { setMode("sleep"); nextAt = now + 6000 + Math.random() * 6000; }
+        }
+        setInterval(() => {
+          if (!cat.classList.contains("on") || document.hidden) return;
+          if (Date.now() >= nextAt) think();
+          const max = width();
+          if (mode === "walk") {
+            x += dir * 1.6;
+            if (x <= 0) { x = 0; dir = 1; } else if (x >= max) { x = max; dir = -1; }
+            place();
+          } else if (x > max) { x = max; place(); }
+        }, 50);
+
+        function say(text, wide, ms) {
+          clearTimeout(bubbleTimer);
+          const old = cat.querySelector(".ucup-bubble");
+          if (old) old.remove();
+          const b = el("div", "ucup-bubble" + (wide ? " wide" : ""), esc(text));
+          cat.appendChild(b);
+          // jaga supaya gelembung tidak keluar dari layar
+          const r = b.getBoundingClientRect();
+          let shift = 0;
+          if (r.left < 8) shift = 8 - r.left;
+          else if (r.right > innerWidth - 8) shift = innerWidth - 8 - r.right;
+          if (shift) b.style.transform = `translateX(calc(-50% + ${Math.round(shift)}px))`;
+          bubbleTimer = setTimeout(() => b.remove(), ms || 2300);
+        }
+        function hearts(n) {
+          for (let i = 0; i < n; i++) {
+            const h = el("div", "ucup-heart", Math.random() < 0.5 ? "💚" : "🐾");
+            h.style.setProperty("--dx", Math.round(Math.random() * 50 - 25) + "px");
+            h.style.animationDelay = i * 0.12 + "s";
+            cat.appendChild(h);
+            setTimeout(() => h.remove(), 1500 + i * 120);
+          }
+        }
+        const WILD = ["meow?", "mrrrow 🐾", "*menatap kamu*", "meong~"];
+        const HOME = ["Ucup pulang! 🐱", "purr purr… 💚", "meong~ (traktir ikan dong)", "*ndusel*", "mrrrow 🐾", "jangan lupa traktirannya ya 😼"];
+        const pick = (a) => a[Math.floor(Math.random() * a.length)];
+        // [BARU] side quest: elus Ucup 17 kali
+        const PET_GOAL = 17;
+        const PET_TEXT = { 1: "ucup noticed you.", 5: "ucup is enjoying this.", 10: "almost halfway there!", 15: "just a little more...", 17: "ucup has a gift for you!" };
+        cat.addEventListener("click", () => {
+          setMode("sit");
+          nextAt = Date.now() + 2500;
+          const S = STATE.side;
+          if (S.petDone) {
+            say(pick(HOME));
+            hearts(3);
+            return;
+          }
+          S.pets = Math.min(PET_GOAL, S.pets + 1);
+          const n = S.pets;
+          if (n >= PET_GOAL) {
+            S.petDone = true;
+            save();
+            say("mission complete! you've given ucup 17 pets. check your email, he has something for you!", true, 6500);
+            hearts(8);
+            celebrate(80);
+            if (wins.mail && wins.mail.api.refresh) wins.mail.api.refresh();
+            setTimeout(() => questToast("✉️", "Email baru dari Ucup", "Dari Ucup · klik untuk membuka", () => openApp("mail")), 1200);
+            return;
+          }
+          save();
+          const line = `${n}/${PET_GOAL} · ${PET_TEXT[n] || pick(home ? HOME : WILD)}`;
+          if (n === 1) say("elus ucup 17 kali buat dapetin hadiah spesial dari dia!\n" + line, true, 4200);
+          else say(line);
+          hearts(home ? 3 : 1);
+        });
+
+        function show() {
+          cat.classList.add("on");
+          x = Math.random() * width();
+          dir = Math.random() < 0.5 ? -1 : 1;
+          nextAt = 0;
+          place();
+        }
+        // dipanggil dari album Secret begitu password benar
+        window.ucupFound = function () {
+          if (home) return;
+          home = true;
+          try { localStorage.setItem(KEY, "1"); } catch (_) {}
+          if (!cat.classList.contains("on")) show();
+          const t = $("#toast");
+          t.innerHTML = '<div class="ti">🐱</div><div><b>Ucup pulang!</b><div>Kucingnya ketemu 🥹 Kecilkan jendela buat lihat dia di desktop.</div></div>';
+          t.classList.add("on");
+          t.onclick = () => t.classList.remove("on");
+          setTimeout(() => t.classList.remove("on"), 7000);
+          celebrate(70);
+        };
+        // dipanggil oleh Time Machine: kucing hilang lagi
+        window.ucupReset = function () {
+          home = false;
+          try { localStorage.removeItem(KEY); } catch (_) {}
+          cat.classList.remove("on", "walk", "sleep");
+          const b = cat.querySelector(".ucup-bubble");
+          if (b) b.remove();
+          if (UCUP_FROM_START) show();
+        };
+        if (home || UCUP_FROM_START) show();
+      })();
+      renderQuests();
     </script>
   </body>
 </html>
-#reset
