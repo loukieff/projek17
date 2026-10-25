@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Faiza Turns Seventeen 🌿</title>
+    <!-- [BARU] Pratinjau link (WhatsApp dll) + jangan diindeks Google.
+         Taruh gambar 1200x630 bernama preview.jpg di folder assets/ (pakai gambar netral, jangan bocorin isi) -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Ada sesuatu yang spesial menunggumu 🌿" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nyalakan komputernya 🌿" />
-    <meta property="og:description" content="Ada sesuatu yang spesial menunggumu." />
+    <meta property="og:title" content="Special 17 🌿" />
+    <meta property="og:description" content="Pecahkan teka-teki dalam computer!" />
     <meta property="og:url" content="https://projekhbd.loukief.site/" />
-    <meta property="og:image" content="https://projekhbd.loukief.site/assets/preview.jpg" />
+    <meta property="og:image" content="assets/preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -43,20 +45,13 @@
         position: fixed;
         inset: 0;
         z-index: 0;
-        background: linear-gradient(
-          180deg,
-          #bfe3ee 0%,
-          #f9e7cc 55%,
-          #e8f0c8 100%
-        );
+        background:
+          linear-gradient(180deg, rgba(10, 23, 36, 0.18), rgba(10, 23, 36, 0.38)),
+          url("assets/cuking.jpg") center / cover no-repeat;
         overflow: hidden;
       }
       .wall svg {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 78%;
+        display: none;
       }
       .wall-title {
         position: absolute;
@@ -81,9 +76,9 @@
         align-items: center;
         justify-content: center;
         color: #fff;
-        background: rgba(30, 55, 38, 0.4);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        background: rgba(10, 23, 36, 0.22);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         transition:
           opacity 0.7s,
           visibility 0.7s;
@@ -109,6 +104,7 @@
         width: 104px;
         height: 104px;
         border-radius: 50%;
+        position: relative;
         background: linear-gradient(135deg, #f2a1b5, #f7d56a);
         display: flex;
         align-items: center;
@@ -118,10 +114,15 @@
         border: 3px solid rgba(255, 255, 255, 0.85);
         overflow: hidden;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        padding: 0;
+        color: #fff;
       }
       .avatar img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
+        border-radius: inherit;
         object-fit: cover;
       }
       .lg-name {
@@ -643,6 +644,16 @@
         font-size: 0.75rem;
         font-weight: 700;
         margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .wa-who-avatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex: 0 0 20px;
       }
       .msg .tm {
         font-size: 0.65rem;
@@ -1473,7 +1484,7 @@
       .rst-btn.danger{background:#d9534f;box-shadow:0 4px 0 #a93a37}
       .rst-warn{width:100%;font-size:.85rem;font-weight:700;color:#a93a37;margin-bottom:4px}
 
-      
+
       /* ===== Toko & Email ===== */
       .shop{height:100%;display:flex;flex-direction:column;background:#fff6ec}
       .shop-h{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#fff;border-bottom:1px solid #f0e0cc}
@@ -1533,10 +1544,12 @@
       .dept label{display:block;font-size:.7rem;font-weight:900;color:#f3d76b;margin:10px 0 4px;letter-spacing:1px}
       .dept input[type=text],.dept input[type=date],.dept textarea{width:100%;background:#0b130e;border:2px solid #8ebc83;color:#f8f5d7;padding:8px 10px;font:inherit;font-size:.85rem;outline:none;color-scheme:dark}
       .dept textarea{resize:vertical;min-height:58px}
-      .dept .d-photos{display:flex;gap:10px}
-      .dept .d-ph{flex:1;border:3px solid #536c53;background:#0b130e;padding:8px;text-align:center;cursor:pointer;color:#d2dfca;font:inherit;font-size:.7rem}
-      .dept .d-ph.on{border-color:#f3d76b;color:#f3d76b}
-      .dept .d-ph canvas{display:block;margin:0 auto 6px;width:72px;height:90px;image-rendering:pixelated;background:#bfe3ee}
+       .dept .d-photo-upload{display:flex;align-items:flex-start;gap:12px}
+       .dept .d-photo-preview{flex:0 0 72px;width:72px;height:90px;border:2px solid #8ebc83;background:#bfe3ee;image-rendering:pixelated}
+       .dept .d-photo-controls{flex:1;min-width:0}
+       .dept input[type=file]{display:block;width:100%;background:#0b130e;border:2px solid #8ebc83;color:#f8f5d7;padding:7px;font:inherit;font-size:.7rem}
+       .dept .d-photo-controls small{display:block;margin-top:6px;font-size:.68rem;line-height:1.4;color:#d2dfca}
+       .dept .d-photo-controls .d-btn{margin-top:8px;padding:7px 9px;font-size:.68rem}
       .dept .d-sig{background:#fffdf0;border:3px solid #8ebc83;touch-action:none;display:block;width:100%;height:auto;cursor:crosshair}
       .dept .d-err{color:#ffb4a8;font-size:.78rem;font-weight:700;min-height:1.1em;margin-top:8px}
       .dept .d-paper{background:#fffdf0;color:#2b2b26;border:3px solid #8ebc83;padding:16px;position:relative;box-shadow:4px 4px 0 #0b130e}
@@ -1548,9 +1561,15 @@
       @keyframes stampHit{0%{opacity:0;transform:rotate(-14deg) scale(3.2)}60%{opacity:1;transform:rotate(-14deg) scale(.92)}100%{opacity:.92;transform:rotate(-14deg) scale(1)}}
       .dept .d-paper.thud{animation:thud .25s}
       @keyframes thud{25%{transform:translate(3px,4px)}60%{transform:translate(-2px,-2px)}}
-      .dept .d-card{display:block;width:100%;height:auto;image-rendering:pixelated;border:3px solid #8ebc83;box-shadow:4px 4px 0 #0b130e;background:#0b130e}
+      .dept .d-card{display:block;width:100%;height:auto;image-rendering:pixelated;border:3px solid #168bff;box-shadow:4px 4px 0 #0b2b4a;background:#0b2b4a}
       @media (prefers-reduced-motion: reduce){.dept .d-stamp.hit{animation:none;opacity:.92;transform:rotate(-14deg)}.dept .d-paper.thud{animation:none}}
       @media (max-width:700px){#quest{width:min(262px,calc(100% - 28px))}}
+      body,
+      body *,
+      body *::before,
+      body *::after {
+        font-family: "Quicksand", system-ui, sans-serif !important;
+      }
 
       /* ===== mobile ===== */
       @media (max-width: 700px) {
@@ -1641,18 +1660,18 @@
     <div id="login">
       <div class="lg-time" id="lgTime">00:00</div>
       <div class="lg-date" id="lgDate"></div>
-      <div class="avatar" id="lgAvatar">-</div>
+      <div class="avatar" id="lgAvatar">F</div>
       <div class="lg-name" id="lgName">Faiza</div>
       <form class="lg-form" id="lgForm" autocomplete="off">
         <input
           type="password"
           id="lgPass"
-          placeholder="Input password"
+          placeholder="Masukan password"
           autocomplete="off"
         />
         <button type="submit">➜</button>
       </form>
-      <div class="lg-hint" id="lgHint">Hint: day/month/year</div>
+      <div class="lg-hint" id="lgHint">Hint: T/B/L</div>
       <div class="lg-welcome" id="lgWelcome">Password accepted. Unlocking something special...</div>
     </div>
 
@@ -1680,7 +1699,7 @@
     <div id="bye">
       <h1 id="byeTitle"></h1>
       <p id="byeMsg"></p>
-      <button id="byeBtn">Nyalakan Computer 🔄</button>
+      <button id="byeBtn">Restart 🔄</button>
     </div>
     <canvas id="confetti"></canvas>
     <audio id="audio" loop preload="auto"></audio>
@@ -1696,13 +1715,13 @@
         balance: 70000,
         code: "4TUL-SWVT-2O26",
         items: [
-          { id: "kresek", n: "Plastik kresek", p: 1, e: "🛍️", m: "Warung Bu Tini" },
-          { id: "teh", n: "Es teh manis", p: 5000, e: "🧋", m: "Warung Bu Tini" },
-          { id: "cat", n: "Cat air pro set", p: 45000, e: "🎨", m: "Toko Seni Kuas" },
-          { id: "nasi", n: "Nasi cumi hitam Madura", p: 25000, e: "🍛", m: "Warung Madura" },
-          { id: "ucup", n: "Ucup (kucing)", p: 0, e: "🐱", m: "Pet Corner", out: true },
-          { id: "f1", n: "Mobil F1 Rusdi", p: 17000000, e: "🏎️", m: "Garasi Sultan" },
-          { id: "code", n: "Kode Redeem Spesial", p: 69999, e: "🎟️", m: "Toko Kode", key: true },
+          { id: "kresek", n: "Plastik limited edition", p: 9999999999, e: "🛍️", m: "Plastik je" },
+          { id: "teh", n: "Es teh manis", p: 5000, e: "🧋", m: "Warung Neng Tasy" },
+          { id: "cat", n: "Cat air pro max", p: 45000, e: "🎨", m: "Toko Seni Aul" },
+          { id: "nasi", n: "Nasi cumi hitam Madura", p: 25000, e: "🍛", m: "Barot" },
+          { id: "ucup", n: "Babu (kucing)", p: 0, e: "🐱", m: "Pet Corner", out: true },
+          { id: "f1", n: "Miniatur Mobil", p: 170000000, e: "🏎️", m: "Garasi Winna" },
+          { id: "code", n: "Kode Redeem Spesial", p: 69999, e: "🎟️", m: "????", key: true },
         ],
       };
       // bandingkan kode tanpa peduli spasi, tanda hubung, huruf besar/kecil, dan O vs 0
@@ -1740,12 +1759,12 @@
               },
               {
                 w: "them",
-                t: "Cek semua yaa. Jangan lupa buka Catatan, paling penting!! ✉️",
+                t: "Cek semua yaa!!",
                 time: "00:02",
               },
               {
                 w: "them",
-                t: "Kalo boleh rikues, bagian aplikasi recycle bin di akhir klo smua udah selesai di liat 😃😄",
+                t: "Kalo boleh rikues, bagian aplikasi recycle bin di akhir klo smua udah selesai di liat (main quest)) 🤫🤫",
                 time: "00:02",
               },
               {
@@ -1758,18 +1777,28 @@
           {
             name: "Detective 🔍",
             emoji: "🕵️",
+            avatar: "assets/detek.jpg",
             unread: 1,
             msgs: [
               { day: "30 Oktober" },
-              { w: "them", t: "Aplikasi recycle bin buka paling akhir! ada secret file 🫣", time: "00:01" },
+              { w: "them", t: "Hei! aplikasi recycle bin di buka di akhir ya! itu main questnya. Ada file tersembunyi 🔍🤫", time: "00:01" },
               { w: "me", t: "File apa?? 😳", time: "00:02" },
-              { w: "them", t: "Kepo siee.. Katanya sih tersembunyi ya, selamat jadi detektif! 🕵️‍♀️", time: "00:02" },
-              { w: "them", t: `Oh iya, welcome to the ${PZ.age} club! 😉`, time: "00:03" },
+              { w: "them", t: "Kepo.. Katanya sih tersembunyi ya, selamat jadi detektif! 🕵️‍♀️", time: "00:02" },
+              { w: "them", t: `Oh iya, welkam to the ${PZ.age} club! 😉`, time: "00:03" },
             ],
           },
           {
             name: "NASI CUMI HITAM MADURA",
             emoji: "👥",
+            avatar: "",
+            memberAvatars: {
+              Winaa: "assets/igege.jpg",
+              Jeehan: "assets/je.jpeg",
+              Fakhira: "assets/fir.jpg",
+              Safiraa: "assets/rot.jpeg",
+              Aullia: "assets/igege.jpg",
+              Tasyaa: "assets/igege.jpg",
+            },
             unread: 6,
             msgs: [
               { day: "30 Oktober" },
@@ -1814,6 +1843,7 @@
           {
             name: "???",
             emoji: "❓",
+            avatar: "assets/igege.jpg",
             unread: 3,
             msgs: [
               { day: "30 Oktober" },
@@ -1833,6 +1863,7 @@
            {
              name: "Telsel ✅",
              emoji: "📞",
+             avatar: "",
              unread: 2,
              msgs: [
                { day: "30 Oktober" },
@@ -1846,7 +1877,8 @@
             },
             {
               name: "Muss",
-              emoji: "🙍",
+              emoji: "👤",
+             avatar: "assets/igege.jpg",
               unread: 3,
               msgs: [
                 { day: "29 Oktober" },
@@ -1874,8 +1906,8 @@
               name: "Your story",
               emoji: "",
               avatar: "assets/tul.jpeg",
-              text: "beginning a 17-year journey!",
-              bg: "assets/cuking.jpg",
+              text: "birthday girl",
+              bg: "assets/tul.jpeg",
             },
             {
               name: "kakitabel",
@@ -1888,7 +1920,7 @@
               name: "George Russell",
               emoji: "",
               avatar: "assets/rusli.jpg",
-              text: "Happie b-day!!",
+              text: "Happie bday!!",
               bg: "assets/rusli.jpg",
             },
           ],
@@ -1898,7 +1930,7 @@
               avatar: "assets/je.jpeg",
               emoji: "🎂",
               bg: "linear-gradient(135deg,#f9d3b8,#f2a1b5)",
-              img: "assets/je.jpeg",
+              img: "assets/cake.jpg",
               caption:
                 "Happy birthday Faiza! Semoga tahun ini makin banyak hal baik yang datang, WYATB!! ★ ★ ★ ★",
               likes: 128,
@@ -1911,9 +1943,9 @@
               avatar: "assets/rot.jpeg",
               emoji: "🏞️",
               bg: "linear-gradient(135deg,#cfe8c4,#8ecae6)",
-              img: "assets/ger.jpg",
+              img: "assets/mole.jpg",
               caption:
-                "Pengingat: Cara jago main mm di mobile legend gmna kak??? ● ● ● ● ● ●",
+                "Cara jago main mm di mobile legend gmna kak??? ● ● ● ● ● ●",
               likes: 96,
               comments: [["aulia2ndd", "hapus aja emelnya"]],
             },
@@ -1922,11 +1954,11 @@
               avatar: "assets/igege.jpg",
               emoji: "",
               bg: "linear-gradient(135deg,#f7e9a8,#b79ced)",
-              img: "assets/igege.jpg",
+              img: "assets/gifhbd.jfif",
               caption:
-                "Kalau hidup itu kanvas, semoga umur barumu penuh warna cerah. Happy birthday Faiza 🎨 ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥",
+                "Semoga di umur baru nya lebih happy. Faiza  ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥",
               likes: 74,
-              comments: [["inihintkah", "bintang - bulat - cinta"]],
+              comments: [["inihintkah!?", "bintang - bulat - cinta"]],
             },
           ],
         },
@@ -1964,13 +1996,13 @@
           {
             caption: "Senja favorit",
             emoji: "🌅",
-            album: "Alam",
+            album: "Kita",
             src: "alam1.jpg",
           },
           {
             caption: "Senja favorit",
             emoji: "🌅",
-            album: "Alam",
+            album: "Kita",
             src: "alam1.jpg",
           },
           {
@@ -1996,15 +2028,9 @@
         /* ---------- Catatan ---------- (todo: [teks, sudahDicentang]) */
         notes: [
           {
-            title: "📓 Catatan lama (jangan dihapus)",
-            date: "Lama banget",
-            text: `Catatan buat diriku sendiri:
-
-Kalau suatu hari kamu lupa kenapa kita bisa sedekat ini, ingat satu hal: yang bikin persahabatan ini berharga itu bukan barangnya, tapi MEMORY-nya. Semua tawa, semua cerita, semua hari random yang ujungnya jadi spesial.
-
-Simpan baik-baik. Itu awal dari segalanya.
-
-P.S. Kata yang ditulis kapital itu penting. 😉`,
+            title: "🖐️ Alhamdulilah",
+            date: "21 Desember 2012",
+            text: `kiamat ga nih?`,
           },
           {
             title: "✉️ Letters for You",
@@ -2020,24 +2046,23 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
 — from F.`,
           },
           {
-            title: "🎁 Wishlist hadiah",
+            title: "📋 List apaaja",
             date: "Kemarin",
             todo: [
-              ["Kopi dan kue enak", true],
-              ["Cat air baru 🎨", false],
-              ["Kanvas ukuran besar", false],
-              ["Jalan-jalan ke alam 🌄", false],
-              ["Traktiran dari diri sendiri 😆", false],
+              ["Sepedahan keliling NTB", false],
+              ["Nonton bioskop", true],
+              ["Jualan cilok", true],
+              ["Balikin buku fisika yang ketuker", true],
+              ["Traktiran fakhira", false],
             ],
           },
           {
             title: "✅ Resolusi umur baru",
             date: "Kemarin",
             todo: [
-              ["Melukis lebih sering", false],
-              ["Healing ke tempat baru", false],
-              ["Tidur cukup", false],
-              ["Tetap jadi Faiza yang baik hati", true],
+              ["Hidup", true],
+              ["Happie", true],
+              ["Tidur cukup", true],
             ],
           },
         ],
@@ -2048,18 +2073,18 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
             a: {
               title: "The Article",
               where: "Tempat dimana ada jawaban",
-              clue: "Ambil tahun tertua dan hapus digit pertamanya.",
+              clue: "Ambil tahun terkecil dan hapus digit pertamanya.",
               hint: "Tahun",
             },
             b: {
               title: "Random Conversations",
-              where: "Tempat komunikasi",
+              where: "Tempat berkomunikasi",
               clue: "Masing-masing menyimpan satu yang harus diambil.",
               hint: "Gabung menjadi 3",
             },
             c: {
               title: "The Grid",
-              where: "pinky",
+              where: "pinky cam",
               clue: "caption",
               hint: "Atas ke bawah",
             },
@@ -2070,7 +2095,7 @@ Panjang umur, sehat selalu, dan jangan lupa traktir ya! 🎂🌿
             "135",
           ],
           orderCorrect: 1,
-          passwordHint: "Kode redeem dijual di toko. Cek saldo, lalu cek emailmu.",
+          passwordHint: "Harus bayar",
         },
         gift: {
           letter: `Haii Faiza! 🎉
@@ -2241,6 +2266,42 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         img.onload = () => box.appendChild(img);
         img.src = src;
       }
+      function imageFileToDataUrl(file, maxSide = 1200) {
+        return new Promise((resolve, reject) => {
+          const supportedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/avif"];
+          if (!file || !supportedTypes.includes(file.type)) {
+            reject(new Error("Pilih foto JPG, PNG, WebP, GIF, atau AVIF."));
+            return;
+          }
+          if (file.size > 12 * 1024 * 1024) {
+            reject(new Error("Ukuran foto maksimal 12 MB."));
+            return;
+          }
+          const objectUrl = URL.createObjectURL(file);
+          const img = new Image();
+          img.onload = () => {
+            URL.revokeObjectURL(objectUrl);
+            try {
+              const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+              const canvas = document.createElement("canvas");
+              canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+              canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+              const ctx = canvas.getContext("2d");
+              ctx.fillStyle = "#fff";
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+              resolve(canvas.toDataURL("image/jpeg", 0.86));
+            } catch (_) {
+              reject(new Error("Foto tidak bisa diproses. Coba pilih gambar lain."));
+            }
+          };
+          img.onerror = () => {
+            URL.revokeObjectURL(objectUrl);
+            reject(new Error("Foto tidak dapat dibuka. Coba pilih gambar lain."));
+          };
+          img.src = objectUrl;
+        });
+      }
       function waAvatarMarkup(contact, compact = false) {
         const emoji = esc(contact.emoji || "🙂");
         const content = contact.avatar
@@ -2387,10 +2448,16 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
       /* ---------- login ---------- */
       (function () {
         const av = $("#lgAvatar");
-        av.textContent = (CONFIG.name || "F")[0].toUpperCase();
-        mediaBox(av, CONFIG.avatar);
+        const fallback = (CONFIG.name || "F")[0].toUpperCase();
+        av.textContent = fallback;
+        if (CONFIG.avatar) {
+          const img = new Image();
+          img.alt = "";
+          img.onload = () => av.replaceChildren(img);
+          img.src = CONFIG.avatar;
+        }
         $("#lgName").textContent = CONFIG.name;
-        $("#lgWelcome").textContent = "Password accepted, unlocking something..";
+        $("#lgWelcome").textContent = "Kata sandi benar, memuat..";
       })();
       $("#lgForm").onsubmit = (e) => {
         e.preventDefault();
@@ -2401,7 +2468,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           void f.offsetWidth;
           f.classList.add("shake");
           $("#lgHint").textContent =
-            "incorrect password, Hint: day/month/year";
+            "Password salah, ex: 27072009";
           $("#lgPass").value = "";
           $("#lgPass").focus();
           return;
@@ -2444,7 +2511,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         $("#desktop").classList.remove("on");
         $("#lgForm").style.display = "flex";
         $("#lgHint").style.display = "block";
-        $("#lgHint").textContent = "Hint: day/month/year";
+        $("#lgHint").textContent = "Hint: T/B/L";
         $("#lgWelcome").style.display = "none";
         $("#lgPass").value = "";
         $("#login").classList.remove("hide");
@@ -2533,16 +2600,16 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
 
       /* ---------- achievements: retro birthday quest ---------- */
       const ACHIEVEMENTS = [
-        { id: "first-login", title: "A LITTLE HELLO", icon: "🌿", desc: "Successfully logged into the computer." },
-        { id: "first-app", title: "NEW WORLD LOADED", icon: "🪴", desc: "Opened your first app. The adventure begins!" },
-        { id: "memory-collector", title: "MEMORY COLLECTOR", icon: "📸", desc: "Visited the photo gallery." },
-        { id: "letter-reader", title: "A NOTE FOR YOU", icon: "💌", desc: "Opened the notes app to read a birthday note." },
-        { id: "social-butterfly", title: "SOCIAL BUTTERFLY", icon: "☁️", desc: "Checked both WhysApp and Instaglam." },
-        { id: "detective", title: "JUNIOR DETECTIVE", icon: "🕵️", desc: "Recovered a mysterious file from the Recycle Bin." },
-        { id: "fragments", title: "FRAGMENT FINDER", icon: "🧩", desc: "Collected all three memory fragments." },
-        { id: "access-granted", title: "ACCESS GRANTED", icon: "🔓", desc: "Cracked the password and unlocked Project 17." },
-        { id: "wish-maker", title: "WISH MAKER", icon: "🎂", desc: "Made a wish at the very end. Happy birthday!" },
-        { id: "ultimate-bestie", title: "THAT'S A WRAP", icon: "🤍", desc: "Unlocked every achievement, you've seen it all. Hope you enjoyed this little surprise!", final: true },
+        { id: "first-login", title: "A LITTLE HELLO", icon: "🌿", desc: "Berhasil login ke komputer." },
+        { id: "first-app", title: "NEW WORLD LOADED", icon: "🪴", desc: "Membuka aplikasi pertama. Perjalanan di mulai!" },
+        { id: "memory-collector", title: "MEMORY COLLECTOR", icon: "📸", desc: "Melihat galeri foto." },
+        { id: "letter-reader", title: "A NOTE FOR YOU", icon: "💌", desc: "Membuka catatan." },
+        { id: "social-butterfly", title: "SOCIAL BUTTERFLY", icon: "☁️", desc: "Memeriksa aplikasi WhysApp dan Instaglam." },
+        { id: "detective", title: "JUNIOR DETECTIVE", icon: "🕵️", desc: "Mengembalikan file misterius dari recycle bin." },
+        { id: "fragments", title: "FRAGMENT FINDER", icon: "🧩", desc: "Berhasil mengumpulkan semua fragment yang terpisah." },
+        { id: "access-granted", title: "ACCESS GRANTED", icon: "🔓", desc: "Memecahkan kata sandi dan membuka Project 17." },
+        { id: "wish-maker", title: "WISH MAKER", icon: "🎂", desc: "Last. Happy birthday!" },
+        { id: "ultimate-bestie", title: "THAT'S A WRAP", icon: "🤍", desc: "Membuka semua penghargaan. Hope you enjoyed this little surprise!", final: true },
       ];
       const ACHIEVEMENT_STORAGE_KEY = "faiza-birthday-achievements-v1";
       const achievementState = { unlocked: new Set(), openedApps: new Set(), toastTimer: null };
@@ -2713,16 +2780,16 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           build: buildMail,
         },
         dept: {
-          title: "Dept. of 17",
-          icon: "🪪",
+          title: "Dept of 17",
+          icon: "🏢",
           bg: "linear-gradient(135deg,#3e6b46,#f3d76b)",
           w: 560,
           h: 620,
           build: buildDept,
         },
         reset: {
-          title: "Time Machine",
-          icon: "⏪",
+          title: "Mesin waktu",
+          icon: "🔄️",
           bg: "linear-gradient(135deg,#b79ced,#8ecae6)",
           w: 460,
           h: 440,
@@ -2938,7 +3005,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
                   Math.floor(Math.random() * 3)
                 ];
 
-              return "fitur jawab hanya untuk say thanks dan say hallo";
+              return "mf lagi minim pengetahan";
             }
 
             form.onsubmit = (e) => {
@@ -2995,7 +3062,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
                 el(
                   "div",
                   "msg " + m.w,
-                  `${m.who ? `<div class="who" style="color:${whoColor(m.who)}">${esc(m.who)}</div>` : ""}${esc(m.t)}<div class="tm">${esc(m.time || "")}${m.w === "me" ? ' <span style="color:#53bdeb">✓✓</span>' : ""}</div>`,
+                  `${m.who ? `<div class="who"><img class="wa-who-avatar" src="${esc(c.memberAvatars?.[m.who] || "assets/igege.jpg")}" alt="${esc(m.who)}" onerror="this.remove()"><span style="color:${whoColor(m.who)}">${esc(m.who)}</span></div>` : ""}${esc(m.t)}<div class="tm">${esc(m.time || "")}${m.w === "me" ? ' <span style="color:#53bdeb">✓✓</span>' : ""}</div>`,
                 ),
               );
             box.scrollTop = box.scrollHeight;
@@ -3194,12 +3261,12 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
                   STATE.side.secret = true;
                   save();
                 }
-                if (window.ucupFound) window.ucupFound(); // [BARU] Ucup pulang
+                if (window.ucupFound) window.ucupFound(); 
                 render();
                 return;
               }
               error.textContent = CONFIG.secretAlbumPassword
-                ? "Salah jirr. Coba lagi.. jawabannya ada di komputer ini lho"
+                ? "Salah jirr. Coba lagi.. jawabannya ada di artikel"
                 : "Password album belum diatur di konfigurasi.";
               error.hidden = false;
               input.focus();
@@ -3417,25 +3484,25 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
 
       /* ============ APP: Recycle Bin ============ */
       const BIN_FILES = [
-        { id: "img", name: "IMG_0017.mem", size: "0 KB", status: "Rusak", icon: "🖼️", note: "Ukuran 0 KB. Kemungkinan besar nggak bisa diselamatkan." },
-        { id: "note", name: "old_note.dat", size: "2 KB", status: "Dapat dipulihkan", icon: "📄", note: "Catatan lama. Datanya masih utuh." },
+        { id: "img", name: "IMG_0017.jpg", size: "0 KB", status: "Rusak", icon: "🖼️", note: "Ukuran 0 KB. Kemungkinan besar tidak bisa diselamatkan." },
+        { id: "note", name: "old_note.dat", size: "2 KB", status: "Dapat dipulihkan", icon: "📄", note: "Catatan lama." },
         { id: "pic", name: "memory_03.pic", size: "1,2 MB", status: "Dapat dipulihkan", icon: "🏞️", note: "Gambar dengan potongan data." },
-        { id: "p17", name: "project17.tmp", size: "17 KB", status: "Tidak dikenal", icon: "🧩", note: "File sementara, asalnya tidak diketahui." },
+        { id: "p17", name: "project17.tmp", size: "17 KB", status: "Tidak dikenal", icon: "🧩", note: "Tidak diketahui." },
       ];
       function binResult(id) {
         if (id === "img")
-          return { ok: false, html: "<b>❌ Pemulihan gagal</b><br>File rusak (error 0x017). Tidak ada data yang bisa diselamatkan.<br><small>Tenang, ini bukan file yang kamu cari.</small>" };
+          return { ok: false, html: "<b>❌ Pemulihan gagal</b><br>File rusak (error 0x017). Tidak ada data yang bisa diselamatkan.<br><small>Tenang, ini bukan file yang dicari.</small>" };
         if (id === "note")
-          return { ok: true, html: '<b>📄 Recovery log #017</b><br><span class="mono">Three fragments remain.<br>Find them where memories are stored.</span><br><small>💡 Tempat kenangan disimpan: catatan, percakapan, dan unggahan foto.</small>' };
+          return { ok: true, html: '<b>📄 Recovery log #017</b><br><span class="mono">Tiga fragment tersisa.<br>Temukanlah fragment-fragment.</span><br><small>💡 artikel, komunikasi, dan caption.</small>' };
         if (id === "pic")
-          return { ok: true, html: '<div class="bin-pic">🏞️</div><b>memory_03.pic</b><br>Potongan gambar berhasil dipulihkan. Di pojoknya ada tulisan kecil:<br><span class="mono">"Awal cerita selalu ada di tulisan lama."</span><br><small>💡 Petunjuk pertama: coba cek aplikasi Catatan.</small>' };
+          return { ok: true, html: '<div class="bin-pic">🏞️</div><b>memory_03.pic</b><br>Potongan gambar berhasil dipulihkan. Di pojoknya ada tulisan kecil:<br><span class="mono">"artikel bersejarah."</span><br><small>💡 Petunjuk pertama: coba cek aplikasi gugel.</small>' };
         return { ok: true, html: "<b>🧩 project17.tmp berhasil dipulihkan</b><br>Aplikasi baru bernama <b>Project 17</b> sekarang ada di desktop kamu." };
       }
       function buildBin() {
         const root = el(
           "div",
           "bin",
-          `<div class="bin-top">🗑️ <b>Recycle Bin</b> • 4 file terhapus<br>💡 Coba pulihkan file yang berstatus <b>Dapat dipulihkan</b> dulu. File yang rusak atau tidak dikenal mungkin butuh petunjuk dari file lain.</div>
+          `<div class="bin-top">🗑️ <b>Recycle Bin</b> • 4 file terhapus<br>File yang rusak atau tidak dikenal mungkin butuh petunjuk dari file lain.</div>
            <div class="bin-list"></div>
            <div class="bin-res"><span style="color:#8a9086">Pilih file lalu tekan "Pulihkan".</span></div>`,
         );
@@ -3669,7 +3736,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             const file = el(
               "div",
               "filebox",
-              '<div style="font-size:3rem">🎁</div><div style="font-weight:700;margin:8px 0">for_faiza_final.gift</div><div style="font-size:.8rem;opacity:.8">Klik untuk membuka hadiah terakhir</div>',
+              '<div style="font-size:3rem">🎁</div><div style="font-weight:700;margin:8px 0">final_sweet17.gift</div><div style="font-size:.8rem;opacity:.8">Klik untuk membuka hadiah terakhir</div>',
             );
             file.onclick = () => openApp("gift");
             root.appendChild(file);
@@ -3755,7 +3822,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             "div",
             "gcard" + (STATE.gift.letter ? "" : " locked"),
           );
-          memoryCard.appendChild(el("h3", "", "Part 2 — Our Little Memories"));
+          memoryCard.appendChild(el("h3", "", "Part 2 —"));
           if (!STATE.gift.letter) {
             memoryCard.appendChild(el("div", "", "🔒 Baca suratnya sampai habis dulu"));
           } else {
@@ -3903,7 +3970,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         function render() {
           const total = cart.reduce((a, id) => a + it(id).p, 0), hasKey = cart.includes("code");
           root.innerHTML = `<div class="shop-h"><b>🛒 Toko</b><span>Saldo: ${rp(bal())}</span></div>
-            <div class="shop-n">💡 Beli barang dengan bijak ya. Semua pesanan tidak bisa dikembalikan.</div>
+            <div class="shop-n">💡 Beli barang dengan bijak. Semua pesanan tidak bisa dikembalikan.</div>
             <div class="shop-g">${SHOP.items.map((i) => {
               const own = S.bought.includes(i.id), inC = cart.includes(i.id);
               return `<div class="shop-i"><div class="e">${i.e}</div>${esc(i.n)}<small>${esc(i.m)}</small><b>${i.out ? "Stok habis" : rp(i.p)}</b><button data-add="${i.id}" ${i.out || own || inC ? "disabled" : ""}>${own ? "Dibeli ✓" : inC ? "Di keranjang" : "+ Keranjang"}</button></div>`;
@@ -3920,7 +3987,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           const co = root.querySelector("[data-co]");
           if (co) co.onclick = () => {
             const vk = root.querySelector(".vk");
-            if (total > bal()) { msg = "Saldo tidak cukup 😢"; return render(); }
+            if (total > bal()) { msg = "Liat duit gasi brok 😢"; return render(); }
             if (hasKey && cnorm(vk && vk.value) !== cnorm(fragKey())) { msg = "Kode verifikasi salah."; return render(); }
             S.bought.push(...cart); cart = []; save(); msg = "Pesanan berhasil ✅"; render();
             setTimeout(() => {
@@ -3942,7 +4009,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         const root = el("div", "mail");
         let cur = 0;
         const mails = () => {
-          const m = [{ f: "Toko", s: "Selamat datang! Saldo Rp70.000 sudah masuk 🎉", b: "Halo " + CONFIG.name + "!\n\nSaldo awal Rp70.000 sudah masuk ke akunmu di Toko. Belanjalah dengan bijak ya 😉" }];
+          const m = [{ f: "Toko", s: "Selamat! Top up saldo Rp70.000 sudah masuk 🎉", b: "Halo " + CONFIG.name + "!\n\nSaldo awal Rp70.000 sudah masuk ke akunmu di Toko. Belanjalah dengan bijak ya 😉" }];
           STATE.shop.bought.forEach((id) => {
             const i = SHOP.items.find((x) => x.id === id);
             const rp = "Rp" + i.p.toLocaleString("id-ID");
@@ -3950,12 +4017,11 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
               ? { f: i.m, s: "Pesananmu: " + i.n + " 🎟️", b: "Terima kasih sudah berbelanja!\n\nKode redeem kamu:\n\n" + SHOP.code + "\n\nMasukkan kode ini di aplikasi Project 17." }
               : { f: i.m, s: "Pesananmu: " + i.n, b: "Terima kasih sudah berbelanja di " + i.m + "!\n\nPesanan: " + i.n + "\nTotal: " + rp + "\n\nBarang yang sudah dibeli tidak dapat dikembalikan." });
           });
-          // [BARU] hadiah side quest Elus Ucup 17 kali
           if (STATE.side.petDone)
             m.unshift({
               f: "Ucup",
               s: "Dari Ucup",
-              b: "hai, ini ucup!\n\nmakasih udah elus aku 17 kali. sebagai hadiah, aku kasih foto aku yang asli buat kamu.\n\njangan lupa elus aku lagi kapan-kapan, ya. meow!",
+              b: "hai, ini ucup!\n\nkucing asli gue, ilang 2024 masi gamon nijh.",
               img: UCUP_PHOTO,
             });
           return m;
@@ -3981,7 +4047,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
 
       /* ============ [BARU] Quest log: bar progress main & side quest ============ */
       // Foto asli Ucup untuk email hadiah: taruh file ini di folder assets/
-      const UCUP_PHOTO = "assets/ucup.jpg";
+      const UCUP_PHOTO = "assets/ucup.jpeg";
       let questMin = innerWidth <= 700;
       function questToast(icon, title, text, onclick) {
         const t = $("#toast");
@@ -4004,9 +4070,9 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             { t: "Masukkan kode redeem di Project 17", n: STATE.unlocked ? 1 : 0, of: 1, done: !!STATE.unlocked },
           ],
           side: [
-            { t: "Unlock album Secret", n: S.secret ? 1 : 0, of: 1, done: !!S.secret },
-            { t: "Elus Ucup 17 kali", n: S.pets, of: 17, done: !!S.petDone },
-            { t: "Unlock pixel-art ID card", n: S.idDone ? 1 : 0, of: 1, done: !!S.idDone },
+            { t: "Buka album secret", n: S.secret ? 1 : 0, of: 1, done: !!S.secret },
+            { t: "Elus Ucup", n: S.pets, of: 17, done: !!S.petDone },
+            { t: "Membuat identitas di deptartemen", n: S.idDone ? 1 : 0, of: 1, done: !!S.idDone },
           ],
         };
       }
@@ -4042,7 +4108,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
       /* ============ [BARU] APP: The Department of Turning 17 ============ */
       const DEPT_INK = "#1b2b6b";
       const AV_ROWS = ["........", ".....bbb", "....bbbb", "...hhhhh", "..hhhhhh", "..hhssss", "..hsssss", "..hsesss", "..hsssss", "..hcssss", "..hssssm", "...hssss", "......ss", "...ggggg", "..gggggg", "..ggyggg", "..gggggg", "..gggggg"];
-      const AV_PAL = { b: "#c4577a", h: "#3a2a22", s: "#f2c7a5", e: "#1a1a1a", c: "#f2a1b5", m: "#c0504d", g: "#3e6b46", y: "#f3d76b" };
+      const AV_PAL = { b: "#c4577a", h: "#3a2a22", s: "#f2c7a5", e: "#1a1a1a", c: "#f2a1b5", m: "#c0504d", g: "#168bff", y: "#f3d76b" };
       const MON = ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"];
       function drawPixelAvatar(g, x, y, w, h) {
         g.fillStyle = "#bfe3ee";
@@ -4059,18 +4125,6 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             g.fillRect(ox + c * s, oy + r * s, s, s);
           }
         });
-      }
-      let realPhotoPromise = null;
-      function loadRealPhoto() {
-        if (!realPhotoPromise)
-          realPhotoPromise = new Promise((res) => {
-            if (!CONFIG.avatar) return res(null);
-            const im = new Image();
-            im.onload = () => res(im);
-            im.onerror = () => res(null);
-            im.src = CONFIG.avatar;
-          });
-        return realPhotoPromise;
       }
       function drawPixelPhoto(g, img, x, y, w, h) {
         const tw = Math.max(8, Math.round(w / 6)), th = Math.max(8, Math.round(h / 6));
@@ -4147,82 +4201,83 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         cv.width = W;
         cv.height = H;
         const g = cv.getContext("2d");
-        const [photoImg, sigImg] = await Promise.all([p.photo === "real" ? loadRealPhoto() : Promise.resolve(null), loadImg(p.sig)]);
+        const photoSrc = p.photo === "real" ? CONFIG.avatar : typeof p.photo === "string" && p.photo !== "pixel" ? p.photo : "";
+        const [photoImg, sigImg] = await Promise.all([photoSrc ? loadImg(photoSrc) : Promise.resolve(null), loadImg(p.sig)]);
         g.textBaseline = "alphabetic";
         g.textAlign = "left";
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         g.fillRect(0, 0, W, H);
-        g.fillStyle = "#f6f0d4";
+        g.fillStyle = "#eaf5ff";
         g.fillRect(8, 8, W - 16, H - 16);
-        g.fillStyle = "rgba(62,107,70,.08)";
+        g.fillStyle = "rgba(22,139,255,.10)";
         for (let yy = 100; yy < 500; yy += 8) for (let xx = (yy / 8) % 2 ? 4 : 0; xx < W; xx += 8) g.fillRect(xx, yy, 4, 4);
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         [[8, 8], [W - 20, 8], [8, H - 20], [W - 20, H - 20]].forEach(([x, y]) => g.fillRect(x, y, 12, 12));
         // header
-        g.fillStyle = "#3e6b46";
+        g.fillStyle = "#168bff";
         g.fillRect(20, 8, W - 40, 82);
         g.fillStyle = "#f3d76b";
         g.fillRect(8, 90, W - 16, 6);
         g.fillStyle = "#f3d76b";
         g.font = 'bold 30px "Courier New",monospace';
-        g.fillText("DEPARTMENT OF TURNING 17", 32, 52);
-        g.fillStyle = "#d9e8cf";
+        g.fillText("KARTU IDENTITAS", 32, 52);
+        g.fillStyle = "#e7f4ff";
         g.font = 'bold 15px "Courier New",monospace';
-        g.fillText("REPUBLIC OF FAIZA · LEVEL 17 IDENTITY CARD", 32, 76);
-        g.fillStyle = "#17251d";
+        g.fillText("REPUBLIC OF LOUKIEF · FAIZA'S SWEET SEVENTEEN CARD", 32, 76);
+        g.fillStyle = "#0b2b4a";
         g.fillRect(W - 138, 18, 108, 62);
         g.fillStyle = "#f3d76b";
         g.fillRect(W - 134, 22, 100, 54);
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         g.font = 'bold 44px "Courier New",monospace';
         g.textAlign = "center";
         g.fillText("17", W - 84, 64);
         g.textAlign = "left";
         // photo
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         g.fillRect(30, 106, 222, 274);
-        if (p.photo === "real" && photoImg) drawPixelPhoto(g, photoImg, 36, 112, 210, 262);
+        if (photoImg) drawPixelPhoto(g, photoImg, 36, 112, 210, 262);
         else drawPixelAvatar(g, 36, 112, 210, 262);
         // left info
         const label = (t, x, y) => {
-          g.fillStyle = "#6b7a5f";
+          g.fillStyle = "#537ba4";
           g.font = 'bold 12px "Courier New",monospace';
           g.fillText(t, x, y);
         };
         label("ID NO.", 36, 398);
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         g.fillText(fitText(g, p.no, 210, 19, "bold", 12), 36, 420);
-        label("VALID UNTIL", 36, 446);
-        g.fillStyle = "#17251d";
+        label("BERLAKU HINGGA", 36, 446);
+        g.fillStyle = "#0b2b4a";
         g.fillText(fitText(g, p.valid, 210, 19, "bold", 12), 36, 468);
-        g.fillStyle = "#3e6b46";
+        g.fillStyle = "#168bff";
         g.fillRect(36, 478, 210, 22);
         g.fillStyle = "#f3d76b";
-        g.font = 'bold 13px "Courier New",monospace';
+          g.font = 'bold 13px "Courier New",monospace';
         g.textAlign = "center";
-        g.fillText("LEVEL 17 · ACTIVE", 141, 494);
+        g.fillText("SEVENTEEN · ACTIVE", 141, 494);
         g.textAlign = "left";
         // right fields
         const field = (t, v, x, y, maxW, px) => {
           label(t, x, y + 14);
-          g.fillStyle = "#17251d";
+          g.fillStyle = "#0b2b4a";
           const s = fitText(g, v, maxW, px, "bold", 13);
           g.fillText(s, x, y + 42);
-          g.fillStyle = "#cfc8a4";
+          g.fillStyle = "#a9c8e8";
           g.fillRect(x, y + 48, maxW, 2);
         };
-        field("NAME", p.name, 276, 112, 544, 26);
-        field("PREFERRED NAME", p.pref, 276, 170, 260, 22);
-        field("DATE OF BIRTH", fmtDate(p.dob), 560, 170, 260, 22);
-        field("OCCUPATION", p.job, 276, 228, 544, 22);
-        field("SPECIAL ABILITY", p.power, 276, 286, 544, 22);
-        label("PERSONALITY", 276, 358);
-        g.fillStyle = "#17251d";
+        field("NAMA LENGAKAP", p.name, 276, 112, 544, 26);
+        field("NAMA PANGGILAN", p.pref, 276, 170, 260, 22);
+        field("TANGGAL LAHIR", fmtDate(p.dob), 560, 170, 260, 22);
+        field("PEKERJAAN", p.job, 276, 228, 544, 22);
+        field("KEMAMPUAN", p.power, 276, 286, 544, 22);
+        label("QUOTES", 276, 358);
+        g.fillStyle = "#0b2b4a";
         g.font = '15px "Courier New",monospace';
         wrapLines(g, p.pers, 470, 2).forEach((ln, i) => g.fillText(ln, 276, 380 + i * 20));
         // signature
-        label("SIGNATURE", 276, 424);
-        g.fillStyle = "#17251d";
+        label("TANDA TANGAN", 276, 424);
+        g.fillStyle = "#0b2b4a";
         g.fillRect(276, 492, 256, 3);
         if (sigImg) {
           const sc = Math.min(256 / sigImg.naturalWidth, 60 / sigImg.naturalHeight, 1.6);
@@ -4242,22 +4297,22 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         g.strokeRect(-141, -29, 282, 58);
         g.font = 'bold 26px "Courier New",monospace';
         g.textAlign = "center";
-        g.fillText("CERTIFIED", 0, -3);
-        g.fillText("BIRTHDAY GIRL", 0, 23);
+        g.fillText("FAIZA'S", 0, -3);
+        g.fillText("SWEET SEVENTEN", 0, 23);
         g.restore();
         // footer
         g.fillStyle = "#f3d76b";
         g.fillRect(8, 504, W - 16, 28);
-        g.fillStyle = "#17251d";
+        g.fillStyle = "#0b2b4a";
         g.font = 'bold 14px "Courier New",monospace';
         g.textAlign = "center";
-        g.fillText("FICTIONAL BIRTHDAY KEEPSAKE — NOT AN OFFICIAL ID", W / 2, 523);
+        g.fillText("LOUKIEF — NOT AN OFFICIAL ID", W / 2, 523);
         g.textAlign = "left";
       }
       async function downloadCard(cv, p) {
         const a = document.createElement("a");
         const slug = String(p.pref || p.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "citizen";
-        a.download = `level17-id-${slug}.png`;
+        a.download = `Seventeen-id-${slug}.png`;
         try {
           a.href = cv.toDataURL("image/png");
         } catch (_) {
@@ -4340,55 +4395,76 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         const root = el("div", "dept");
         const existing = () => (STATE.side.idDone && STATE.side.id ? STATE.side.id : null);
         function office() {
-          root.innerHTML = `<div class="d-box"><h2>🪪 THE DEPARTMENT OF TURNING 17</h2><p class="d-quote">“One citizen. One identity. Seventeen years of being iconic.”</p><p>Welcome to the Department of Turning 17. Every citizen deserves an identity of their own. Complete your application to receive your official Level 17 Identity Card.</p><div class="d-row"><button class="d-btn" data-go>APPLY FOR LEVEL 17 ID</button></div></div><p style="font-size:.72rem;opacity:.75">Side quest opsional · hasilnya kartu kenang-kenangan fiktif, bukan ID resmi.</p>`;
+          root.innerHTML = `<div class="d-box"><h2>🪪 DEPARTEMEN MENUJU 17 TAHUN</h2><p class="d-quote">“officially seventeen yo.”</p><p>Selamat datang di Departemen. Setiap warga punya identitasnya sendiri, giliran kamu buat punya kartu identitas.</p><div class="d-row"><button class="d-btn" data-go>AJUKAN</button></div></div><p style="font-size:.72rem;opacity:.75">Side quest opsional · hasilnya kartu identitas.</p>`;
           root.querySelector("[data-go]").onclick = () => form(null);
         }
         function form(prev) {
           const v = (k, d) => esc(prev && prev[k] ? prev[k] : d || "");
-          root.innerHTML = `<div class="d-box"><h2>IDENTITY REGISTRATION</h2><p>Isi data versi kamu. Semua ini akan muncul di kartu akhirnya. Jangan isi nomor identitas asli ya.</p></div>
-            <label>FULL NAME *</label><input type="text" id="f_name" maxlength="40" value="${v("name")}" placeholder="nama lengkap" autocomplete="off">
-            <label>PREFERRED NAME</label><input type="text" id="f_pref" maxlength="24" value="${v("pref")}" placeholder="biasa dipanggil apa?" autocomplete="off">
-            <label>DATE OF BIRTH</label><input type="date" id="f_dob" value="${v("dob", "2009-10-30")}">
-            <label>OCCUPATION</label><input type="text" id="f_job" maxlength="40" value="${v("job")}" placeholder="misal: Pelukis Perasaan" autocomplete="off">
-            <label>SPECIAL ABILITY</label><input type="text" id="f_power" maxlength="40" value="${v("power")}" placeholder="misal: Bisa tidur di mana saja" autocomplete="off">
-            <label>PERSONALITY DESCRIPTION</label><textarea id="f_pers" maxlength="110" placeholder="satu dua kalimat tentang kamu">${v("pers")}</textarea>
-            <label>PHOTO</label>
-            <div class="d-photos"><button type="button" class="d-ph on" data-ph="pixel"><canvas width="72" height="90"></canvas>PIXEL AVATAR</button><button type="button" class="d-ph" data-ph="real"><canvas width="72" height="90"></canvas><span>FOTO PROFIL</span></button></div>
+          root.innerHTML = `<div class="d-box"><h2>PENDAFTARAN IDENTITAS</h2><p>Isi data versi kamu, semua data akan muncul di kartu akhirnya.</p></div>
+            <label>NAMA LENGKAP *</label><input type="text" id="f_name" maxlength="40" value="${v("name")}" placeholder="nama lengkap" autocomplete="off">
+            <label>NAMA PANGGILAN</label><input type="text" id="f_pref" maxlength="24" value="${v("pref")}" placeholder="biasa dipanggil apa?" autocomplete="off">
+            <label>TANGGAL LAHIR</label><input type="date" id="f_dob" value="${v("dob", "2009-10-30")}">
+            <label>PEKERJAAN</label><input type="text" id="f_job" maxlength="40" value="${v("job")}" placeholder="tulis pekerjaan" autocomplete="off">
+            <label>KEMAMPUAN</label><input type="text" id="f_power" maxlength="40" value="${v("power")}" placeholder="bisa apalo" autocomplete="off">
+            <label>QUOTES</label><textarea id="f_pers" maxlength="110" placeholder="Kata-katanya bank">${v("pers")}</textarea>
+          <label for="f_photo">FOTO KAMU</label>
+          <div class="d-photo-upload">
+            <canvas class="d-photo-preview" width="72" height="90" aria-label="Pratinjau foto kartu identitas"></canvas>
+            <div class="d-photo-controls">
+              <input type="file" id="f_photo" accept="image/jpeg,image/png,image/webp,image/gif,image/avif">
+              <small>Unggah foto sendiri (maks. 12 MB). Foto dibuat bergaya pixel pada kartu.</small>
+              <button type="button" class="d-btn ghost" data-login-photo>PAKAI FOTO LOGIN</button>
+            </div>
+          </div>
             <label>SIGNATURE * <span style="font-weight:400;color:#d2dfca">(gambar pakai jari / mouse)</span></label>
             <canvas class="d-sig" width="600" height="200"></canvas>
             <div class="d-row" style="margin-top:8px"><button type="button" class="d-btn ghost" data-clear>HAPUS TANDA TANGAN</button></div>
             ${prev && prev.sig ? '<p style="font-size:.7rem;margin-top:6px">Kosongkan kalau mau tetap pakai tanda tangan lama.</p>' : ""}
             <div class="d-err" role="alert"></div>
             <div class="d-row"><button type="button" class="d-btn" data-submit>SUBMIT APPLICATION</button>${prev ? '<button type="button" class="d-btn ghost" data-cancel>BATAL</button>' : ""}</div>`;
-          let photo = prev && prev.photo === "real" ? "real" : "pixel";
-          const phBtns = [...root.querySelectorAll(".d-ph")];
-          const setPh = (k) => {
-            photo = k;
-            phBtns.forEach((b) => b.classList.toggle("on", b.dataset.ph === k));
+          let photo = prev && typeof prev.photo === "string" && prev.photo !== "pixel" && prev.photo !== "real"
+            ? prev.photo
+            : CONFIG.avatar || "";
+          const photoInput = root.querySelector("#f_photo");
+          const photoPreview = root.querySelector(".d-photo-preview");
+          const err = root.querySelector(".d-err");
+          let previewVersion = 0;
+          const showPhotoPreview = async (src) => {
+            const version = ++previewVersion;
+            const img = src ? await loadImg(src) : null;
+            if (!root.isConnected || version !== previewVersion) return;
+            const ctx = photoPreview.getContext("2d");
+            ctx.clearRect(0, 0, photoPreview.width, photoPreview.height);
+            if (img) drawPixelPhoto(ctx, img, 0, 0, photoPreview.width, photoPreview.height);
+            else drawPixelAvatar(ctx, 0, 0, photoPreview.width, photoPreview.height);
           };
-          phBtns.forEach((b) => (b.onclick = () => !b.disabled && setPh(b.dataset.ph)));
-          drawPixelAvatar(phBtns[0].querySelector("canvas").getContext("2d"), 0, 0, 72, 90);
-          loadRealPhoto().then((img) => {
-            if (!root.isConnected) return;
-            const c = phBtns[1].querySelector("canvas"), cg = c.getContext("2d");
-            if (img) drawPixelPhoto(cg, img, 0, 0, 72, 90);
-            else {
-              drawPixelAvatar(cg, 0, 0, 72, 90);
-              phBtns[1].disabled = true;
-              phBtns[1].querySelector("span").textContent = "FOTO TIDAK ADA";
-              if (photo === "real") setPh("pixel");
+          showPhotoPreview(photo);
+          photoInput.onchange = async () => {
+            const file = photoInput.files && photoInput.files[0];
+            if (!file) return;
+            try {
+              photo = await imageFileToDataUrl(file);
+              await showPhotoPreview(photo);
+              err.textContent = "";
+            } catch (error) {
+              err.textContent = error.message || "Foto tidak bisa digunakan.";
+            } finally {
+              photoInput.value = "";
             }
-          });
-          setPh(photo);
+          };
+          root.querySelector("[data-login-photo]").onclick = () => {
+            photo = CONFIG.avatar || "";
+            showPhotoPreview(photo);
+            err.textContent = "";
+          };
           const pad = makeSigPad(root.querySelector(".d-sig"));
           root.querySelector("[data-clear]").onclick = () => pad.clear();
-          const err = root.querySelector(".d-err");
           if (prev) root.querySelector("[data-cancel]").onclick = card.bind(null, false);
           root.querySelector("[data-submit]").onclick = () => {
             const name = root.querySelector("#f_name").value.trim();
             if (!name) { err.textContent = "Full Name wajib diisi."; root.querySelector("#f_name").focus(); return; }
             const sig = pad.hasInk() ? pad.exportPng() : prev && prev.sig;
-            if (!sig) { err.textContent = "Tanda tangan dulu ya, citizen."; return; }
+            if (!sig) { err.textContent = "Tanda tangan dulu."; return; }
             const dob = root.querySelector("#f_dob").value || "2009-10-30";
             const p = {
               name,
@@ -4397,25 +4473,25 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
               job: root.querySelector("#f_job").value.trim() || "Citizen of Level 17",
               power: root.querySelector("#f_power").value.trim() || "Classified",
               pers: root.querySelector("#f_pers").value.trim() || "Thoughtful, creative, and one of a kind.",
-              photo,
+              photo: photo || "pixel",
               sig,
             };
             const h = hashStr(name + "|" + dob);
-            p.no = "L17-" + String(h % 10000).padStart(4, "0") + "-" + String(Math.floor(h / 10000) % 10000).padStart(4, "0");
+            p.no = "F17-" + String(h % 10000).padStart(4, "0") + "-" + String(Math.floor(h / 10000) % 10000).padStart(4, "0");
             p.valid = validUntil(dob);
             review(p);
           };
         }
         function review(p) {
-          root.innerHTML = `<div class="d-box"><h2>APPLICATION REVIEW</h2><p>Berkas sedang diperiksa oleh pejabat yang sangat sibuk…</p></div>
-            <div class="d-paper" style="padding-bottom:78px"><h3>FORM L17-A · LEVEL 17 ID APPLICATION</h3>
-              <div class="d-line"><span>Application Type</span><b>Level 17 ID</b></div>
-              <div class="d-line"><span>Applicant</span><b>${esc(p.name)}</b></div>
-              <div class="d-line"><span>Processing Fee</span><b>1 Birthday Wish</b></div>
-              <div class="d-line"><span>Payment Status</span><b>PAID IN HAPPINESS</b></div>
+          root.innerHTML = `<div class="d-box"><h2>PEMERIKSAAN PENDAFTARAN</h2><p>Berkas sedang diperiksa oleh pejabat…</p></div>
+            <div class="d-paper" style="padding-bottom:78px"><h3>FORM F17-A · PENGAJUAN KARTU IDENTITAS</h3>
+              <div class="d-line"><span>Jenis Pengajuan</span><b>Kartu Identitas</b></div>
+              <div class="d-line"><span>Yang Mengaju</span><b>${esc(p.name)}</b></div>
+              <div class="d-line"><span>Biaya Administrasi</span><b>1 Birthday Wish</b></div>
+              <div class="d-line"><span>Status Pembayaran</span><b>LUNAS (FREE)</b></div>
               <div class="d-stamp">APPROVED</div></div>
-            <p class="d-quote" style="display:none;margin-top:14px">After careful consideration of absolutely nothing, your application has been approved.</p>
-            <div class="d-row"><button class="d-btn" style="display:none" data-go>PROCEED TO ID CARD ISSUANCE</button></div>`;
+            <p class="d-quote" style="display:none;margin-top:14px">Setelah mempertimbangkan segala hal yang sebenarnya tidak perlu dipertimbangkan, pengajuan kamu resmi DISETUJUI.</p>
+            <div class="d-row"><button class="d-btn" style="display:none" data-go>PROSES PENERBITAN KARTU</button></div>`;
           const paper = root.querySelector(".d-paper"), stamp = root.querySelector(".d-stamp");
           setTimeout(() => { if (root.isConnected) stamp.classList.add("hit"); }, 900);
           setTimeout(() => { if (root.isConnected) { paper.classList.add("thud"); celebrate(40); } }, 1250);
@@ -4432,7 +4508,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             save();
             if (first) {
               celebrate(110);
-              questToast("🪪", "Side quest selesai!", "Level 17 ID card kamu sudah terbit.");
+              questToast("🪪", "Side quest selesai!", "Kartu Identitas kamu sudah terbit.");
             }
             card(first);
           };
@@ -4440,7 +4516,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         function card(justIssued) {
           const p = existing();
           if (!p) return office();
-          root.innerHTML = `<div class="d-box"><h2>${justIssued ? "ID CARD ISSUED!" : "YOUR LEVEL 17 ID"}</h2><p>Kartu kenang-kenangan fiktif. Simpan sebagai PNG kalau mau.</p></div><canvas class="d-card"></canvas><div class="d-row"><button class="d-btn" data-dl>DOWNLOAD ID CARD PNG</button>${justIssued ? '<button class="d-btn ghost" data-next>FINISH ▶</button>' : '<button class="d-btn ghost" data-edit>EDIT APPLICATION</button><button class="d-btn ghost" data-close>RETURN TO DESKTOP</button>'}</div>`;
+          root.innerHTML = `<div class="d-box"><h2>${justIssued ? "KARTU IDENTITAS TERBIT!" : "KARTU IDENTITAS TERBIT!"}</h2><p>Bisa disimpan sebagai PNG kalau mau.</p></div><canvas class="d-card"></canvas><div class="d-row"><button class="d-btn" data-dl>DOWNLOAD KARTU</button>${justIssued ? '<button class="d-btn ghost" data-next>SELESAI ▶</button>' : '<button class="d-btn ghost" data-edit>EDIT KARTU</button><button class="d-btn ghost" data-close>KEMBALI KE DESKTOP</button>'}</div>`;
           const cv = root.querySelector(".d-card");
           drawCard(cv, p);
           root.querySelector("[data-dl]").onclick = () => downloadCard(cv, p);
@@ -4451,7 +4527,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           }
         }
         function done() {
-          root.innerHTML = `<div class="d-box"><h2>🎉 REGISTRATION COMPLETE!</h2><p class="d-quote">Your Level 17 identity has been successfully issued. You may be officially 17, but the department takes no responsibility for your questionable decisions. Have a wonderful birthday, citizen.</p><div class="d-row"><button class="d-btn" data-ret>RETURN TO DESKTOP</button><button class="d-btn ghost" data-view>LIHAT KARTU LAGI</button></div></div>`;
+          root.innerHTML = `<div class="d-box"><h2>🎉 PENDAFTARAN SELESAI!</h2><p class="d-quote">Identitas kamu resmi diterbitkan! Sekarang kamu sah memasuki usia 17 tahun, Selamat ulang tahun! Semoga hari spesialmu penuh kebahagiaan dan hal-hal seru. 🎂.</p><div class="d-row"><button class="d-btn" data-ret>KEMABLI KE DESKTOP</button><button class="d-btn ghost" data-view>LIHAT KARTU LAGI</button></div></div>`;
           root.querySelector("[data-ret]").onclick = () => closeWin("dept");
           root.querySelector("[data-view]").onclick = () => card(false);
         }
@@ -4496,7 +4572,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
       function rewindAndReset() {
         const ov = document.createElement("div");
         ov.style.cssText = "position:fixed;inset:0;z-index:16000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#120f24;color:#fff;font-family:'Quicksand',sans-serif;opacity:0;transition:opacity .5s";
-        ov.innerHTML = '<div style="font-size:3.4rem">⏪</div><div style="font-size:1.1rem;font-weight:700;letter-spacing:1px">Memutar balik waktu…</div>';
+        ov.innerHTML = '<div style="font-size:3.4rem">🔄️</div><div style="font-size:1.1rem;font-weight:700;letter-spacing:1px">Memutar balik waktu…</div>';
         document.body.appendChild(ov);
         requestAnimationFrame(() => (ov.style.opacity = "1"));
         setTimeout(() => {
@@ -4506,14 +4582,14 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
         }, 1700);
       }
       function buildReset() {
-        const root = el("div", "rst", `<div class="rst-ic">⏪</div><h2>Time Machine</h2>
+        const root = el("div", "rst", `<div class="rst-ic">🔄️</div><h2>Mesin Waktu</h2>
           <p>Mau mengulang ceritanya dari awal?<br>Semua progres dikembalikan seperti pertama kali komputer ini dinyalakan.</p>
-          <ul><li>🏆 Achievement</li><li>🧩 Teka-teki dan file yang sudah dipulihkan</li><li>🎁 Hadiah dan kejutan lainnya</li><li>📝 Centang di catatan dan chat yang kamu ketik</li></ul>
+          <ul><li>🏆 Achievement</li><li>🧩 Teka-teki dan file yang sudah dipulihkan</li><li>
           <div class="rst-act"></div>`);
         const act = root.querySelector(".rst-act");
         function first() {
           act.innerHTML = "";
-          const b = el("button", "rst-btn", "⏪ Mulai ulang cerita");
+          const b = el("button", "rst-btn", "🔄️ Mulai ulang cerita");
           b.onclick = confirmStep;
           act.appendChild(b);
         }
@@ -4621,10 +4697,9 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
             setTimeout(() => h.remove(), 1500 + i * 120);
           }
         }
-        const WILD = ["meow?", "mrrrow 🐾", "*menatap kamu*", "meong~"];
-        const HOME = ["Ucup pulang! 🐱", "purr purr… 💚", "meong~ (traktir ikan dong)", "*ndusel*", "mrrrow 🐾", "jangan lupa traktirannya ya 😼"];
+        const WILD = ["meow?", "mrrrow 🐾", "*diam*", "meong~"];
+        const HOME = ["Ucup pulang 🐱", "meong~", "mrrrow 🐾", "jangan lupa traktirannya 😼"];
         const pick = (a) => a[Math.floor(Math.random() * a.length)];
-        // [BARU] side quest: elus Ucup 17 kali
         const PET_GOAL = 17;
         const PET_TEXT = { 1: "ucup noticed you.", 5: "ucup is enjoying this.", 10: "almost halfway there!", 15: "just a little more...", 17: "ucup has a gift for you!" };
         cat.addEventListener("click", () => {
@@ -4641,7 +4716,7 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           if (n >= PET_GOAL) {
             S.petDone = true;
             save();
-            say("mission complete! you've given ucup 17 pets. check your email, he has something for you!", true, 6500);
+            say("Misi selesai! kamu mengelus ucup 17x. periksa email kamu, he has something for you!", true, 6500);
             hearts(8);
             celebrate(80);
             if (wins.mail && wins.mail.api.refresh) wins.mail.api.refresh();
@@ -4669,13 +4744,12 @@ Beragam pilihan kuliner tersebut menunjukkan kekayaan cita rasa dan pengalaman b
           try { localStorage.setItem(KEY, "1"); } catch (_) {}
           if (!cat.classList.contains("on")) show();
           const t = $("#toast");
-          t.innerHTML = '<div class="ti">🐱</div><div><b>Ucup pulang!</b><div>Kucingnya ketemu 🥹 Kecilkan jendela buat lihat dia di desktop.</div></div>';
+          t.innerHTML = '<div class="ti">🐱</div><div><b>Ucup pulang!</b><div>Kucingnya ketemu! Kecilkan jendela buat lihat dia di desktop.</div></div>';
           t.classList.add("on");
           t.onclick = () => t.classList.remove("on");
           setTimeout(() => t.classList.remove("on"), 7000);
           celebrate(70);
         };
-        // dipanggil oleh Time Machine: kucing hilang lagi
         window.ucupReset = function () {
           home = false;
           try { localStorage.removeItem(KEY); } catch (_) {}
